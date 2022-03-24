@@ -1,0 +1,293 @@
+$bg: #23272a;
+$suppbg: #2c2f33;
+$supp: #f7bc34;
+$sup: #ffdd8c;
+$w: white;
+$b: 2px solid $supp;
+$br: 25px;
+
+.seperate{
+    margin: 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.bar{
+    margin: 15px;
+    display: flex;
+    width: 350px;
+}
+
+.title{
+    position: fixed;
+    padding: 0;
+    font-size: 30px;
+    width: 25%;
+    text-align: center;
+    text-decoration: line-through $sup;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.yellow{
+    color: $supp;
+}
+
+.gray{
+    text-shadow: -2.5px 0 rgb(146, 146, 146);
+}
+
+.grey{
+    text-shadow: 2.5px 0 rgb(146, 146, 146);
+}
+
+.fix{
+    font-size: 25px;
+    position: fixed;
+    padding: 25px;
+    height: 100%;
+}
+ul{
+    height: 100%;
+}
+
+li{
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.new{
+    margin:10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 2;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+
+#posting{
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 5px;
+    padding: 15px;
+    background-color: $suppbg;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.query input[type = "text"]{
+    background: none;
+    color: $w;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.query input[type = "file"]{
+    margin-bottom: 5px;
+}
+
+.query input[type = "submit"]{
+    margin-top: 10px;
+    padding: 5px 15px 5px 15px; 
+    border: 0;
+    border-radius: $br;
+    background: $supp;
+}
+
+button{
+    font-size: 18;
+    border: none;
+    background: none;
+    color: white;
+}
+
+.divider{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.warning{
+    padding-top: 15px;
+    font-size: 10px;
+}
+
+.hehe{
+    display: flex;
+}
+
+.pfp{
+    padding-right: 10px;
+}
+
+.push{
+    padding-top: 5px;
+}
+
+select{
+    text-align: center;
+    border-radius: 20px;
+}
+
+.rev{
+    row-gap: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.column{
+    display: flex;
+}
+
+.prof{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sep{
+    display: flex;
+    justify-content: space-between;
+}
+
+#hatdog{
+    border-radius: 50px;
+}
+
+.content{
+    display: flex;
+    align-self: stretch;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.actual{
+    display: flex;
+    flex: 1;
+    align-content: stretch;
+    flex-direction: column;
+}
+
+.ups{
+    padding-right: 15px
+}
+
+.onetwothree{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.what{
+    padding-top: 5px;
+    border-bottom: 1px solid $w;
+}
+
+.commit{
+    margin: 0;
+    padding: 10px 0px 10px 0px;
+}
+
+.commend{
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    border-left: 1px solid grey;
+}
+
+#below:not(:nth-last-of-type(1)){
+    border-bottom: 1px dashed grey;
+}
+
+.CUser{
+    padding: 10px;
+}
+
+.commentt{
+    margin: 0;
+    padding-top: 10px;
+    border-left: 1px solid grey;
+}
+
+.error{
+    padding: 10px;
+    background-color: rgb(255, 55, 55);
+    border: 2px solid rgb(255, 91, 91);
+    border-radius: 5px;
+}
+
+.flair{
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.aimg{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pimg{
+    background-color: $bg;
+}
+
+.side{
+    top: 0;
+    position: sticky;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    margin-right: 20px;
+    justify-content: center;
+    align-content: space-between;
+    gap: 10px;
+}
+
+.he{
+    color: white;
+    height: 100%;
+    cursor: pointer;
+    .stick{
+        display: flex;
+        width: 250px;
+        height: 200px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.hey{
+    color: white;
+    height: 100%;
+    cursor: pointer;
+    top: 200px;
+    .sticka{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 100px;
+        text-align: center;
+    }
+}
