@@ -1,11 +1,12 @@
 body{
   font-family: 'Montserrat Alternates', sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 header {
     width: 100%;
-    background-color: #FFEFCB;
+    background-color: #FDF5E6;
     display: block;
     position: -webkit-sticky;
     position: sticky;
@@ -168,13 +169,324 @@ nav ul li a:hover:after {
   opacity: 1;
 }
 
+.carousel-inner{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
+.carousel-inner .banner{
+  background-color:blue;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-color:black; 
+  background-size: cover;
+}
+
+.carousel-fluid{
+  display: flex; 
+  justify-content: center;
+ } 
+ .tag-fluid{
+  display: flex; 
+  justify-content: center;
+ }
+
+.header-fluid{
+  display: flex; 
+  
+ } 
+.discover{
+  margin: 25px;
+}
+.container-fluid{
+  height: 100vh;
+  display: flex; 
+  margin-bottom:100px;
+ } 
+
+ .headering {
+  border-color: solid black 1px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 0px 150px;
+  margin-top:20px;
+  justify-content: space-between;
+  align-items: center;
+}
+ .disc-right{
+   text-decoration: none;
+
+ }
+ /* wait why is there featured if its gallery lmaoooooooooo we only filter maybe idk wait wait */
+ .row{
+     width: 100%;
+     margin: 0;
+     margin-top: 15px;
+     justify-content: stretch;
+     height: auto;
+ }
+ 
+ .gap{
+     row-gap: 7px;
+     column-gap: 7px;
+ }
+ /* so its image is contained but the height depends on who is taller then width adjusts how wat yes */
+ .first{
+     /* height: 35vh; */
+     padding: 0;
+     flex-grow: 2;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: contain;
+     border: 1px solid  rgba(0, 0, 0, 0.514);
+     border-radius:10px;
+ }
+ 
+ .second{
+     padding: 0;
+     flex-grow: 1;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: contain;
+     border: 1px solid  rgba(0, 0, 0, 0.514);
+     border-radius:10px;
+ }
+ /* who the duck is dale wat*/
+ .cover{
+     width: 100%;
+     height: 100%;
+     transition: 0.2s;
+     /* background-color: rgba(255, 255, 255, 0); */
+     /*what da nas doin*/
+ }
+ 
+ .cover:hover{
+     width:100%;
+     height:100%;
+     z-index: 1;
+     overflow: hidden;
+     background: #a7a198;
+     /* background: -moz-linear-gradient(top, #FFFFFF 0%, #000000 50%);
+     background: -webkit-linear-gradient(top, #FFFFFF 0%, #000000 50%);
+     background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%); */
+     /* background-color: rgba(19, 19, 19, 0.534); do we make responsive? no okay*/  
+     /* background-color: linear-gradient(to bottom, rgb(19, 19, 19), rgb(104, 104, 104)); */
+     opacity: 50%;
+     transition: 0.2s;
+     cursor: pointer;
+     border-radius:10px;
+     /* wat i do? i frogr ah the gradient mea dk what u do i make rice HAHAHAHA */
+ }
+
+ .row{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+  justify-content: stretch;
+  height: auto;
+}
+
+ .first{
+  padding: 0;
+  flex-grow: 2;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid  rgba(0, 0, 0, 0.514);
+  border-radius:10px;
+}
+
+.second{
+  padding: 0;
+  flex-grow: 1;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid  rgba(0, 0, 0, 0.514);
+  border-radius:10px;
+}
+
+ .cover{
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  /* background-color: rgba(255, 255, 255, 0); */
+  /*what da nas doin*/
+}
+
+.cover:hover{
+  width:100%;
+  height:100%;
+  z-index: 1;
+  overflow: hidden;
+  background: #f8f0e3;
+  /* background: -moz-linear-gradient(top, #FFFFFF 0%, #000000 50%);
+  background: -webkit-linear-gradient(top, #FFFFFF 0%, #000000 50%);
+  background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%); */
+  /* background-color: rgba(19, 19, 19, 0.534); do we make responsive? no okay*/  
+  /* background-color: linear-gradient(to bottom, rgb(19, 19, 19), rgb(104, 104, 104)); */
+  opacity: 50%;
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius:10px;
+  /* wat i do? i frogr ah the gradient mea dk what u do i make rice HAHAHAHA */
+}
+
+.marquee {
+  height: 35px;
+  width: 100%;
+
+  overflow: hidden;
+  position: relative;
+  background-color: #e9e5fb;  
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 8px 0 4px 0;
+}
+
+
+/* would need to be adjusted depending on time */
+.marquee .marqueeone{
+  animation: marquee 10s linear infinite
+}
+
+.marquee .marqueetwo{
+  animation: marquee 10s linear 2.5s infinite 
+}
+
+.marquee .marqueethree{
+  animation: marquee 10s linear 5s infinite
+}
+
+.marquee .marqueefour{
+  animation: marquee 10s linear 7.5s infinite
+}
+
+/* even out the elements */
+.marquee div {
+  position: absolute;
+  width: 100%;
+  left: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.marquee:hover div {
+  animation-play-state: paused;
+}
+
+/* add delay at the end of animation so you dont start while another div is going */
+@keyframes marquee {
+  0% { left: 100%; }
+  50% { left: -100%; }
+  100% {left: -100%}
+}
 
 /*
 
 CSS Testing Below
 
 */
+/* 
+footer{
+  width: 100%;
+  display: block;
+  position: sticky;
+} */
+
+.footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+  margin-top:50px;
+}
+
+.footer-distributed .footer-left p {
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: whitesmoke;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float:right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
 
 #head-nav{
   margin: 0;
@@ -183,3 +495,4 @@ CSS Testing Below
   justify-content: space-between;
   background-color: #FCB293;
 }
+
