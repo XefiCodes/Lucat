@@ -47,7 +47,7 @@ body{
     
     nav ul li a {
     color: #272727;
-    font-size: 12px;
+    font-size: 15px;
     position: relative;
     padding: 15px 5px;
     width: 100px;
@@ -63,8 +63,8 @@ body{
     
     nav ul li #siteName{
     color: #272727;
-    font-size: 20px;
-    padding: 10px 5px 5px 0;
+    font-size: 24px;
+    padding: 7px 1px 1px 0;
     width: 100px;
     text-align: center;
     font-weight: 600;
