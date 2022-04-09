@@ -1,175 +1,8 @@
-body{
-  font-family: 'Montserrat Alternates', sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-}
+ /* wait why is there featured if its gallery lmaoooooooooo we only filter maybe idk wait wait */
 
-header {
-    width: 100%;
-    background-color: #FDF5E6;
-    display: block;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-radius: 0 0 10px 10px;
-  }
+ /* Carousel */
 
-nav {
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav ul {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 0;
-  justify-content: stretch;
-  display: flex;
-  -ms-grid-rows: auto auto auto auto auto auto;
-      grid-template-rows: auto auto auto auto auto auto;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
-
-nav ul li {
-  list-style: none;
-}
-
- nav ul{
-  display: flex;
-  float: left;
-  grid-template-columns: auto auto auto;
-}  
-
-nav ul li a {
-  color: #272727;
-    font-size: 15px;
-    position: relative;
-    padding: 15px 5px;
-    width: 100px;
-    text-align: center;
-    font-weight: 600;
-    display: block;
-    text-decoration: none;
-    z-index: 2;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-
-nav ul li #siteName{
-  color: #272727;
-  font-size: 24px;
-  padding: 7px 1px 1px 0;
-  width: 100px;
-  text-align: center;
-  font-weight: 600;
-  display: block;
-  text-decoration: none;
-  z-index: 2;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-nav ul li a.sub:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid #FCB293;
-  -webkit-transform: scaleY(2);
-          transform: scaleY(2);
-  opacity: 0;
-  -webkit-transition: .15s;
-  transition: .15s;
-}
-
-nav ul li a.com:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid #A4C9D7;
-  -webkit-transform: scaleY(2);
-          transform: scaleY(2);
-  opacity: 0;
-  -webkit-transition: .15s;
-  transition: .15s;
-}
-
-nav ul li a:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid #272727;
-  -webkit-transform: scaleY(2);
-          transform: scaleY(2);
-  opacity: 0;
-  -webkit-transition: .15s;
-  transition: .15s;
-}
-
-nav ul li a:after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  width: 100%;
-  left: 0;
-  height: 100%;
-  background-color: rgba(224, 112, 112, 0);
-  color: #ffffff;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  opacity: 0;
-  -webkit-transition: .15s;
-  transition: .15s;
-}
-
-nav ul li a:hover {
-  color: white;
-  /* -webkit-text-stroke-color: black;
-  -webkit-text-stroke-width: 0.2px; */
-  text-shadow: -1px -1px black, 1px 1px black, -1px 1px black, 1px -1px black;
-}
-
-nav ul li a.sub:hover {
-  color: white;
-  /* -webkit-text-stroke-color: black;
-  -webkit-text-stroke-width: 0.2px; */
-  text-shadow: -1px -1px #FCB293, 1px 1px #FCB293, -1px 1px #FCB293, 1px -1px #FCB293;
-}
-
-nav ul li a.com:hover {
-  color: white;
-  /* -webkit-text-stroke-color: black;
-  -webkit-text-stroke-width: 0.2px; */
-  text-shadow: -1px -1px #A4C9D7, 1px 1px #A4C9D7, -1px 1px #A4C9D7, 1px -1px #A4C9D7;
-}
-
-nav ul li a:hover:before {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
-  opacity: 1;
-}
-
-nav ul li a:hover:after {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
-  opacity: 1;
-}
-
-.carousel-inner{
+ .carousel-inner{
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -190,6 +23,7 @@ nav ul li a:hover:after {
   display: flex; 
   justify-content: center;
  } 
+
  .tag-fluid{
   display: flex; 
   justify-content: center;
@@ -222,7 +56,9 @@ nav ul li a:hover:after {
    text-decoration: none;
 
  }
- /* wait why is there featured if its gallery lmaoooooooooo we only filter maybe idk wait wait */
+ 
+/* Discover */
+
  .row{
      width: 100%;
      margin: 0;
@@ -338,57 +174,83 @@ nav ul li a:hover:after {
   /* wat i do? i frogr ah the gradient mea dk what u do i make rice HAHAHAHA */
 }
 
-.marquee {
-  height: 35px;
-  width: 100%;
+/* Tags*/
 
-  overflow: hidden;
+#Tag{
+  margin: 25px;
+}
+
+.tag-fluid{
+  column-gap: 10px;
+  flex-direction: row;
+}
+
+.tag-fluidity{
+  margin-top: 15px;
+  height: 100px;
+  display: flex; 
+  margin-bottom:100px;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+ } 
+
+.tag-fluid .tag-img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  transition: 0.25s;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+}
+
+.tag-fluid .btn {
   position: relative;
-  background-color: #e9e5fb;  
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  padding: 8px 0 4px 0;
+  overflow: hidden;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  /*border-radius: 5px;*/
+  text-align: center;
+  z-index: 1;
 }
-
-
-/* would need to be adjusted depending on time */
-.marquee .marqueeone{
-  animation: marquee 10s linear infinite
-}
-
-.marquee .marqueetwo{
-  animation: marquee 10s linear 2.5s infinite 
-}
-
-.marquee .marqueethree{
-  animation: marquee 10s linear 5s infinite
-}
-
-.marquee .marqueefour{
-  animation: marquee 10s linear 7.5s infinite
-}
-
-/* even out the elements */
-.marquee div {
+/* Why like this on side i guess it can be used then put mmargaret*/
+.tag-fluid .hoverTagline{
+  background-color: #CAFFBF; 
+  border-radius:0px 5px 5px 0px;/* yon un eh blureed */
+  margin-top: 37px;
+  width:auto;
+  padding-left:15px;
+  padding-right:15px;
+  top: 0;
+  color: black; /**/
   position: absolute;
-  width: 100%;
-  left: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  font-size: 23px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.25s;
+  -webkit-transform: scaleY(0.85);
+          transform: scaleY(0.85); 
 }
+/* maybe nested???  nest wat okay so no good */
 
-.marquee:hover div {
-  animation-play-state: paused;
+.tag-fluid .imag:hover .hoverTagline{
+  opacity: 1;
+  transition: 0.25s;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1); 
 }
-
-/* add delay at the end of animation so you dont start while another div is going */
-@keyframes marquee {
-  0% { left: 100%; }
-  50% { left: -100%; }
-  100% {left: -100%}
+/* me do sampay */
+.imag:hover .tag-img{
+  filter: blur(2.5px);
+  -webkit-filter: blur(2.5px);
+  transition: 0.25s;
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
 }
-
 /*
 
 CSS Testing Below
@@ -400,99 +262,3 @@ footer{
   display: block;
   position: sticky;
 } */
-
-.footer-distributed {
-  background-color: #292c2f;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  font: normal 16px sans-serif;
-  padding: 45px 50px;
-  margin-top:50px;
-}
-
-.footer-distributed .footer-left p {
-  color: #ffffff;
-  font-size: 14px;
-  margin: 0;
-}
-/* Footer links */
-
-.footer-distributed p.footer-links {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0 0 10px;
-  padding: 0;
-  transition: ease .25s;
-}
-
-.footer-distributed p.footer-links a {
-  display: inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color: whitesmoke;
-  transition: ease .25s;
-}
-
-.footer-distributed .footer-links a:before {
-  content: "·";
-  font-size: 20px;
-  left: 0;
-  color: #fff;
-  display: inline-block;
-  padding-right: 5px;
-}
-
-.footer-distributed .footer-links .link-1:before {
-  content: none;
-}
-
-.footer-distributed .footer-right {
-  float:right;
-  margin-top: 6px;
-  max-width: 180px;
-}
-
-.footer-distributed .footer-right a {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  background-color: #33383b;
-  border-radius: 2px;
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-  line-height: 35px;
-  margin-left: 3px;
-  transition:all .25s;
-}
-
-.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
-
-.footer-distributed p.footer-links a:hover{text-decoration:underline;}
-
-/* Media Queries */
-
-@media (max-width: 600px) {
-  .footer-distributed .footer-left, .footer-distributed .footer-right {
-    text-align: center;
-  }
-  .footer-distributed .footer-right {
-    float: none;
-    margin: 0 auto 20px;
-  }
-  .footer-distributed .footer-left p.footer-links {
-    line-height: 1.8;
-  }
-}
-
-#head-nav{
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  background-color: #FCB293;
-}
-

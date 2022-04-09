@@ -14,18 +14,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="Styles/index.css" rel="stylesheet">
+    <link href="Styles/global.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><div id="siteName">Lucat</div></li>
-                <li><a href="#" class="left">Home</a></li>
-                <li><a href="#" class="left">Profile</a></li> 
-                <li><a href="gallery.html" class="left">Gallery</a></li>
-                </ul><ul class="right">
+              <li><div id="siteName">Lucat</div></li>
+              <li><a href="#" class="left">Home</a></li>
+              <li><a href="profile.html" class="left">Profile</a></li>
+              <li><a href="gallery.html" class="left">Gallery</a></li>
+              </ul>
+              <ul class="right">
                 <li><a href="#" class="sub">Submit</a></li>
-                <li><a href="commissions.html" class="com">Commissions</a></li></ul>
+                <li><a href="commissions.html" class="com">Commissions</a></li>
+                <!-- <li><a href="#" class="sub">me</a></li> -->
+              </ul>
             </ul>
         </nav>
     </header>
@@ -83,8 +87,67 @@
               </div>
           </div>
         </div>
-        <div class="tag-fluid">
+
+        <section id="Tag">
+          <div class="header-fluid headering">
+            <h2 class="featureHeader">Tags</h2>
+            <a class="featureHeader footer-right" href="gallery.html"><b>Go to Gallery</b></a>
+          </div>
+          <div class="tag-fluidity" style="width: 80%;">
+              <div class="tag-fluid">
+                <button class="btn"> 
+                  <a class="imag" href="gallery.html">
+                    <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                    <div class="hoverTagline">Tags</div>
+                  </a>
+                </button>
+                <button class="btn">
+                  <a class="imag">
+                    <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                    <div class="hoverTagline">Tags</div>
+                  </a>
+                </button>
+                <button class="btn"> 
+                  <a class="imag"> 
+                    <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                    <div class="hoverTagline">Tags</div>
+                  </a>
+                </button>
+                <button class="btn"> 
+                  <a class="imag"> 
+                    <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                    <div class="hoverTagline">Tags</div>
+                  </a>
+                </button>
+                <button class="btn"> 
+                  <a class="imag"> 
+                    <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width:125%;">
+                    <div class="hoverTagline">Tags</div>
+                  </a>
+                </button>
+            </div>
+          </div>
+          
+        </section>
+
+        <div class="discover">
+          <div class="header-fluid headering">
+            <h2 class="featureHeader">Submissions</h2>
+            <a class="featureHeader footer-right" href="commissions.html"><b>See all</b></a>
+          </div>
+          <div class="container-fluid" style="width:80%">
+            <div class="row gap">
+                <div class="col-md-4 first" style="background-image: url('img/Pika.png');"><a href="#"></a><div class="cover"></div></div>
+                <div class="col-md-2 second" style="background-image: url('img/Chung.png');"><div class="cover"></div></div>
+                <div class="col-md-2 first" style="background-image: url('img/chad.png');"><div class="cover"></div></div>
+                <div class="col-md-2 second" style="background-image: url('img/a.png');"><div class="cover"></div></div>
+                <div class="col-md-2 second" style="background-image: url('img/dale.png');"><div class="cover"></div></div>
+                <div class="col-md-2 second" style="background-image: url('img/earth.png');"><div class="cover"></div></div>
+                <div class="col-md-2 second" style="background-image: url('img/black.png');"><div class="cover"></div></div>
+              </div>
+          </div>
         </div>
+
       </div>
       <footer class="footer-distributed">
         <div class="footer-right">
@@ -95,13 +158,12 @@
         </div>
 			<div class="footer-left">
 				<p class="footer-links">
-					<a class="link-1" href="index.html">About Us</a>
-					<a href="gallery.html">Term of Service</a>
+					<a class="link-1" href="aboutus.html">About Us</a>
+					<a href="#">Term of Service</a>
 					<a href="#">Support Us</a>
 				</p>
 				<p>Lucat &copy; 2022  Literally 1984</p>
 			</div>
-
 		</footer>
 </body>
 </html>
