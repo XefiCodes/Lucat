@@ -181,6 +181,30 @@ body{
             transform: scaleY(1);
     opacity: 1;
   }
+  .ad-normal{
+    /* position: ; */
+    border: solid black 1px;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+  }
+  .ad-banner{
+    /* position: ; */
+    border: solid black 1px;
+    overflow: hidden;
+    width: 200px;
+    height: 100px;
+    margin: 0;
+  }
+  .ad-long{
+    /* position: ; */
+    border: solid black 1px;
+    overflow: hidden;
+    width: 160px;
+    height: 325px;
+    margin: 0;
+  }
    
 /* Footer */
 
