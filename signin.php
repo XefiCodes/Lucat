@@ -30,19 +30,32 @@
                 </ul>
             </nav>
         </header>
-        <div>
+        <div class="content">
             <form class="box" action="login.php" method="post">
-                <h3>Log In to connect with people! </h3>
-                <input type="text" name="un" placeholder="Username" required>
-                <input type="password" name="pw" placeholder="Password" required>
-                <input type="submit" name="Login" value="Log In" style="padding: 5px 112px 5px 112px;">
+                <h1>Welcome back</h1>
+                <p class="msg">Log in to connect with people!</p>
+
+                <label class="custom-field">
+                    <input type="text" name="un" id="email" required/>
+                    <span class="placeholder bg-transparent">Enter username</span>
+                </label>
+
+                <label class="custom-field">
+                    <input type="password" name="pw" id="password" required/>
+                    <span class="placeholder bg-transparent">Enter password</span>
+                </label>
+
+                <input type="submit" name="Login" value="LOGIN" class="login-btn">
+                
                 <?php if(isset($_SESSION['error'])) { ?>
                     <div id="error" style="padding: 5px 0px 5px 0px; color: white; background-color: #dc143c;">
                         <?php echo $_SESSION['error']; ?>
                     </div>
                 <?php } ?>
-                <p>Don't have an account? <span class="sign"><a href="signup.php">Sign up here.</a></span></p>
+
+                <p class="option">Don't have an account yet? <a onClick="location.href='signup.php'">Sign Up Here</a></p>
             </form>
+            <div class="profile-bg"></div>
         </div>
     </body>
 </html>

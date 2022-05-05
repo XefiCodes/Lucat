@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    background-color: white;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-x: hidden;
+}
+
+.content form {
+    padding: 120px 100px 20px;
+}
+
+.content form h1 {
+    color: #292929;
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 0;
+}
+.content form .msg {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: #707070;
+}
+
+.content form .custom-field {
+    position: relative;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.content form .custom-field input {
+    border:none;
+    appearance: none;
+    outline: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background:
+        linear-gradient(90deg, #FF8552, #FF8552) center bottom/0 2px no-repeat,
+        linear-gradient(90deg, #39393A, #39393A) left bottom/100% 2px no-repeat,
+        linear-gradient(90deg, #FFF8F4, #FFF8F4) left bottom/100% no-repeat;
+    transition: background-size 0.3s ease;
+}
+
+.content form .custom-field input:valid, .content form .custom-field input:focus {
+    background-size: 100% 2px, 100% 2px, 100%;
+}
+
+.content form .custom-field input:valid + .placeholder, .content form .custom-field input:focus + .placeholder {
+    top: -10px;
+    font-size: 12px;
+    color: #39393A;
+    background-size: 100% 2px, 100% 2px, 100%;
+}
+
+.content form .placeholder {
+    opacity: 1;
+    position: absolute;
+    left: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 22px;
+    line-height: 100%;
+    transform: translateY(-50%);
+    color: #39393A;
+    transition: 
+        top 0.3s ease,
+        color 0.3s ease,
+        font-size 0.3s ease;
+}
+
+.content form .login-btn {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: #FF8552;
+}
+
+.content form .login-btn:hover {
+    box-shadow: 4px 4px 20px rgba(255, 84, 10, 0.2);
+    background-color: #FF540A;
+}
+
+.content form .option {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.content form .option a {
+    color: #FF8552;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content form .option a:hover {
+    color: #FF540A;
+}
+
+.profile-bg {
+    background: #fff url("../img/profile-bg.png") left/cover no-repeat;
+}
