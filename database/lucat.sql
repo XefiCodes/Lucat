@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 25, 2022 at 09:53 AM
+-- Generation Time: May 05, 2022 at 06:01 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -76,18 +76,26 @@ CREATE TABLE IF NOT EXISTS `posts` (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `image` longblob,
-  `coverimage` longblob,
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `bio` varchar(100) DEFAULT NULL,
-  `comm_status` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`uid`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `prof_pic` varchar(255) NOT NULL,
+  `cover_pic` varchar(255) NOT NULL,
+  `bio` text NOT NULL,
+  `signup_date` date NOT NULL,
+  `user_closed` varchar(3) NOT NULL,
+  `friend_array` text NOT NULL,
+  `comment_stat` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `prof_pic`, `cover_pic`, `bio`, `signup_date`, `user_closed`, `friend_array`, `comment_stat`) VALUES
+(1, 'Kindiaz', 'Kindiaz@yahoo.com', '8ce87b8ec346ff4c80635f667d1592ae', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '', '2022-05-05', 'no', ',', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
