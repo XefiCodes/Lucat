@@ -81,8 +81,8 @@
         font-size 0.3s ease;
 }
 
-.content form .login-btn {
-    margin-top: 50px;
+.content form .login-btn, .content form .register-btn {
+    margin-top: 35px;
     margin-bottom: 15px;
     padding: 20px 0;
     width: 100%;
@@ -96,7 +96,7 @@
     background-color: #FF8552;
 }
 
-.content form .login-btn:hover {
+.content form .login-btn:hover, .content form .register-btn:hover {
     box-shadow: 4px 4px 20px rgba(255, 84, 10, 0.2);
     background-color: #FF540A;
 }
@@ -117,6 +117,10 @@
     color: #FF540A;
 }
 
-.profile-bg {
-    background: #fff url("../img/sign-in-bg.png") left/cover no-repeat;
+.signin-bg {
+    background: #fff url("../img/Dribbble-Elen Winata-Crowded Space.png") left/cover no-repeat;
+}
+
+.signup-bg {
+    background: #fff url("../img/Dribbble-Karolina Kalinowska-Head's Up.png") left/cover no-repeat;
 }
