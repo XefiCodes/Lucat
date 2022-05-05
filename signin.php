@@ -33,7 +33,7 @@
         <div class="content">
             <form class="box" action="login.php" method="post">
                 <h1>Welcome back</h1>
-                <p class="msg">Log in to connect with people!</p>
+                <p class="msg">Sign in to connect with people!</p>
 
                 <label class="custom-field">
                     <input type="text" name="un" id="email" required/>
