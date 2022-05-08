@@ -2,6 +2,7 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    background-color: #F5F4EA
   }
   
 /* Header */
@@ -16,7 +17,7 @@ body{
   
   header {
       width: 100%;
-      background-color: #fffcd9;
+      background-color: #D67667;
       display: block;
       position: -webkit-sticky;
       position: sticky;
@@ -31,6 +32,7 @@ body{
     overflow: hidden;
     display: flex;
     justify-content: space-between;
+   
   }
   
   nav ul {
