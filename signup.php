@@ -1,57 +1,67 @@
-<?php session_start(); ?>
-<html>
-    <head>
-        <title>Signup Lucat</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <link href="Styles/index.css" rel="stylesheet">
-        <link href="Styles/global.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                <li><div id="siteName">Lucat</div></li>
-                <!-- <li><a href="#" class="left">Home</a></li>
-                <li><a href="profile.html" class="left">Profile</a></li>
-                <li><a href="gallery.html" class="left">Gallery</a></li> -->
-                </ul>
-                <!-- <ul class="right">
-                    <li><a href="#" class="sub">Submit</a></li>
-                    <li><a href="commissions.html" class="com">Commissions</a></li>
-                    <li><a href="#" class="sub">me</a></li>
-                </ul> -->
-            </nav>
-        </header>
-        <section>
-            <div>
-                <form class="box" action="bts/account_created.php" method="post" enctype="multipart/form-data">
-                    <h3>Signup</h3>
-                    <input type="text" name="em" placeholder="Email" required>
-                    <input type="text" name="un" placeholder="Username" required>
-                    <input type="password" name="pw" placeholder="Password" required>
-                    <?php if(isset($_SESSION['error'])) { ?>
-                        <div id="error" style="padding: 5px 0px 5px 0px; margin-bottom: 10px; color: white; background-color: #dc143c;">
-                            <?php echo $_SESSION['error']; ?>
-                        </div>
-                    <?php } ?>
-                    <!-- <div class="divide">
-                        <input type="submit" value="CREATE ACCOUNT" style="padding: 5px 50px 5px 50px;">
-                        <a href="main.php"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
-                    </div> -->
-                </form>
-            </div>
-        </section>
+<?php include("bts/header.php"); ?>
+
+        <div class="content">
+            <form action="signup.php" method="POST">
+                <h1>Sign up here</h1>
+                <?php 
+                    if(in_array("<span class='msg'>You're all set! Go ahead and login!</span><br>", $error_array)) { echo "<p class='msg' style='color: #007CBE; font-weight: bold;'>You're all set! Go ahead and login!</p>"; }
+                    else { echo "<p class='msg'>Let's get you started</p>";}
+                ?>
+
+                <!-- Field for the username -->
+                <label class="custom-field">
+                    <input type="text" name="reg_uname" id="email" value="<?php 
+                        if(isset($_SESSION['reg_uname'])) {
+                            echo $_SESSION['reg_uname'];
+                        } 
+                        ?>" required/>
+                    <span class="placeholder bg-transparent">Enter username</span>
+                </label>
+                <!-- Error messages -->
+                <?php if(in_array("Your username must be between 2 and 100 characters<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin: 5px 0; '>Your username must be between 2 and 100 characters</p>"; ?>
+
+                <!-- Fields for the emails -->
+                <label class="custom-field">
+                    <input type="email" name="reg_email" value="<?php 
+                        if(isset($_SESSION['reg_email'])) {
+                            echo $_SESSION['reg_email'];
+                        } 
+                        ?>" required/>
+                    <span class="placeholder bg-transparent">Enter email</span>
+                </label>
+                <label class="custom-field">
+                    <input type="email" name="reg_email2" value="<?php 
+                        if(isset($_SESSION['reg_email2'])) {
+                            echo $_SESSION['reg_email2'];
+                        } 
+                        ?>" required/>
+                    <span class="placeholder bg-transparent">Confirm email</span>
+                </label>
+                <!-- Error messages -->
+                <?php if(in_array("Email already in use<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin: 5px 0; '>Email already in use </p>"; 
+                else if(in_array("Invalid email format<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin: 5px 0; '>Invalid email format</p>";
+                else if(in_array("Emails don't match<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin: 5px 0; '>Emails don't match</p>"; ?>
+
+
+                <!-- Field for the passwords -->
+                <label class="custom-field">
+                    <input type="password" name="reg_password" required/>
+                    <span class="placeholder bg-transparent">Enter password</span>
+                </label>
+                <label class="custom-field">
+                    <input type="password" name="reg_password2" required/>
+                    <span class="placeholder bg-transparent">Confirm password</span>
+                </label>
+                <!-- Error messages -->
+                <?php if(in_array("Your passwords do not match<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin-top: 5px; '>Your passwords do not match</p>"; 
+                else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin-top: 5px; '>Your password can only contain english characters or numbers</p>";
+                else if(in_array("Your password must be betwen 8 and 30 characters<br>", $error_array)) echo "<p style='color:#AF1B3F; padding-left: 12px; font-weight: bold; font-size: 12px; margin-top: 5px; '>Your password must be betwen 8 and 30 characters</p>"; ?>
+
+                <input type="submit" name="register_button" class="register-btn" value="REGISTER">
+
+                <p class="option">Already have an account? <a onClick="location.href='signin.php'">Sign In Here</a></p>
+            </form>
+            <div class="signup-bg"></div>
+        </div>
     </body>
 </html>
-<?php session_destroy(); ?>
