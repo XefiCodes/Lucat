@@ -262,3 +262,47 @@ footer{
   display: block;
   position: sticky;
 } */
+
+.flex-box{
+
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  align-content: center;
+  margin: 30px;
+}
+
+.flex-box-ad-1{
+  width:300px;
+  border: 1px solid black;
+  background-color: black;
+  margin: 10px;
+  min-height: 300px;
+
+}
+
+.flex-box-ad-2{
+  width:300px; 
+  border: 1px solid black;
+  background-color: black;
+  margin: 10px;
+  min-height: 300px;
+}
+
+.flex-box-ad-3{
+  width:300px;
+  border: 1px solid black;
+  background-color: black;
+  margin: 10px;
+  min-height: 300px;
+}
+
+.flex-box-ad-4{
+  width:300px;
+  border: 1px solid black;
+  background-color: black;
+  margin: 10px;
+  min-height: 300px;
+}
+

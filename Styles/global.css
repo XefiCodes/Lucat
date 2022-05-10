@@ -2,7 +2,8 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     margin: 0;
     overflow-x: hidden;
-    background-color: #F5F4EA
+    background-color: #E2E4E7
+  
   }
   
 /* Header */
@@ -13,17 +14,19 @@ body{
     display: flex;
     justify-content: space-between;
     background-color: #FCB293;
+    
   }
   
   header {
       width: 100%;
-      background-color: #D67667;
+      background-color: #F04854;
       display: block;
       position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 10;
       border-radius: 0 0 10px 10px;
+      
     }
   
   nav {
