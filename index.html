@@ -16,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="Styles/index.css" rel="stylesheet">
     <link href="Styles/global.css" rel="stylesheet">
+    <link href="Styles/scss/hover.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -34,69 +35,131 @@
             </ul>
         </nav>
     </header>
-    
-    
+
     <div class="content">
-      <div class="carousel-fluid">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width:65%; height:450px; border-radius:10px; margin-top:20px"> 
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
+    <!-- Carousel -->
+      <div class="dividerTop">
+        <!-- <div class="epal wala">
+          <div class="ad-long">
+            <div class="w3-content w3-display-container">
+              <img class="mySlidesa" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesa" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesa" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesa" src="img/old/black.png" style="width:100%">
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img/black.png" class="d-block banner" alt="IM1">
-              </div>
-              <div class="carousel-item">
-                <img src="img/nightmarefule.png" class="d-block banner" alt="IM2">
-              </div>
-              <div class="carousel-item">
-                <img src="img/topPlaces1.png" class="d-block banner" alt="IM3">
-              </div>
-              <div class="carousel-item">
-                <img src="img/topPlaces2.png" class="d-block banner" alt="IM4">
-              </div>
-              <div class="carousel-item">
-                <img src="img/topPlaces3.jpg" class="d-block banner" alt="IM5">
+          </div>
+        </div> -->
+        <div id="topIndex" class="margin">
+          <div class="carousel-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width:75%; height:450px; border-radius:10px; margin-top:20px; position: relative;"> 
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/whos mario.png" class="d-block banner" alt="IM1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/Jail.png" class="d-block banner" alt="IM2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/cypher.png" class="d-block banner" alt="IM3">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/Black Mage FF Final.png" class="d-block banner" alt="IM4">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/Vanellope.png" class="d-block banner" alt="IM5">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+        </div>
+        <div class="epal">
+          <div class="ad-long">
+            <div class="w3-content w3-display-container">
+              <img class="mySlidesL" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesL" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesL" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesL" src="img/old/black.png" style="width:100%">
+            </div>
           </div>
         </div>
-
-       
-
-        <div class="discover">
-          <div class="header-fluid headering">
-            <h2 class="featureHeader">Discover</h2>
-            <a class="featureHeader footer-right" href="gallery.html"><b>See all</b></a>
-          </div>
-          <div class="container-fluid" style="width:80%">
-            <div class="row gap">
-                <div class="col-md-4 first" style="background-image: url('img/Pika.png');"><a href="#"></a><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/Chung.png');"><div class="cover"></div></div>
-                <div class="col-md-2 first" style="background-image: url('img/chad.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/a.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/dale.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/earth.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/black.png');"><div class="cover"></div></div>
-              </div>
+      </div>
+      <!-- Discover -->
+      <div class="discover margin">
+        <div class="header-fluid headering">
+          <h2 class="featureHeader">Discover</h2>
+          <a class="featureHeader footer-right" href="gallery.html"><b>See all</b></a>
+        </div>
+        <div class="container-fluid" style="width:80%">
+          <div class="row gap">
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/Vanellope.png" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/cypher.png" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/whos mario.png" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/Jail.png" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/nightmarefule.png" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/Jail.png" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <img class="jezuki" src="img/Black Mage FF Final.png" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        
-
-        <section id="Tag">
+        <section id="Tag" class="margin">
           <div class="header-fluid headering">
             <h2 class="featureHeader">Tags</h2>
             <a class="featureHeader footer-right" href="gallery.html"><b>Go to Gallery</b></a>
@@ -138,44 +201,86 @@
           
         </section>
 
-        <div class="discover">
+        <div class="discover margin">
           <div class="header-fluid headering">
             <h2 class="featureHeader">Submissions</h2>
             <a class="featureHeader footer-right" href="commissions.html"><b>See all</b></a>
           </div>
           <div class="container-fluid" style="width:80%">
             <div class="row gap">
-                <div class="col-md-4 first" style="background-image: url('img/Pika.png');"><a href="#"></a><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/Chung.png');"><div class="cover"></div></div>
-                <div class="col-md-2 first" style="background-image: url('img/chad.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/a.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/dale.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/earth.png');"><div class="cover"></div></div>
-                <div class="col-md-2 second" style="background-image: url('img/black.png');"><div class="cover"></div></div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/Vanellope.png" />
+                  </div>
+                </a>
               </div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/cypher.png" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/whos mario.png" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/Jail.png" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/nightmarefule.png" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/Jail.png" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 first">
+                <a href="#" class="cover">
+                  <div class="coll">
+                    <img class="jezuki" src="img/Black Mage FF Final.png" />
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         <section class="">
-          <div class="ad-normal">
+          <!-- <div class="ad-normal">
             <div class="w3-content w3-display-container">
-              <img class="mySlidesN" src="img/chad.png" style="width:100%">
-              <img class="mySlidesN" src="img/dale.png" style="width:100%">
-              <img class="mySlidesN" src="img/Chung.png" style="width:100%">
-              <img class="mySlidesN" src="img/black.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/black.png" style="width:100%">
             </div>
-          </div>
+          </div> -->
           
-          <div class="ad-banner">
+          <!-- <div class="ad-banner">
             <div class="w3-content w3-display-container">
-              <img class="mySlidesB" src="img/chad.png" style="width:100%">
-              <img class="mySlidesB" src="img/dale.png" style="width:100%">
-              <img class="mySlidesB" src="img/Chung.png" style="width:100%">
-              <img class="mySlidesB" src="img/black.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/black.png" style="width:100%">
             </div>
-          </div>
+          </div> -->
 
-          <div class="ad-long">
+          <!-- <div class="ad-long">
             <div class="w3-content w3-display-container">
               <img class="mySlidesL" src="img/chad.png" style="width:100%">
               <img class="mySlidesL" src="img/dale.png" style="width:100%">
@@ -183,18 +288,44 @@
               <img class="mySlidesL" src="img/black.png" style="width:100%">
               
             </div>
-          </div>
-          <script src="Javascript/ads-normal.js"></script>
+          </div> -->
         </section>
-      </div>
 
       <div class="flex-box">
-        <div class="flex-box-ad-1"></div>
-        <div class="flex-box-ad-2"></div>
-        <div class="flex-box-ad-3"></div>
+        <div class="flex-box-ad-1">
+          <div class="ad-normal">
+            <div class="w3-content w3-display-container">
+              <img class="mySlidesN" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/black.png" style="width:100%">
+            </div>
+          </div>
+        </div>
+        <div class="flex-box-ad-2">
+          <div class="ad-normal">
+            <div class="w3-content w3-display-container">
+              <img class="mySlidesN" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesN" src="img/old/black.png" style="width:100%">
+            </div>
+          </div>
+        </div>
+        <div class="flex-box-ad-3">
+          <div class="ad-banner">
+            <div class="w3-content w3-display-container">
+              <img class="mySlidesB" src="img/old/chad.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/dale.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlidesB" src="img/old/black.png" style="width:100%">
+            </div>
+          </div>
+        </div>
         <div class="flex-box-ad-4"></div>
     </div>
 
+          <script src="Javascript/ads-normal.js"></script>
     
       <footer class="footer-distributed">
         <div class="footer-right">

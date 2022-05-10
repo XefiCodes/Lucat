@@ -6,6 +6,12 @@ body{
   
   }
   
+/* Margin */
+
+.margin{
+  margin-bottom: 100px;
+}
+
 /* Header */
 
 #head-nav{
@@ -19,7 +25,7 @@ body{
   
   header {
       width: 100%;
-      background-color: #F04854;
+      background: linear-gradient(90deg, rgb(255, 185, 87) 0%, rgb(255, 198, 26) 100%);
       display: block;
       position: -webkit-sticky;
       position: sticky;
@@ -186,6 +192,8 @@ body{
             transform: scaleY(1);
     opacity: 1;
   }
+
+  /* Ads */
   .ad-normal{
     /* position: ; */
     border: solid black 1px;
