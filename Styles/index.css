@@ -1,5 +1,3 @@
- /* wait why is there featured if its gallery lmaoooooooooo we only filter maybe idk wait wait */
-
 /* Divide */
 
 .dividerTop{
@@ -9,7 +7,8 @@
 }
 
 .epal{
-  margin-top: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .wala{
@@ -70,13 +69,13 @@
  
 /* Discover */
 
-
 .discover{
   margin: 25px;
   display: contents;
 }
 
  .row{
+  --bs-gutter-x: 0;
      width: 100%;
      margin: 0;
      margin-top: 15px;
@@ -88,40 +87,20 @@
      row-gap: 15px;
      column-gap: 15px;
  }
- /* so its image is contained but the height depends on who is taller then width adjusts how wat yes */
- .first{
-   z-index: 0;
-  overflow: hidden;
 
-     /* height: 35vh; */
-     /* /* padding: 0; */
-     flex-grow: 2;
-     /* background-position: 50% 50%;
-     background-repeat: no-repeat;
-     background-size: cover;
-     border: 1px solid  rgba(0, 0, 0, 0.514);
-     border-radius:10px; */
-     height: 250px;
-     width: 250px;
+ .first{
+  z-index: 0;
+  overflow: hidden;
+  flex-grow: 2;
+  height: 250px;
+  width: 250px;
  }
-/*  
- .second{
-     padding: 0;
-     flex-grow: 1;
-     background-position: 50% 50%;
-     background-repeat: no-repeat;
-     background-size: cover;
-     border: 1px solid  rgba(0, 0, 0, 0.514);
-     border-radius:10px;
- } */
 
 .coll{
   position: relative;
     display: flex;
     -webkit-box-align: center;
-    /* align-items: center; */
     -webkit-box-pack: center;
-    /* justify-content: center; */
     width: 100%;
     height: 100%;
 }
@@ -133,93 +112,28 @@
     height: 100%;
 }
 
- /* who the duck is dale wat*/
- /* .cover{
-     width: 100%;
-     height: 100%;
-     transition: 0.2s; */
-     /* background-color: rgba(255, 255, 255, 0); */
-     /*what da nas doin*/
- /* }
+.cover{
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+}
  
  .cover:hover{
      width:100%;
      height:100%;
      z-index: 1;
      overflow: hidden;
-     background: #74747469; */
-     /* background: -moz-linear-gradient(top, #FFFFFF 0%, #000000 50%);
-     background: -webkit-linear-gradient(top, #FFFFFF 0%, #000000 50%);
-     background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%); */
-     /* background-color: rgba(19, 19, 19, 0.534); do we make responsive? no okay*/  
-     /* background-color: linear-gradient(to bottom, rgb(19, 19, 19), rgb(104, 104, 104)); */
-     /* opacity: 50%;
+     background: #74747469;
+     opacity: 50%;
      transition: 0.2s;
      cursor: pointer;
-     border-radius:10px; */
-     /* wat i do? i frogr ah the gradient mea dk what u do i make rice HAHAHAHA */
- /* } */
-
- .row{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  margin-top: 15px;
-  justify-content: stretch;
-  height: auto;
-}
-
- .first{
-  padding: 0;
-  flex-grow: 2;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: 1px solid  rgba(0, 0, 0, 0.514);
-  border-radius:10px;
-}
-
-.second{
-  padding: 0;
-  flex-grow: 1;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: 1px solid  rgba(0, 0, 0, 0.514);
-  border-radius:10px;
-}
-
- .cover{
-  width: 100%;
-  height: 100%;
-  transition: 0.2s;
-  /* background-color: rgba(255, 255, 255, 0); */
-  /*what da nas doin*/
-}
-/* 
-.cover:hover{
-  width:100%;
-  height:100%;
-  z-index: 1;
-  overflow: hidden;
-  background: #ffffff71;
-  background: -moz-linear-gradient(top, #FFFFFF 0%, #000000 50%);
-  background: -webkit-linear-gradient(top, #FFFFFF 0%, #000000 50%);
-  background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
-  background-color: rgba(19, 19, 19, 0.534); do we make responsive? no okay  
-  background-color: linear-gradient(to bottom, rgb(19, 19, 19), rgb(104, 104, 104));
-  opacity: 50%;
-  transition: 0.2s;
-  cursor: pointer;
-  border-radius:10px;
-
-  wat i do? i frogr ah the gradient mea dk what u do i make rice HAHAHAHA
-} */
+     border-radius:10px;
+  }
 
 /* Tags*/
 
 #Tag{
-  margin: 25px;
+  margin-top: 100px;
 }
 
 .tag-fluid{
@@ -254,20 +168,19 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
-  /*border-radius: 5px;*/
   text-align: center;
   z-index: 1;
 }
-/* Why like this on side i guess it can be used then put mmargaret*/
+
 .tag-fluid .hoverTagline{
   background-color: #CAFFBF; 
-  border-radius:0px 5px 5px 0px;/* yon un eh blureed */
+  border-radius:0px 5px 5px 0px;
   margin-top: 37px;
   width:auto;
   padding-left:15px;
   padding-right:15px;
   top: 0;
-  color: black; /**/
+  color: black;
   position: absolute;
   text-align: center;
   font-size: 23px;
@@ -277,7 +190,6 @@
   -webkit-transform: scaleY(0.85);
           transform: scaleY(0.85); 
 }
-/* maybe nested???  nest wat okay so no good */
 
 .tag-fluid .imag:hover .hoverTagline{
   opacity: 1;
@@ -285,7 +197,7 @@
   -webkit-transform: scaleY(1);
           transform: scaleY(1); 
 }
-/* me do sampay */
+
 .imag:hover .tag-img{
   filter: blur(2.5px);
   -webkit-filter: blur(2.5px);
@@ -293,17 +205,6 @@
   -webkit-transform: scale(120%);
           transform: scale(120%);
 }
-/*
-
-CSS Testing Below
-
-*/
-/* 
-footer{
-  width: 100%;
-  display: block;
-  position: sticky;
-} */
 
 .flex-box{
 
@@ -321,6 +222,7 @@ footer{
   background-color: black;
   margin: 10px;
   min-height: 300px;
+  border-radius: 5px;
 
 }
 
@@ -330,6 +232,7 @@ footer{
   background-color: black;
   margin: 10px;
   min-height: 300px;
+  border-radius: 5px;
 }
 
 .flex-box-ad-3{
@@ -338,6 +241,7 @@ footer{
   background-color: black;
   margin: 10px;
   min-height: 300px;
+  border-radius: 5px;
 }
 
 .flex-box-ad-4{
@@ -346,5 +250,6 @@ footer{
   background-color: black;
   margin: 10px;
   min-height: 300px;
+  border-radius: 5px;
 }
 

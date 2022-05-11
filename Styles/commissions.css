@@ -5,12 +5,12 @@
 .pagination a {
     font-size: 13px;
     margin-left:10px;
-    color: black;
+    color: white;
     float: left;
     padding: 7px 15px;
     text-decoration: none;
     transition: .3s; 
-    border: 1px solid  rgba(0, 0, 0, 0.514);
+    border: 1px solid  rgba(255, 255, 255, 0.514);
     border-radius:20px;
 }
 
@@ -25,7 +25,7 @@
     color: black;
 }
 
-.border{
+.daborder{
  margin: 0;
  margin: 15px;
  padding: 25px;
@@ -116,20 +116,24 @@
 
 .card .card-content .card-desc {
   font-size: 16px;
+  color:black;
 }
 
 .card .card-content .card-rating {
   display: grid;
   grid-template-columns: 116px 1fr;
   grid-gap: 6px;
+  color:black;
 }
 
 .card .card-content .card-rating img {
   width: 116px;
   height: 20px;
+  color:black;
 }
 
 .card .card-content .card-price {
   font-size: 25px;
   font-weight: bolder;
+  color:black;
 }
