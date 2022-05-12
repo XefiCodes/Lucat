@@ -30,7 +30,6 @@ body{
       /*background: linear-gradient(90deg, rgb(255, 185, 87) 0%, rgb(255, 198, 26) 100%);*/
       background-color: #F4E4C0;
       display: block;
-      position: -webkit-sticky;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -212,6 +211,7 @@ body{
 
   .ad-normal{
     /* position: ; */
+    background-color: #A5A4FF;
     border: solid black 1px;
     overflow: hidden;
     width: 200px;
@@ -220,6 +220,7 @@ body{
   }
   .ad-banner{
     /* position: ; */
+    background-color: #A5A4FF;
     border: solid black 1px;
     overflow: hidden;
     width: 200px;
@@ -228,6 +229,7 @@ body{
   }
   .ad-long{
     /* position: ; */
+    background-color: #A5A4FF;
     border: solid black 1px;
     overflow: hidden;
     width: 160px;
