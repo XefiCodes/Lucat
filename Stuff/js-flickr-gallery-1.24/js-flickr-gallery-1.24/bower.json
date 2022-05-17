@@ -1,0 +1,31 @@
+{
+  "name": "js-flickr-gallery",
+  "version": "1.24",
+  "homepage": "http://petejank.github.io/js-flickr-gallery/",
+  "authors": [
+    "Peter Jankowski"
+  ],
+  "description": "Easy to use and flexible Flickr gallery",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "flickr",
+    "gallery",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "<2.0.0",
+    "bootstrap": "~2.3.2"
+  }
+}

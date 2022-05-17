@@ -12,11 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/cube-gallery-js/src/index.min.js"> -->
+    <link href="Styles/justifiedGallery.min.css" rel="stylesheet"> 
+    <script src="Javascript/jquery.justifiedGallery.min.js"></script>
+    <link href="Styles/scss/galllery.css" rel="stylesheet">
     <link href="Styles/gallery.css" rel="stylesheet">
     <link href="Styles/global.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Document</title>
 </head>
 <body>
     <header>
@@ -55,49 +57,154 @@
                 });
             </script>
             </div></span>
-        <div class="container-fluid">
-            <div class="row gap">
-                <figure class="col-md-4 first">
-                    <div class="outer">
-                        <div class="inner">
-                            <a href="#" class="cover">
-                                <div class="coll">
-                                    <img class="jezuki" src="img/Vanellope.png" />
+            <span>
+        <!-- <div class="container-fluid">
+            <div id="mygallery" class="justified-gallery">
+                <ul>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/Vanellope.png" data-bind=" style: {'background-image':'url(\'img\'+thumbnail.url+'\')'} ,attr: {'data-width': thumbnail.width, width: thumbnail.width, height: thumbnail.height }" alt="Title" loading="lazy"/>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-                </figure>
-                <figure class="col-md-4 first">
-                    <a href="#" class="cover">
-                      <div class="coll">
-                        <img class="jezuki" src="img/cypher.png" />
-                      </div>
-                    </a>
-                </figure>
-                <figure class="col-md-4 first">
-                    <a href="#" class="cover">
-                      <div class="coll">
-                        <img class="jezuki" src="img/cover.jpg" />
-                      </div>
-                    </a>
-                </figure>
-                <figure class="col-md-4 first">
-                    <a href="#" class="cover">
-                      <div class="coll">
-                        <img class="jezuki" src="img/Vanellope.png" />
-                      </div>
-                    </a>
-                </figure>
-                <figure class="col-md-4 first">
-                    <a href="#" class="cover">
-                      <div class="coll">
-                        <img class="jezuki" src="img/Vanellope.png" />
-                      </div>
-                    </a>
-                </figure>
+                            </div>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/cypher.png"  alt="Title" loading="lazy"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/cover.jpg"  alt="Title" loading="lazy"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/Vanellope.png"  />
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/Vanellope.png"  />
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/Vanellope.png" />
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <div class="inner">
+                                <div class="outer">
+                                    <a href="#" class="cover">
+                                        <img src="img/Vanellope.png"  />
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                    </li>
+                     Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens! 
+                    <li class="first"></li>
+                </ul>
+            </div>
+        </div> --></span>
+        <div class="container-fluid">
+            <div id="mygallery" class="justified-gallery">
+                <img src="img/Vanellope.png" />
+                <img src="img/cypher.png" />
+                <img src="img/Black Mage FF Final.png" />
+                <img src="img/cover.jpg" />
+                <img src="img/Jail.png" />
+                <img src="http://unsplash.it/560/500?image=677" />
+                <img src="http://unsplash.it/670/410?image=401" />
+                <img src="http://unsplash.it/620/340?image=623" />
+                <img src="http://unsplash.it/790/390?image=339" />
             </div>
         </div>
+        <div class="container-fluid">
+            <div id="mygallery" class="justified-gallery">
+                <a href="#" class="cover">
+                    <img src="img/Vanellope.png"/>
+                </a>
+                    <a href="#" class="cover">
+                    <img src="img/cypher.png" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="img/Black Mage FF Final.png" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="img/cover.jpg" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="img/Jail.png" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="http://unsplash.it/560/500?image=677" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="http://unsplash.it/670/410?image=401" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="http://unsplash.it/620/340?image=623" />
+                </a>
+                    <a href="#" class="cover">
+                    <img src="http://unsplash.it/790/390?image=339" />
+                </a>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#mygallery").justifiedGallery({
+                    rowHeight : 250,
+                    maxrowHeight : 250,
+                    // lastRow : 'center',
+                    // margin : 5,
+                    // sizeRangeSuffixes: {
+                    //     lt100: '_t',
+                    //     lt240: '_m',
+                    //     lt320: '_n',
+                    //     lt500: '',
+                    //     lt640: '_z',
+                    //     lt1024: '_b'
+                    // }
+                });
+            })
+        </script>
         <span><div class="pagination page">
             <a class="active" href="#">&laquo;</a>
             <a class="pageNo" href="#">1</a>
@@ -118,12 +225,8 @@
                     $(this).css("background-color", "")
                 });
             </script> -->
-          </div></span>
+        </div></span>
     </div>
-
-    
-
-
     <footer class="footer-distributed">
 
         <div class="footer-right">
