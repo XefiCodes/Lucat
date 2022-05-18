@@ -19,7 +19,7 @@
             }
 
             $_SESSION['username'] = $username;
-            header("Location: posts.php");
+            header("Location: index.php");
             exit();
         }
         else {
