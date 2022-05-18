@@ -51,9 +51,10 @@ body{
   }
   
   nav ul {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-right: 10px;
+    margin-left: 10px;
     padding: 0;
     justify-content: stretch;
     display: flex;

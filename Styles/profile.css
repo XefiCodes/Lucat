@@ -1,13 +1,20 @@
 
-div.banner {
-    height: 350px;
-    width: 100%;
-    background: #FCB293;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+div.banner {    
+  height: 50%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
+
+div.containing{
+  padding: 275px 35px 35px 35px;
+}
   
   div.bar {
     height: 60px;

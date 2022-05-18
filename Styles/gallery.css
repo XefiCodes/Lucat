@@ -38,6 +38,7 @@
 
 .container-fluid{
  display: flex; 
+ margin: 15px 0;
  margin-bottom: 0;
  
 } 
