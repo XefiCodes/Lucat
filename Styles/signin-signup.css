@@ -105,10 +105,11 @@
     width: 100%;
     font-size: 14px;
     text-align: center;
+    color: #292929;
 }
 
 .content form .option a {
-    color: #FF8552;
+    color: #FF8552 !important;
     font-weight: bold;
     cursor: pointer;
 }
