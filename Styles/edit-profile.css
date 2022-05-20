@@ -1,0 +1,19 @@
+.background img {
+    background-color: aquamarine;
+    height: 20rem;
+    object-fit: cover;
+    position: relative;
+}
+
+.background h2 {
+    position: absolute;
+    top: 45%;
+    left: 10%;
+}
+
+.container .box {
+    background-color: white;
+    height: 25rem;
+    border-radius: 20px;
+    color: black;
+}
