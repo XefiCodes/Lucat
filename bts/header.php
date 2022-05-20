@@ -2,6 +2,17 @@
 	require 'connect_db.php';
 	require 'account_created.php';
 	require 'account_login.php';
+    include("classes/User.php");
+
+    // Checks if there is a username in the session variable (indicates theres a user).
+    if (isset($_SESSION['username'])) {
+        $userLoggedIn = $_SESSION['username'];
+        $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+        $user = mysqli_fetch_array($user_details_query);
+    }
+    else {
+        header("Location: index.php"); //If not, redirects the user back to the index page.
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +31,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link href="Styles/signin-signup.css" rel="stylesheet">
+        <link href="Styles/edit-profile.css" rel="stylesheet">
         <link href="Styles/global.css" rel="stylesheet">
     </head>
     <body>
