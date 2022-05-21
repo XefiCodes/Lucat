@@ -1,19 +1,111 @@
-.background img {
-    background-color: aquamarine;
-    height: 20rem;
-    object-fit: cover;
-    position: relative;
+h1, h2, h3, h4, h5, p, a {
+    color: black;
 }
 
-.background h2 {
-    position: absolute;
-    top: 45%;
-    left: 10%;
+.bg-img {
+    height: 20rem;
+    object-fit: cover;
+    object-position: 50% 35%;
+    position: relative;
+    z-index: -1;
+}
+
+.container h2 {
+    margin-top: -8rem;
+    margin-left: 1.5rem;
+    color: white;
 }
 
 .container .box {
-    background-color: white;
-    height: 25rem;
+    background-color: #F5F5F5;
     border-radius: 20px;
-    color: black;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-gap: 1px;
+    height: 42rem;
+}
+
+.container .box .nav-bar {
+    background-color: white;
+    border-radius: 20px 0 0 20px;
+}
+
+.container .box .nav-bar .profile {
+    text-align: center;
+    margin-top: 2rem;
+    border-bottom: 2px solid #F5F5F5;
+}
+
+.container .box .nav-bar .profile .img {
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .box .nav-bar .profile .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .box .nav-bar .profile h3 {
+    margin-top: 1.5rem;
+}
+
+.container .box .nav-bar a {
+    border-bottom: 2px solid #F5F5F5;
+    padding-left: 4rem;
+    display: block;
+}
+
+.container .box .nav-bar a:hover {
+    color: #C1DFC5;
+}
+
+.container .box .edit {
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+}
+
+.container .box .edit h3 {
+    margin: 2rem 2rem .5rem 2.5rem;
+}
+
+.container .box .edit form {
+    margin: 0 8rem 2rem 2.5rem;
+}
+
+.container .box .edit .section {
+    margin-top: 1rem;
+}
+
+.container .box .edit form .name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.container .box .edit form p {
+    margin-bottom: .5rem;
+}
+
+.container .box .edit form input {
+    padding: 0.3rem .8rem;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+
+.container .box .edit form textarea {
+    border: 1px solid #ECECEC;
+    height: 13rem;
+}
+
+.container .box .edit [type="submit"] {
+    background-color: #F4E4C0;
+    padding: .5rem 1rem;
+}
+
+.container .box .edit [type="submit"]:hover {
+    background-color: #C1DFC5;
 }
