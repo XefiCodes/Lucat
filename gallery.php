@@ -1,37 +1,18 @@
+<?php
+    include_once 'bts/connect_db.php';
+    $fetch = mysqli_query($con, "SELECT * FROM image");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gallery</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="Styles/justifiedGallery.min.css" rel="stylesheet"> 
-    <script src="Javascript/jquery.justifiedGallery.min.js"></script>
+    <title>Gallery | Lucat</title>
+    <?php include("bts/links.php") ?>
     <link href="Styles/scss/galllery.css" rel="stylesheet">
     <link href="Styles/gallery.css" rel="stylesheet">
     <link href="Styles/global.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><div id="siteName">Lucat</div></li>
-                <li><a href="index.html" class="left">Home</a></li>
-                <li><a href="profile.html" class="left">Profile</a></li> 
-                <li><a href="gallery.html" class="left">Gallery</a></li>
-                </ul><ul class="right">
-                <li><a href="#" class="sub">Submit</a></li>
-                <li><a href="commissions.html" class="com">Commissions</a></li></ul>
-            </ul>
-        </nav>
-    </header>
+    <?php include("bts/navbar.php") ?>
     <div class="daborder">
         <h2 class="featureHeader"><b>Browse</b></h2>
             <span><div class="pagination">
@@ -55,6 +36,17 @@
                     $(this).css("background-color", "");
                 });
             </script>
+            <?php 
+                // $i=0;
+                // while($row = mysqli_fetch_array($fetch)) {
+            ?>
+                <!-- <a href="#" class="cover"> -->
+                <?php 
+                // echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" />'; ?>
+            <?php
+                // $i++;
+                // }
+            ?>
         <div class="container-fluid">
             <div id="mygallery" class="justified-gallery">
                 <a href="#" class="cover">
@@ -126,30 +118,7 @@
             });
         </script>
     </div>
-    <footer class="footer-distributed">
-
-        <div class="footer-right">
-
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-
-        </div>
-
-        <div class="footer-left">
-                  <div class="footer-left">
-                      <p class="footer-links">
-                          <a class="link-1" href="aboutus.html">About Us</a>
-                          <a href="gallery.html">Term of Service</a>
-                          <a href="#">Support Us</a>
-                      </p>
-                      <p>Lucat &copy; 2022  Literally 1984</p>
-                  </div>
-        </div>
-
-    </footer>
-
+    <?php include("bts/footer.php") ?>
 </body>  
 </html>
 

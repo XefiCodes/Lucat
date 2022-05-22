@@ -1,189 +1,147 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Profile</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <title>Profile | Lucat</title>
+        <?php include("bts/links.php") ?>
         <link href="Styles/global.css" rel="stylesheet">
         <link href="Styles/profile.css" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><div id="siteName">Lucat</div></li>
-                    <li><a href="index.html" class="left">Home</a></li>
-                    <li><a href="#" class="left">Profile</a></li>
-                    <li><a href="gallery.html" class="left">Gallery</a></li>
-                    </ul><ul class="right">
-                    <li><a href="#" class="sub">Submit</a></li>
-                    <li><a href="commissions.html" class="com">Commissions</a></li></ul>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="banner"  style="background-image: url('img/Vanellope.png');">
-            @DragmaBa
+      <?php include("bts/navbar.php") ?>
+      <div class="banner"  style="background-image: url('img/Vanellope.png');">
+        @DragmaBa
+      </div>
+      <div class="containing">
+        <div class="bar">
+          <div class="content">
+            <ul>
+              <li class="active">
+                <span>Tweets</span>
+                <strong>3931</strong>
+              </li>
+              <li>
+                <span>Followings</span>
+                <strong>654</strong>
+              </li>
+              <li>
+                <span>Followers</span>
+                <strong>387</strong>
+              </li>
+              <li>
+                <span>Favorites</span>
+                <strong>265</strong>
+              </li>
+              <li>
+                <span>Lists</span>
+                <strong>8</strong>
+              </li>
+              <li>
+                <span>Moments</span>
+                <strong>0</strong>
+              </li>
+            </ul>
+      
           </div>
-        <div class="containing">
-          <div class="bar">
-            <div class="content">
-              <ul>
-                <li class="active">
-                  <span>Tweets</span>
-                  <strong>3931</strong>
-                </li>
-                <li>
-                  <span>Followings</span>
-                  <strong>654</strong>
-                </li>
-                <li>
-                  <span>Followers</span>
-                  <strong>387</strong>
-                </li>
-                <li>
-                  <span>Favorites</span>
-                  <strong>265</strong>
-                </li>
-                <li>
-                  <span>Lists</span>
-                  <strong>8</strong>
-                </li>
-                <li>
-                  <span>Moments</span>
-                  <strong>0</strong>
-                </li>
-              </ul>
-        
-            </div>
-          </div>
-        
-          <div class="wrapper-content content">
-            <aside class="profile">
-              <img src="img/old/chad.png" alt="João Paulo" class="avatar" />
-              <h1>Dragma Nouts</h1>
-              <span class="username">@DragmaBa</span>
-              <p>Web, Design & Rock 'n roll Partner/UI Designer @spade_be Musician in @dashboxmusic</p>
-        
-              <ul class="data">
-                <li><img src="img/images/place.svg" alt="Place" /> Namur, Belgium</li>
-                <li><img src="img/images/link.svg" alt="Link" /> exibit.be</li>
-                <li><img src="img/images/clock.svg" alt="Joined" /> Joined June 2007</li>
-                <li><img src="img/images/child.svg" alt="Born" /> Born the 20th of June 1978</li>
-              </ul>
-              <div class="edit-prof">
-                <button>Edit Profile</button>
-              </div>
-            </aside>
-        
-            <section class="timeline">
-              <nav>
-                <a href="" class="active">Your Posts</a>
-              </nav>
-              <ul class="tweets">
-                <li>
-                  <img src="img/old/chad.png" alt="Avatar" class="avatar" />
-                  <div class="tweet">
-                    <div class="info">
-                      <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
-                      <span>26 janv.</span>
-                    </div>
-                    <p>
-                      I just published “The Belgian Red Cross website : backstage of a revamp like no other”
-                    </p>
-                    <div class="stats">
-                      <a href=""><img src="img/images/comment.svg"> 1</a>
-                      <a href=""><img src="img/images/like.svg"> 3</a>
-                    </div>
-                  </div>
-                </li>
-                </li>
-              </ul>
-
-              <ul class="tweets">
-                <li>
-                  <img src="img/old/chad.png" alt="Avatar" class="avatar" />
-                  <div class="tweet">
-                    <div class="info">
-                      <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
-                      <span>26 janv.</span>
-                    </div>
-                    <p>
-                      I just published “The Belgian Red Cross website : backstage of a revamp like no other”
-                    </p>
-                    <div class="stats">
-                      <a href=""><img src="img/images/comment.svg"> 1</a>
-                      <a href=""><img src="img/images/like.svg"> 3</a>
-                    </div>
-                  </div>
-                </li>
-                </li>
-              </ul>
-
-              <ul class="tweets">
-                <li>
-                  <img src="img/old/chad.png" alt="Avatar" class="avatar" />
-                  <div class="tweet">
-                    <div class="info">
-                      <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
-                      <span>26 janv.</span>
-                    </div>
-                    <p>
-                      I just published “The Belgian Red Cross website : backstage of a revamp like no other”
-                    </p>
-                    <div class="stats">
-                      <a href=""><img src="img/images/comment.svg"> 1</a>
-                      <a href=""><img src="img/images/like.svg"> 3</a>
-                    </div>
-                  </div>
-                </li>
-                </li>
-              </ul>
-
-            </section>
-
-            <div class="widget media">
-                <strong class="media-title"><img src="img/images/media.svg" alt="Photos and videos" /> Your Photos and videos</strong>
-        
-                <ul>
-                  <li></li> 
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>
-            </div>
         </div>
-          
-        
-        <footer class="footer-distributed">
-            <div class="footer-right">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+      
+        <div class="wrapper-content content">
+          <aside class="profile">
+            <img src="img/old/chad.png" alt="João Paulo" class="avatar" />
+            <h1>Dragma Nouts</h1>
+            <span class="username">@DragmaBa</span>
+            <p>Web, Design & Rock 'n roll Partner/UI Designer @spade_be Musician in @dashboxmusic</p>
+      
+            <ul class="data">
+              <li><img src="img/images/place.svg" alt="Place" /> Namur, Belgium</li>
+              <li><img src="img/images/link.svg" alt="Link" /> exibit.be</li>
+              <li><img src="img/images/clock.svg" alt="Joined" /> Joined June 2007</li>
+              <li><img src="img/images/child.svg" alt="Born" /> Born the 20th of June 1978</li>
+            </ul>
+            <div class="edit-prof">
+              <button>Edit Profile</button>
             </div>
-            <div class="footer-left">
-                      <div class="footer-left">
-                          <p class="footer-links">
-                              <a class="link-1" href="aboutus.html">About Us</a>
-                              <a href="gallery.html">Term of Service</a>
-                              <a href="#">Support Us</a>
-                          </p>
-                          <p>Lucat &copy; 2022  Literally 1984</p>
-                      </div>
+          </aside>
+      
+          <section class="timeline">
+            <nav>
+              <a href="" class="active">Your Posts</a>
+            </nav>
+            <ul class="tweets">
+              <li>
+                <img src="img/old/chad.png" alt="Avatar" class="avatar" />
+                <div class="tweet">
+                  <div class="info">
+                    <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
+                    <span>26 janv.</span>
+                  </div>
+                  <p>
+                    I just published “The Belgian Red Cross website : backstage of a revamp like no other”
+                  </p>
+                  <div class="stats">
+                    <a href=""><img src="img/images/comment.svg"> 1</a>
+                    <a href=""><img src="img/images/like.svg"> 3</a>
+                  </div>
+                </div>
+              </li>
+              </li>
+            </ul>
+
+            <ul class="tweets">
+              <li>
+                <img src="img/old/chad.png" alt="Avatar" class="avatar" />
+                <div class="tweet">
+                  <div class="info">
+                    <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
+                    <span>26 janv.</span>
+                  </div>
+                  <p>
+                    I just published “The Belgian Red Cross website : backstage of a revamp like no other”
+                  </p>
+                  <div class="stats">
+                    <a href=""><img src="img/images/comment.svg"> 1</a>
+                    <a href=""><img src="img/images/like.svg"> 3</a>
+                  </div>
+                </div>
+              </li>
+              </li>
+            </ul>
+
+            <ul class="tweets">
+              <li>
+                <img src="img/old/chad.png" alt="Avatar" class="avatar" />
+                <div class="tweet">
+                  <div class="info">
+                    <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
+                    <span>26 janv.</span>
+                  </div>
+                  <p>
+                    I just published “The Belgian Red Cross website : backstage of a revamp like no other”
+                  </p>
+                  <div class="stats">
+                    <a href=""><img src="img/images/comment.svg"> 1</a>
+                    <a href=""><img src="img/images/like.svg"> 3</a>
+                  </div>
+                </div>
+              </li>
+              </li>
+            </ul>
+
+          </section>
+
+          <div class="widget media">
+              <strong class="media-title"><img src="img/images/media.svg" alt="Photos and videos" /> Your Photos and videos</strong>
+      
+              <ul>
+                <li></li> 
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
             </div>
-        </footer>
+          </div>
+      </div>
+    <?php include("bts/footer.php") ?>
     </body>
 </html>

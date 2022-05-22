@@ -31,9 +31,8 @@
 }
 
 .featureHeader{
-    margin-left:5px;
-    /* margin-top:5px; no */
-    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-bottom: 15px;
 }
 
 .container-fluid{
