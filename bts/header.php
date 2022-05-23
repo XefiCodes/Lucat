@@ -11,8 +11,9 @@
         $user = mysqli_fetch_array($user_details_query);
     }
     else {
-        header("Location: index.php"); //If not, redirects the user back to the index page.
+        // header("Location: index.php"); //If not, redirects the user back to the index page.
     }
+    
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
         <title>Sign In Lucat</title>
         <?php include("bts/links.php") ?>
         <link href="Styles/signin-signup.css" rel="stylesheet">
-        <link href="Styles/edit-profile.css" rel="stylesheet">
+        <link href="Styles/scss/edit-profile.css" rel="stylesheet">
         <link href="Styles/global.css" rel="stylesheet">
     </head>
     <body>

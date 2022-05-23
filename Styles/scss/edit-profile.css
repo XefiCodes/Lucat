@@ -1,0 +1,149 @@
+.edit-prof h1, .edit-prof h2, .edit-prof h3, .edit-prof h4, .edit-prof h5, .edit-prof p, .edit-prof a {
+  color: black;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.bg-img {
+  height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 35%;
+     object-position: 50% 35%;
+  position: relative;
+  z-index: -1;
+}
+
+.container h2 {
+  margin-top: -8rem;
+  margin-left: 1.5rem;
+  color: white;
+}
+
+.container .box {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2.5fr;
+      grid-template-columns: 1fr 2.5fr;
+  grid-gap: 1px;
+  height: 43rem;
+}
+
+.container .box input[type="radio"] {
+  display: none;
+}
+
+.container .box .nav-bar {
+  background-color: white;
+  border-radius: 20px 0 0 20px;
+}
+
+.container .box .nav-bar .list label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: black;
+  border-bottom: 2px solid #F5F5F5;
+  padding-left: 4rem;
+  display: block;
+}
+
+.container .box .nav-bar .list label:hover {
+  color: #C1DFC5;
+}
+
+.container .box .nav-bar .profile {
+  text-align: center;
+  margin-top: 2rem;
+  border-bottom: 2px solid #F5F5F5;
+}
+
+.container .box .nav-bar .profile .img {
+  width: 10rem;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .box .nav-bar .profile .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .box .nav-bar .profile h3 {
+  margin-top: 1.5rem;
+}
+
+.container .box .text-content {
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+}
+
+.container .box .text-content .text {
+  display: block;
+  background-color: white;
+}
+
+.container .box .text-content .text h3 {
+  margin: 2rem 2rem 3rem 2.5rem;
+}
+
+.container .box .text-content .text form {
+  margin: 0 8rem 2rem 2.5rem;
+}
+
+.container .box .text-content .text form .name {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.container .box .text-content .text form p {
+  margin-bottom: .5rem;
+}
+
+.container .box .text-content .text form input {
+  padding: 0.3rem .8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ECECEC;
+  border-radius: 5px;
+}
+
+.container .box .text-content .text form textarea {
+  border: 1px solid #ECECEC;
+  border-radius: 5px;
+  height: 14rem;
+}
+
+.container .box .text-content .text [type="submit"] {
+  background-color: #F4E4C0;
+  padding: .5rem 1rem;
+}
+
+.container .box .text-content .text [type="submit"]:hover {
+  background-color: #C1DFC5;
+}
+
+.container .box .text-content .text {
+  display: none;
+}
+
+#tb-ac:checked ~ .text-content .tb-ac,
+#tb-pa:checked ~ .text-content .tb-pa,
+#tb-ab:checked ~ .text-content .tb-ab,
+#tb-ca:checked ~ .text-content .tb-ca {
+  display: block;
+}
+
+#tb-pa:checked ~ .text-content .tb-ac,
+#tb-ab:checked ~ .text-content .tb-ac,
+#tb-ca:checked ~ .text-content .tb-ac {
+  display: none;
+}
+/*# sourceMappingURL=edit-profile.css.map */

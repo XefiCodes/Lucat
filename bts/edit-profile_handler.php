@@ -1,11 +1,12 @@
 <?php 
 // Code for handling the settings functionality.
 
-if(isset($_POST['update_details'])) {
+if(isset($_POST['update_account'])) {
 
-	$first_name = $_POST['first_name'];
-	$last_name = $_POST['last_name'];
+	$uname = $_POST['uname'];
+	$nname = $_POST['nname'];
 	$email = $_POST['email'];
+	$bio = $_POST['bio'];
 
 	$email_check = mysqli_query($con, "SELECT * FROM users WHERE email='$email'");
 	$row = mysqli_fetch_array($email_check);
@@ -14,13 +15,14 @@ if(isset($_POST['update_details'])) {
 	if($matched_user == "" || $matched_user == $userLoggedIn) {
 		$message = "Details updated!<br><br>";
 
-		$query = mysqli_query($con, "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email' WHERE username='$userLoggedIn'");
+		$query = mysqli_query($con, "UPDATE users SET username='$uname', nickname='$nname', email='$email', bio='$bio' WHERE username='$userLoggedIn'");
 	}
 	else 
 		$message = "That email is already in use!<br><br>";
 }
 else 
-	$message = "";
+	$message = "Didn't work...";
+
 
 if(isset($_POST['update_password'])) {
 
@@ -58,7 +60,20 @@ else {
 	$password_message = "";
 }
 
+if(isset($_POST['update_about'])) {
+
+	$loc = $_POST['loc'];
+	$website = $_POST['website'];
+	$dob = $_POST['dob'];
+
+	$message = "Details updated!<br><br>";
+
+	$query = mysqli_query($con, "UPDATE users SET loc='$loc', website_link='$website', dob='$dob' WHERE username='$userLoggedIn'");
+}
+else 
+	$message = "Didn't work...";
+
 if(isset($_POST['close_account'])) {
-	// header("Location: close-account.php");
+	$close_query = mysqli_query($con, "UPDATE users SET user_closed='yes' WHERE username='$userLoggedIn'");
 }
 ?>
