@@ -58,7 +58,7 @@
               <li><img src="img/images/child.svg" alt="Born" /> Born the 20th of June 1978</li>
             </ul>
             <div class="edit-prof">
-              <button>Edit Profile</button>
+              <button><a href="edit-profile.php">Edit Profile</a></button>
             </div>
           </aside>
       

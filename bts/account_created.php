@@ -8,7 +8,7 @@
     $password2 = ""; // Password 2
     $prof_pic = ""; // Profile image
     $cover_pic = ""; // Cover image
-    $bio = ""; // Bio
+    // $bio = ""; // Bio
     $date = ""; // Sign up date 
     $error_array = array(); // Holds error messages
 
@@ -107,7 +107,7 @@
             $prof_pic = "https://i.imgur.com/qiwcrKS.png"; // Default profile image
             $cover_pic = "https://i.imgur.com/qiwcrKS.png"; // Default cover image
     
-            $query = mysqli_query($con, "INSERT INTO users (username, nickname, email, password, prof_pic, cover_pic, signup_date, user_closed, tweets, follower_array, following_array, comment_stat, bio, location, website_link, dob) VALUES ('$uname', '$nname', '$em', '$password', '$prof_pic', '$cover_pic', '$date', 'no', '', ',', ',', '', '', '', '', '')");
+            $query = mysqli_query($con, "INSERT INTO users (username, email, password, prof_pic, cover_pic, bio, signup_date, user_closed, friend_array, comment_stat, status) VALUES ('$uname', '$em', '$password', '$prof_pic', '$cover_pic', '', '$date', 'no', '', '', 'Offline now')");
     
             array_push($error_array, "<span class='msg'>You're all set! Go ahead and login!</span><br>");
     

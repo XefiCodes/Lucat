@@ -11,7 +11,7 @@
                             echo $_SESSION['log_email'];
                         } 
                         ?>" required/>
-                    <span class="placeholder bg-transparent">Enter username</span>
+                    <span class="placeholder bg-transparent">Enter e-mail</span>
                 </label>
                 <label class="custom-field">
                     <input type="password" name="log_password" id="password" required/>
