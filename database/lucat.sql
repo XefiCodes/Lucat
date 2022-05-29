@@ -29,13 +29,15 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL,
-  `cid_reply` int(11) DEFAULT NULL,
+  `cid` int(500) NOT NULL AUTO_INCREMENT,
+  `pid` int(500) NOT NULL,
+  `cid_reply` int(500) DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `cmt` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`cid`),
-  UNIQUE KEY `pid` (`pid`)
+  UNIQUE KEY `pid` (`pid`),
+  CONSTRAINT FK_Men FOREIGN KEY (`pid`)
+  REFERENCES posts(`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -46,11 +48,13 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 DROP TABLE IF EXISTS `heart`;
 CREATE TABLE IF NOT EXISTS `heart` (
-  `hid` int(11) NOT NULL AUTO_INCREMENT,
+  `hid` int(500) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
-  `pid` int(11) NOT NULL,
+  `pid` int(500) NOT NULL,
   PRIMARY KEY (`hid`),
-  UNIQUE KEY `pid` (`pid`)
+  UNIQUE KEY `pid` (`pid`),
+  CONSTRAINT FK_Hea FOREIGN KEY (`pid`)
+  REFERENCES posts(`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -61,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `heart` (
 
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE IF NOT EXISTS `messages` (
-  `msg_id` int(11) NOT NULL AUTO_INCREMENT,
+  `msg_id` int(500) NOT NULL AUTO_INCREMENT,
   `incoming_msg_id` int(255) NOT NULL,
   `outgoing_msg_id` int(255) NOT NULL,
   `msg` varchar(1000) NOT NULL,
@@ -76,11 +80,14 @@ CREATE TABLE IF NOT EXISTS `messages` (
 
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
-  `pid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(500) NOT NULL AUTO_INCREMENT,
   `Image` longblob,
+  `id` int(500),
   `username` varchar(50) NOT NULL,
   `txt` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`pid`)
+  PRIMARY KEY (`pid`),
+  CONSTRAINT FK_Pos FOREIGN KEY (`id`)
+  REFERENCES users(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
@@ -93,12 +100,30 @@ INSERT INTO `posts` (`pid`, `Image`, `username`, `txt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `commissions`
+--
+
+DROP TABLE IF EXISTS `commissions`;
+CREATE TABLE IF NOT EXISTS `commissions` (
+  `coid` int(500) NOT NULL AUTO_INCREMENT,
+  `Image` longblob,
+  `id` int(500),
+  `username` varchar(50) NOT NULL,
+  `txt` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`coid`),
+  CONSTRAINT FK_Com FOREIGN KEY (`id`)
+  REFERENCES users(`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(500) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,

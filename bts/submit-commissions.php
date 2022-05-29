@@ -1,5 +1,5 @@
 <?php
-    include_once 'bts/connect_db.php';
+    include_once 'connect_db.php';
 
     if (!empty($_FILES['image']['name'])){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

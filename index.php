@@ -151,7 +151,6 @@
             }
         ?>
       </div>
-
       <!-- Tags -->
       <section id="Tag" class="margin">
         <div class="header-fluid headering">
