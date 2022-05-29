@@ -1,3 +1,18 @@
+<?php
+    ini_set("display_errors", "off");
+
+    include_once 'bts/connect_db.php';
+
+    $url = basename($_SERVER['PHP_SELF']);
+    $query = $_SERVER['QUERY_STRING'];
+    if($query){
+    $url .= "?".$query;
+    }
+    $_SESSION['current_page'] = $url;
+
+    $result = mysqli_query($con,"SELECT * FROM posts");
+    $checkPosts = mysqli_query($con, "SELECT * FROM posts");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +82,11 @@
           <h2 class="featureHeader">Discover</h2>
           <a class="featureHeader footer-right link-col" href="gallery.php"><b>See all</b></a>
         </div>
+        <?php
+          $i=0;
+          if ($r = mysqli_num_rows($checkPosts) > 0){
+              while($row = mysqli_fetch_array($result)) {
+        ?>
         <div class="container-fluid" style="width:80%">
           <div class="row gap">
             <div class="col-md-4 first">
@@ -120,6 +140,16 @@
             </div>
           </div>
         </div>
+        <?php
+            $i++;
+                }
+            }
+            else{
+        ?>
+        <div id="posting" class="empty">There's nothing here... Why not make a post?</div>
+        <?php
+            }
+        ?>
       </div>
 
       <!-- Tags -->

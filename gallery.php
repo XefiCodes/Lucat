@@ -1,6 +1,6 @@
 <?php
     include_once 'bts/connect_db.php';
-    $fetch = mysqli_query($con, "SELECT * FROM image");
+    $fetch = mysqli_query($con, "SELECT * FROM posts");
 ?>
 <!DOCTYPE html>
 <html lang="en">

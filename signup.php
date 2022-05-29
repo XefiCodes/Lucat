@@ -18,18 +18,9 @@
                                 ?>" required/>
                             <span class="placeholder bg-transparent">Enter username</span>
                         </label>
-                        <label class="custom-field">
-                            <input type="text" name="reg_nname" value="<?php 
-                                if(isset($_SESSION['reg_nname'])) {
-                                    echo $_SESSION['reg_nname'];
-                                } 
-                                ?>" required/>
-                            <span class="placeholder bg-transparent">Enter nickname</span>
-                        </label>
                     </div>
                     <!-- Error message -->
-                    <?php if(in_array("Your username must be between 2 and 25 characters<br>", $error_array)) echo "<p style='color:#F87060; font-size: 12px; margin: 5px 0; '>Your first name must be between 2 and 25 characters</p>"; ?>
-                    <?php if(in_array("Your nickname must be between 2 and 25 characters<br>", $error_array)) echo "<p style='color:#F87060; font-size: 12px; margin: 5px 0; '>Your last name must be between 2 and 25 characters</p>"; ?>
+                    <?php if(in_array("Your username must be between 2 and 25 characters<br>", $error_array)) echo "<p style='color:#F87060; font-size: 12px; margin: 5px 0; '>Your username must be between 2 and 25 characters.</p>"; ?>
 
                 <!-- Fields for the emails -->
                 <label class="custom-field">

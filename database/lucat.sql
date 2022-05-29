@@ -68,22 +68,6 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`msg_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`) VALUES
-(1, 1, 2, 'adsf'),
-(2, 1, 2, 'a'),
-(3, 1, 2, 'hi'),
-(4, 2, 3, 'wa'),
-(5, 2, 3, 'pakyu'),
-(6, 3, 2, 'you suck'),
-(7, 2, 3, 'asdf'),
-(8, 3, 2, 'ffffffff'),
-(9, 2, 3, 'ads;flkjasdf'),
-(10, 3, 2, 'asdfjk;alkjdsf;jlkasdf');
-
 -- --------------------------------------------------------
 
 --
@@ -107,29 +91,32 @@ CREATE TABLE IF NOT EXISTS `posts` (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `prof_pic` varchar(255) NOT NULL,
   `cover_pic` varchar(255) NOT NULL,
-  `bio` text NOT NULL,
   `signup_date` date NOT NULL,
   `user_closed` varchar(3) NOT NULL,
-  `friend_array` text NOT NULL,
-  `comment_stat` varchar(255) NOT NULL,
+  `tweets` int(11),
+  `follower_array` text,
+  `following_array` text,
+  `comment_stat` varchar(255),
+  `bio` text,
+  `loc` text,
+  `website_link` text,
+  `dob` date,
   `status` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `prof_pic`, `cover_pic`, `bio`, `signup_date`, `user_closed`, `friend_array`, `comment_stat`, `status`) VALUES
-(1, 'Kindiaz', 'Kindiaz@yahoo.com', '8ce87b8ec346ff4c80635f667d1592ae', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '', '2022-05-05', 'no', ',', '', ''),
-(2, 'Edgymofo', 'Nashinsorio@gmail.com', 'c69874b898abb180ac71bd99bc16f8fb', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '', '2022-05-18', 'no', ',', '', 'Active now'),
-(3, 'Kekw', 'Pogkekw@gmail.com', '25d55ad283aa400af464c76d713c07ad', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '', '2022-05-25', 'no', '', '', 'Active now');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `prof_pic`, `cover_pic`, `signup_date`, `user_closed`, `tweets`, `follower_array`, `following_array`, `comment_stat`, `bio`, `loc`, `website_link`, `dob`, `status`) VALUES
+(4, 'Dragmanouts', 'Dragmaba@yahoo.com', '8ce87b8ec346ff4c80635f667d1592ae', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-19', 'no', 0, ',', ',', '', 'Web, Design & Hip-Hop\r\nPartner/UI Designer @spade_be\r\nMusician in @dashboxmusic\r\n', 'Namur, Belgium', 'exibit.be', '1978-06-20', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

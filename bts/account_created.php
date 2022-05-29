@@ -1,7 +1,6 @@
 <?php 
     // Declaring variables to prevent errors
     $uname = ""; // Username
-    $nname = ""; // Nickname
     $em = ""; // Email
     $em2 = ""; // Email 2
     $password = ""; // Password
@@ -21,12 +20,6 @@
         $uname = str_replace(' ', '', $uname); // Remove spaces
         $uname = ucfirst(strtolower($uname)); // Uppercase first letter
         $_SESSION['reg_uname'] = $uname; // Stores last name into session variable
-
-        // Nickname
-        $nname = strip_tags($_POST['reg_nname']); // Remove html tags
-        $nname = str_replace(' ', '', $nname); // Remove spaces
-        $nname = ucfirst(strtolower($nname)); // Uppercase first letter
-        $_SESSION['reg_nname'] = $nname; // Stores last name into session variable
     
         // Email
         $em = strip_tags($_POST['reg_email']); // Remove html tags
@@ -43,11 +36,7 @@
         if(strlen($uname) > 25 || strlen($uname) < 2) {
             array_push($error_array, "Your username must be between 2 and 25 characters<br>");
         }
-    
-        if(strlen($nname) > 25 || strlen($nname) < 2) {
-            array_push($error_array,  "Your nickname must be between 2 and 25 characters<br>");
-        }
-    
+        
         // Password
         $password = strip_tags($_POST['reg_password']); // Remove html tags
         $password2 = strip_tags($_POST['reg_password2']); // Remove html tags
@@ -107,13 +96,12 @@
             $prof_pic = "https://i.imgur.com/qiwcrKS.png"; // Default profile image
             $cover_pic = "https://i.imgur.com/qiwcrKS.png"; // Default cover image
     
-            $query = mysqli_query($con, "INSERT INTO users (username, email, password, prof_pic, cover_pic, bio, signup_date, user_closed, friend_array, comment_stat, status) VALUES ('$uname', '$em', '$password', '$prof_pic', '$cover_pic', '', '$date', 'no', '', '', 'Offline now')");
+            $query = mysqli_query($con, "INSERT INTO users (`username`, `email`, `password`, `prof_pic`, `cover_pic`, `signup_date`, `user_closed`, `status`) VALUES ('$uname', '$em', '$password', '$prof_pic', '$cover_pic', '$date', 'yes', 'Offline now')");
     
             array_push($error_array, "<span class='msg'>You're all set! Go ahead and login!</span><br>");
     
             // Clear session variables 
             $_SESSION['reg_uname'] = "";
-            $_SESSION['reg_nname'] = "";
             $_SESSION['reg_email'] = "";
             $_SESSION['reg_email2'] = "";
         }
