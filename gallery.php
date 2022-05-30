@@ -1,6 +1,18 @@
 <?php
     include_once 'bts/connect_db.php';
-    $fetch = mysqli_query($con, "SELECT * FROM posts");
+    ini_set("display_errors", "off");
+
+    include_once 'bts/connect_db.php';
+
+    $url = basename($_SERVER['PHP_SELF']);
+    $query = $_SERVER['QUERY_STRING'];
+    if($query){
+    $url .= "?".$query;
+    }
+    $_SESSION['current_page'] = $url;
+
+    $result = mysqli_query($con,"SELECT * FROM posts");
+    $checkPosts = mysqli_query($con, "SELECT * FROM posts");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,20 +48,21 @@
                     $(this).css("background-color", "");
                 });
             </script>
-            <?php 
-                // $i=0;
-                // while($row = mysqli_fetch_array($fetch)) {
-            ?>
-                <!-- <a href="#" class="cover"> -->
-                <?php 
-                // echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" />'; ?>
-            <?php
-                // $i++;
-                // }
-            ?>
         <div class="container-fluid">
             <div id="mygallery" class="justified-gallery">
-                <a href="#" class="cover">
+                <?php 
+                    $i=0;
+                    while($row = mysqli_fetch_array($result)) {
+                ?>
+                <a href="#" class="cover"> 
+                    <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'; ?>
+                </a>
+                <?php
+                    $i++;
+                    }
+                ?>
+                <!-- <a href="#" class="cover"> 
+                    
                     <img src="img/Vanellope.png"/>
                 </a>
                     <a href="#" class="cover">
@@ -75,7 +88,7 @@
                 </a>
                     <a href="#" class="cover">
                     <img src="http://unsplash.it/790/390?image=339" />
-                </a>
+                </a> -->
             </div>
         </div>
         <script>

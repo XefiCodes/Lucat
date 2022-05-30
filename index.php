@@ -82,14 +82,28 @@
           <h2 class="featureHeader">Discover</h2>
           <a class="featureHeader footer-right link-col" href="gallery.php"><b>See all</b></a>
         </div>
-        <?php
-          $i=0;
-          if ($r = mysqli_num_rows($checkPosts) > 0){
-              while($row = mysqli_fetch_array($result)) {
-        ?>
         <div class="container-fluid" style="width:80%">
           <div class="row gap">
+            <?php
+              $i=0;
+              if ($r = mysqli_num_rows($checkPosts) > 0){
+                  while($row = mysqli_fetch_array($result)) {
+            ?>
             <div class="col-md-4 first">
+              <a href="#" class="cover">
+                <div class="coll">
+                  <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
+                  <!-- <img class="jezuki" src="img/Vanellope.png" /> -->
+                </div>
+              </a>
+            </div>
+            
+            <?php
+                $i++;
+                    }
+                }
+                else{
+            ?><!-- <div class="col-md-4 first">
               <a href="#" class="cover">
                 <div class="coll">
                   <img class="jezuki" src="img/Vanellope.png" />
@@ -137,15 +151,9 @@
                   <img class="jezuki" src="img/Black Mage FF Final.png" />
                 </div>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
-        <?php
-            $i++;
-                }
-            }
-            else{
-        ?>
         <div id="posting" class="empty">There's nothing here... Why not make a post?</div>
         <?php
             }

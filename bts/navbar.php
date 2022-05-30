@@ -8,9 +8,9 @@
             </ul><ul class="right">
                 <li><a href="submit.php" class="sub">Submit</a></li>
                 <li><a href="commissions.php" class="com">Commissions</a></li>
-                <?php  ?>
                 <li><a href="users.php" class="sub"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                 <?php ?>
+                <li><a href="signin.php" class="sub"><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
             </ul>
         </ul>
     </nav>
