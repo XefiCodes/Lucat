@@ -46,7 +46,6 @@
     </section>
   </div>
 
-  <script src="Javascript/chat.js"></script>
 
 </body>
 </html>

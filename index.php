@@ -86,11 +86,11 @@
           <div class="row gap">
             <?php
               $i=0;
-              if ($r = mysqli_num_rows($checkPosts) > 0){
+              if (mysqli_num_rows($checkPosts) > 0){
                   while($row = mysqli_fetch_array($result)) {
             ?>
             <div class="col-md-4 first">
-              <a href="#" class="cover">
+              <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">'?>
                 <div class="coll">
                   <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                   <!-- <img class="jezuki" src="img/Vanellope.png" /> -->
@@ -103,58 +103,58 @@
                     }
                 }
                 else{
-            ?><!-- <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/Vanellope.png" />
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/cypher.png" />
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/whos mario.png" />
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/Jail.png" />
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/nightmarefule.png" />
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/Jail.png" />
-                </div>
-              </a>
-            </div>
-            <div class="col-md-4 first">
-              <a href="#" class="cover">
-                <div class="coll">
-                  <img class="jezuki" src="img/Black Mage FF Final.png" />
-                </div>
-              </a>
-            </div> -->
+            ?>
           </div>
         </div>
-        <div id="posting" class="empty">There's nothing here... Why not make a post?</div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Vanellope.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/cypher.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/whos mario.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Jail.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/nightmarefule.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Jail.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Black Mage FF Final.png" />
+              </div>
+            </a>
+          </div>
         <?php
             }
         ?>

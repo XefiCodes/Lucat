@@ -1,7 +1,7 @@
 <?php 
   include_once "bts/connect_db.php";
   if(!isset($_SESSION['id'])){
-    header("location: login.php");
+    header("location: signup.php");
   }
 ?>
 <!DOCTYPE html>

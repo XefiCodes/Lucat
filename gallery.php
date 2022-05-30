@@ -2,8 +2,6 @@
     include_once 'bts/connect_db.php';
     ini_set("display_errors", "off");
 
-    include_once 'bts/connect_db.php';
-
     $url = basename($_SERVER['PHP_SELF']);
     $query = $_SERVER['QUERY_STRING'];
     if($query){
@@ -54,8 +52,8 @@
                     $i=0;
                     while($row = mysqli_fetch_array($result)) {
                 ?>
-                <a href="#" class="cover"> 
-                    <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'; ?>
+                <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
+                      echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'; ?>
                 </a>
                 <?php
                     $i++;
@@ -109,7 +107,7 @@
                 });
             });
         </script>
-        <span><div class="pagination page">
+        <!-- <span><div class="pagination page">
             <a class="active" href="#">&laquo;</a>
             <a class="pageNo" href="#">1</a>
             <a class="pageNo" href="#">2</a>
@@ -121,7 +119,7 @@
             <a class="pageNo" href="#">8</a>
             <a class="pageNo" href="#">9</a>
             <a class="active" href="#">&raquo;</a>
-        </div></span>
+        </div></span> -->
         <script>
             var colors = ['#8cd6ab', '#F6A42E', '#BBEECC', '#FCB293', '#FCB293', '#FCB293'];
             $(".pageNo").hover(function () {
