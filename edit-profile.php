@@ -12,11 +12,10 @@ include("bts/edit-profile_handler.php");
         <div class="box mt-4">
             <!-- Gets the data from the database. -->
             <?php
-            $user_data_query = mysqli_query($con, "SELECT username, nickname, email, bio, loc, website_link, dob FROM users WHERE username='$userLoggedIn'");
+            $user_data_query = mysqli_query($con, "SELECT username, email, bio, loc, website_link, dob FROM users WHERE username='$userLoggedIn'");
             $row = mysqli_fetch_array($user_data_query);
 
             $username = $row['username'];
-            $nickname = $row['nickname'];
             $email = $row['email'];
             $bio = $row['bio'];
             $loc = $row['loc'];
@@ -33,7 +32,7 @@ include("bts/edit-profile_handler.php");
                 <div class="profile">
                     <div class="img"><img src="img/old/chad.png" alt="User Profile Picture" class="rounded-circle"></div>
                     <h3 class="fw-bold"><?php echo $username; ?></h3>
-                    <h5 class="pb-4">@<?php echo $nickname; ?></h5>
+                    <h3 class="fs-5 mb-4">@<?php echo $username; ?></h3>
                 </div>
                 <div class="list">
 
@@ -54,14 +53,11 @@ include("bts/edit-profile_handler.php");
                                 <input class="w-100" type="text" name="uname" value="<?php echo $username; ?>">
                             </div>
                             <div class="section">
-                                <p class="fs-5">Nickname</p>
-                                <input class="w-100" type="text" name="nname" value="<?php echo $nickname; ?>">
+                                <p class="fs-5">Email</p>
+                                <input class="w-100" type="text" name="email" value="<?php echo $email; ?>">
                             </div>
                         </div>
-                        <div class="section">
-                            <p class="fs-5">Email</p>
-                            <input class="w-100" type="text" name="email" value="<?php echo $email; ?>">
-                        </div>
+
                         <div class="section">
                             <p class="fs-5">Biography</p>
                             <textarea class="w-100" type="text" name="bio"><?php echo $bio; ?></textarea>
@@ -87,7 +83,7 @@ include("bts/edit-profile_handler.php");
                             <input class="w-100" type="password" name="new_password_2">
                         </div>
                         <br>
-                        <input type="submit" name="update_password"value="Update">
+                        <input type="submit" name="update_password" value="Update">
                         <br>
                     </form>
                 </div>

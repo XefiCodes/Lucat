@@ -8,24 +8,58 @@
     </head>
     <body>
       <?php include("bts/navbar.php") ?>
-      <div class="banner"  style="background-image: url('img/Vanellope.png');">
-        @DragmaBa
-      </div>
+
+      <!-- Gets the data from the database. -->
+      <?php
+        require 'bts/connect_db.php';
+        require 'bts/account_created.php';
+        require 'bts/account_login.php';
+        include("bts/classes/User.php");
+
+          // Checks if there is a username in the session variable (indicates theres a user).
+          if (isset($_SESSION['username'])) {
+              $userLoggedIn = $_SESSION['username'];
+              $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+              $user = mysqli_fetch_array($user_details_query);
+          }
+          else {
+              // header("Location: index.php"); //If not, redirects the user back to the index page.
+          }
+        
+        $user_data_query = mysqli_query($con, "SELECT username, email, prof_pic, cover_pic, signup_date, tweets, follower_array, following_array, bio, loc, website_link, dob FROM users WHERE username='$userLoggedIn'");
+        $row = mysqli_fetch_array($user_data_query);
+
+        $username = $row['username'];
+        $email = $row['email'];
+        $prof_pic = $row['prof_pic'];
+        $cover_pic = $row['cover_pic'];
+        $signup_date = $row['signup_date'];
+        $tweets = $row['tweets'];
+        $follower_array = $row['follower_array'];
+        $following_array = $row['following_array'];
+        $bio = $row['bio'];
+        $loc = $row['loc'];
+        $website_link = $row['website_link'];
+        $dob = $row['dob'];
+      ?>
+
+      <div class="banner" style="background-image: url('<?php echo $cover_pic; ?>');">@<?php echo $username; ?></div>
+
       <div class="containing">
         <div class="bar">
           <div class="content">
             <ul>
               <li class="active">
                 <span>Tweets</span>
-                <strong>3931</strong>
+                <strong><?php echo $tweets; ?></strong>
               </li>
               <li>
                 <span>Followings</span>
-                <strong>654</strong>
+                <strong><?php echo $follower_array; ?></strong>
               </li>
               <li>
                 <span>Followers</span>
-                <strong>387</strong>
+                <strong><?php echo $following_array; ?></strong>
               </li>
               <li>
                 <span>Favorites</span>
@@ -46,19 +80,19 @@
       
         <div class="wrapper-content content">
           <aside class="profile">
-            <img src="img/old/chad.png" alt="João Paulo" class="avatar" />
-            <h1>Dragma Nouts</h1>
-            <span class="username">@DragmaBa</span>
-            <p>Web, Design & Rock 'n roll Partner/UI Designer @spade_be Musician in @dashboxmusic</p>
+            <img src="<?php echo $prof_pic; ?>" alt="João Paulo" class="avatar bg-light" />
+            <h1><?php echo $username; ?></h1>
+            <span class="username">@<?php echo $username; ?></span>
+            <p><?php echo $bio; ?></p>
       
             <ul class="data">
-              <li><img src="img/images/place.svg" alt="Place" /> Namur, Belgium</li>
-              <li><img src="img/images/link.svg" alt="Link" /> exibit.be</li>
-              <li><img src="img/images/clock.svg" alt="Joined" /> Joined June 2007</li>
-              <li><img src="img/images/child.svg" alt="Born" /> Born the 20th of June 1978</li>
+              <li><img src="img/images/place.svg" alt="Place" /><?php echo $loc; ?></li>
+              <li><img src="img/images/link.svg" alt="Link" /><?php echo $website_link; ?></li>
+              <li><img src="img/images/clock.svg" alt="Joined" /><?php echo $signup_date; ?></li>
+              <li><img src="img/images/child.svg" alt="Born" /><?php echo $dob; ?></li>
             </ul>
             <div class="edit-prof">
-              <button><a href="edit-profile.php">Edit Profile</a></button>
+              <button><a href="edit-profile.php" class="text-decoration-none text-dark">Edit Profile</a></button>
             </div>
           </aside>
       
