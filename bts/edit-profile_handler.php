@@ -6,7 +6,6 @@ if(isset($_POST['update_account'])) {
 	$uname = $_POST['uname'];
 	$email = $_POST['email'];
 	$bio = $_POST['bio'];
-	$userLoggedIn = $uname;
 
 	$email_check = mysqli_query($con, "SELECT * FROM users WHERE email='$email'");
 	$row = mysqli_fetch_array($email_check);
@@ -16,6 +15,8 @@ if(isset($_POST['update_account'])) {
 		$message = "Details updated!<br><br>";
 
 		$query = mysqli_query($con, "UPDATE users SET username='$uname', email='$email', bio='$bio' WHERE username='$userLoggedIn'");
+		$userLoggedIn = $uname;
+		$_SESSION['username'] = $uname;
 	}
 	else 
 		$message = "That email is already in use!<br><br>";
