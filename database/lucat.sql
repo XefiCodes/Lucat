@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 30, 2022 at 08:37 PM
+-- Generation Time: May 30, 2022 at 09:12 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -36,7 +36,14 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `cmt` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cid`),
   KEY `fkcomment` (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`cid`, `pid`, `cid_reply`, `username`, `cmt`) VALUES
+(1, 1, NULL, 'Xenonph', 'adsf');
 
 -- --------------------------------------------------------
 
@@ -150,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `prof_pic`, `cover_pic`, `signup_date`, `user_closed`, `tweets`, `follower_array`, `following_array`, `comment_stat`, `bio`, `loc`, `website_link`, `dob`, `status`) VALUES
 (1, 'Dragmanouts', 'Dragmaba@yahoo.com', '8ce87b8ec346ff4c80635f667d1592ae', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-19', 'no', 0, ',', ',', '', 'Web, Design & Hip-Hop\r\nPartner/UI Designer @spade_be\r\nMusician in @dashboxmusic\r\n', 'Namur, Belgium', 'exibit.be', '1978-06-20', 'Offline now'),
 (2, 'Xenonph', 'Nashinsorio@gmail.com', '6a204bd89f3c8348afd5c77c717a097a', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-29', 'no', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active now');
-
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
