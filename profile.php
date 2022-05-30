@@ -23,7 +23,7 @@
               $user = mysqli_fetch_array($user_details_query);
           }
           else {
-              // header("Location: index.php"); //If not, redirects the user back to the index page.
+              header("Location: signin.php"); //If not, redirects the user back to the index page.
           }
         
         $user_data_query = mysqli_query($con, "SELECT username, email, prof_pic, cover_pic, signup_date, tweets, follower_array, following_array, bio, loc, website_link, dob FROM users WHERE username='$userLoggedIn'");
