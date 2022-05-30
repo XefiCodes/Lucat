@@ -4,9 +4,9 @@
 if(isset($_POST['update_account'])) {
 
 	$uname = $_POST['uname'];
-	$nname = $_POST['nname'];
 	$email = $_POST['email'];
 	$bio = $_POST['bio'];
+	$userLoggedIn = $uname;
 
 	$email_check = mysqli_query($con, "SELECT * FROM users WHERE email='$email'");
 	$row = mysqli_fetch_array($email_check);
@@ -15,10 +15,11 @@ if(isset($_POST['update_account'])) {
 	if($matched_user == "" || $matched_user == $userLoggedIn) {
 		$message = "Details updated!<br><br>";
 
-		$query = mysqli_query($con, "UPDATE users SET username='$uname', nickname='$nname', email='$email', bio='$bio' WHERE username='$userLoggedIn'");
+		$query = mysqli_query($con, "UPDATE users SET username='$uname', email='$email', bio='$bio' WHERE username='$userLoggedIn'");
 	}
 	else 
 		$message = "That email is already in use!<br><br>";
+
 }
 else 
 	$message = "Didn't work...";
