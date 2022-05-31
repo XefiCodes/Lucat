@@ -3,7 +3,7 @@
         <ul>
             <li><div id="siteName">Lucat</div></li>
             <li><a href="index.php" class="left item">Home</a></li>
-            <li><a href="profile.php" class="left item">Profile</a></li> 
+            <li><a href="profile.php<?php if(isset($_SESSION['id'])){ echo '?id=' .$_SESSION['id'];} ?>" class="left item">Profile</a></li> 
             <li><a href="gallery.php" class="left item">Gallery</a></li>
             </ul><ul class="right">
                 <?php if (isset($_SESSION['id'])){ ?>
