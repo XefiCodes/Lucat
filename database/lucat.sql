@@ -57,8 +57,13 @@ CREATE TABLE IF NOT EXISTS `commissions` (
   `Image` longblob,
   `id` int(255) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `title` varchar(50) NOT NULL,
   `txt` varchar(255) DEFAULT NULL,
-  `title` varchar(50) DEFAULT NULL,
+  `dateCreated` date NOT NULL,
+  `priceMin` int(255) NOT NULL,
+  `priceMax` int(255) DEFAULT NULL,
+  `status` varchar(50) NOT NULL,
+  `close` varchar(3) NOT NULL,
   PRIMARY KEY (`coid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -106,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `username` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `txt` varchar(255) DEFAULT NULL,
+  `dateCreated` date NOT NULL,
   PRIMARY KEY (`pid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 

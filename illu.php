@@ -9,9 +9,10 @@
             $id = $_SESSION["id"];
             $tit = $_POST['title'];
             $cap = $_POST['caption'];
+            $date = date("Y-m-d");
             // $tag = $_POST['tag'];
 
-            $sql = "insert into posts (image, id, username, title, txt) values(?,'$id','$name','$tit','$cap')";
+            $sql = "insert into posts (image, id, username, title, txt, dateCreated) values(?,'$id','$name','$tit','$cap', '$date')";
             $getimg = mysqli_prepare($con, $sql);
             mysqli_stmt_bind_param($getimg, "s" ,$fimg);
             mysqli_stmt_execute($getimg);

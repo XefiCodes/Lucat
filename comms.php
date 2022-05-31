@@ -7,18 +7,25 @@
             $fimg = file_get_contents($img);
             $name = $_SESSION["username"];
             $id = $_SESSION["id"];
-            $tit = $_POST['titleC'];
-            $cap = $_POST['captionC'];
+            $tit = strip_tags($_POST['titleC']);
+            $cap = strip_tags($_POST['captionC']);
+            $date = date("Y-m-d");
+            $stat = $_POST['status'];
+            $min = strip_tags($_POST['min']);
+            $max = strip_tags($_POST['max']);
+            if (empty($stat)){
+                $stat = 'Client';
+            }
             // $tag = $_POST['tag']; 
 
-            $sql = "insert into posts (image, id, username, txt, title) values(?,'$id','$name','$cap','$tit')";
+            $sql = "insert into commissions (Image, id, username, txt, title, dateCreated, status, priceMin, priceMax, close) values (?,'$id','$name','$cap','$tit', '$date','$stat', '$min', '$max', 'no')";
             $getimg = mysqli_prepare($con, $sql);
             mysqli_stmt_bind_param($getimg, "s" ,$fimg);
             mysqli_stmt_execute($getimg);
             $check = mysqli_stmt_affected_rows($getimg);
 
             if ($check == 1) {
-                header('location:index.php');
+                header('location:comms.php');
             }
             else {
                 header('location:submit.php');

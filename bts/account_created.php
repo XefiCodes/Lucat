@@ -19,7 +19,7 @@
         $uname = strip_tags($_POST['reg_uname']); // Remove html tags
         $uname = str_replace(' ', '', $uname); // Remove spaces
         $uname = ucfirst(strtolower($uname)); // Uppercase first letter
-        $_SESSION['reg_uname'] = $uname; // Stores last name into session variable
+        $_SESSION['reg_uname'] = $uname; // Stores username into session variable
     
         // Email
         $em = strip_tags($_POST['reg_email']); // Remove html tags

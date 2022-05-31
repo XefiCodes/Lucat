@@ -26,7 +26,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php echo $row['title']; ?> | Lucat</title>
+    <title><?php
+        if(!empty($row['title'])){
+            echo $row['title'];
+        }else{
+            echo 'Untitled';
+        } 
+        ?> | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/global.css" rel="stylesheet">
     <link href="Styles/commissions.css" rel="stylesheet">
