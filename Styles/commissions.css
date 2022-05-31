@@ -60,6 +60,10 @@
   margin-bottom: 50px;
 }
 
+.card a{
+  text-decoration: none;
+}
+
 .card {
   width: 300px;
   height: 400px;

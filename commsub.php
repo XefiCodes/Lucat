@@ -13,9 +13,6 @@
             function view() {
                 pic.src = URL.createObjectURL(event.target.files[0]);
             }
-            function veiw(){
-                pick.src = URL.createObjectURL(event.target.files[0]);
-            }
         </script>
     </head>
     <body>
@@ -28,16 +25,19 @@
                 });
             });
         </script>
-        <button id="togol"><a href="commsub.php">Commission Submission Form here</a></button>
-        <!-- Illustration Form -->
-        <form id="ill" class="query" action="illu.php" method="POST" enctype="multipart/form-data">
+        <!-- <button id="togol"></button> -->
+        <!-- Commissions Form -->
+        <form id="com" class="query" action="comms.php" method="POST" enctype="multipart/form-data">
             <img id="pic" src="img/upload.png" width="50vw" height="50px" style=" margin-left : 23vw; border-style:none; " />
             <input type="file" name="image" onchange="view()" style=" margin-top: auto;" />
             <input type="text" name="title" placeholder="Title" style=" margin-left : 12vw; " required/>
             <input type="text" name="caption" placeholder="Description" style=" margin-left : 12vw; "/>
+            <input type="text" name="min" placeholder="Lowest" style=" margin-left : 12vw; " required/>
+            <input type="text" name="max" placeholder="Highest" style=" margin-left : 12vw; "/>
+            <input type="checkbox" name="status" style=" margin-left : 12vw; " value="Artist"/> Looking for clients?
             <div class="divider">
                 <div class="warning">Images should not be more than 1 MB. PNG only.</div>
-                <input type="submit" value="" name="illu">
+                <input type="submit" name="comms">
             </div>
         </form>
         <!-- Footer -->
