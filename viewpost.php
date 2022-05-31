@@ -26,34 +26,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php
-        if(!empty($row['title'])){
-            echo $row['title'];
-        }else{
-            echo 'Untitled';
-        } 
-        ?> | Lucat</title>
+    <title><?php echo $row['title']; ?> | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/global.css" rel="stylesheet">
     <link href="Styles/commissions.css" rel="stylesheet">
+    <link href="Styles/viewpost.css" rel="stylesheet">
 </head>
 <body>
     <?php include("bts/navbar.php") ?>
     <?php 
         if(mysqli_num_rows($sql) > 0){
     ?>
+    <!-- ad -->
     <!-- Display Image and Info -->
-    <div class="daborder">
+    <div class="beeg_content">
+        <div class="view">
+        <div class="daborder">
         <div class="content">
+            <div class="view_img">
             <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
-            <div>
-                <?php echo '<div>'.$row['title'].'</div>';?>
-                <?php echo '<div>'.$row['username'].'</div>';?>
-                <?php echo '<div>'.$row['txt'].'</div>';?>
             </div>
         </div>
+            <div>
+                <div class="view_title"><b>
+                <?php echo '<div style="font-size:25px">'.$row['title'].'</div>';?></b>
+                <span class=""><?php echo '<div> by '.$row['username'].'</div>';?></span>
+                <span class="view_date"><u><?php echo '<div>'.$row['username'].'</div>';?></u></span>
+            </div>
+                <div class="view_txt">
+                <?php echo '<div>'.$row['txt'].'</div>';?>
+                </div>
+        </div>
         <!-- Comments -->
-        <div>
+        <div class="coom_section">
             <?php
                 $checkDel = $row["username"];
                 $checkDel2 = $_SESSION["username"];
@@ -70,7 +75,7 @@
             <div class="commend" id="below">
                 <div class="CUser">
                     <div class="sep">
-                        <b><?php echo $roww['username']?></b>
+                        <b><u><?php echo $roww['username']?></u></b>
                         <?php
                             $checkDelP = $roww["username"];
                             if($checkDelP == $checkDel2){
@@ -86,16 +91,18 @@
                     <div class="Ccom">
                     <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($pfp).'" />';?>
                         <?php echo $roww['cmt'];?>
+                        <!-- <div>_______________________</div> -->
                     </div>
                 </div>
             </div>
             <?php  }  $j++;  } ?>
             <form class="commentt" action="comment.php" method="POST">
                 <input text="text" name="pid" value="<?php echo $cid ?>" hidden>
-                <input type="text" name="ct" placeholder="Write a comment..."  autocomplete="off"/>
-                <input type="submit" name="com" value="COMMENT">
+                <input type="text" name="ct" class="com_size" placeholder="Write a comment..."  autocomplete="off"/>
+                <input type="submit" name="com" class="com_sub" value="COMMENT">
             </form>
         </div>
+    </div>
         <?php
             } if(mysqli_num_rows($sql) == 0){
         ?>
@@ -103,7 +110,17 @@
         <?php
             }
         ?>
-        
+    </div>
+    <div class="epal">
+          <div class="ad-long">
+            <div id="advert" class="advert w3-content w3-display-container">
+              <img class="mySlides" src="img/old/chad.png" style="width:100%">
+              <img class="mySlides" src="img/old/dale.png" style="width:100%">
+              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
+              <img class="mySlides" src="img/old/black.png" style="width:100%">
+            </div>
+          </div>
+        </div>
     </div>
     <?php include("bts/footer.php") ?>
 </body>
