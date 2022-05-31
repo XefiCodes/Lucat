@@ -1,3 +1,6 @@
+<?php
+  include_once ('bts/connect_db.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,25 +11,22 @@
     </head>
     <body>
       <?php include("bts/navbar.php") ?>
-
-      <!-- Gets the data from the database. -->
       <?php
-        require 'bts/connect_db.php';
-        require 'bts/account_created.php';
-        require 'bts/account_login.php';
-        include("bts/classes/User.php");
+        $id = mysqli_real_escape_string($con, $_GET['id']);
+        $sql = mysqli_query($con, "SELECT * FROM users WHERE id = '$id'");
+        $row = mysqli_fetch_assoc($sql);
+        $uid = $row["id"];
 
           // Checks if there is a username in the session variable (indicates theres a user).
-          if (isset($_SESSION['username'])) {
-              $userLoggedIn = $_SESSION['username'];
-              $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-              $user = mysqli_fetch_array($user_details_query);
+          if (isset($id)) {
+              // $userLoggedIn = $_SESSION['id'];
           }
           else {
               header("Location: signin.php"); //If not, redirects the user back to the index page.
           }
+          
         
-        $user_data_query = mysqli_query($con, "SELECT username, email, prof_pic, cover_pic, signup_date, tweets, follower_array, following_array, bio, loc, website_link, dob FROM users WHERE username='$userLoggedIn'");
+        $user_data_query = mysqli_query($con, "SELECT * FROM users WHERE id = '$uid'");
         $row = mysqli_fetch_array($user_data_query);
 
         $username = $row['username'];
@@ -41,140 +41,157 @@
         $loc = $row['loc'];
         $website_link = $row['website_link'];
         $dob = $row['dob'];
+        
+          // $result = mysqli_query($con,"SELECT * FROM posts");
+
+        $checkPosts = mysqli_query($con, "SELECT * FROM posts WHERE id = '$uid'");
+        $user_data_post = mysqli_query($con, "SELECT * FROM posts WHERE id = '$uid'");
+        $Countpost = mysqli_num_rows($user_data_post);
       ?>
-
-      <div class="banner" style="background-image: url('<?php echo $cover_pic; ?>');">@<?php echo $username; ?></div>
-
+      <div >
+        <div class="banner" style="background-image: url('<?php echo $cover_pic; ?>');">@<?php echo $username; ?></div>
+      </div>
       <div class="containing">
-        <div class="bar">
-          <div class="content">
-            <ul>
-              <li class="active">
-                <span>Tweets</span>
-                <strong><?php echo $tweets; ?></strong>
-              </li>
-              <li>
-                <span>Followings</span>
-                <strong><?php echo $follower_array; ?></strong>
-              </li>
-              <li>
-                <span>Followers</span>
-                <strong><?php echo $following_array; ?></strong>
-              </li>
-              <li>
-                <span>Favorites</span>
-                <strong>265</strong>
-              </li>
-              <li>
-                <span>Lists</span>
-                <strong>8</strong>
-              </li>
-              <li>
-                <span>Moments</span>
-                <strong>0</strong>
-              </li>
-            </ul>
-      
-          </div>
-        </div>
-      
-        <div class="wrapper-content content">
-          <aside class="profile">
-            <img src="<?php echo $prof_pic; ?>" alt="João Paulo" class="avatar bg-light" />
-            <h1><?php echo $username; ?></h1>
-            <span class="username">@<?php echo $username; ?></span>
-            <p><?php echo $bio; ?></p>
-      
-            <ul class="data">
-              <li><img src="img/images/place.svg" alt="Place" /><?php echo $loc; ?></li>
-              <li><img src="img/images/link.svg" alt="Link" /><?php echo $website_link; ?></li>
-              <li><img src="img/images/clock.svg" alt="Joined" /><?php echo $signup_date; ?></li>
-              <li><img src="img/images/child.svg" alt="Born" /><?php echo $dob; ?></li>
-            </ul>
-            <div class="edit-prof">
-              <button><a href="edit-profile.php" class="text-decoration-none text-dark">Edit Profile</a></button>
-            </div>
-          </aside>
-      
-          <section class="timeline">
-            <nav>
-              <a href="" class="active">Your Posts</a>
-            </nav>
-            <ul class="tweets">
-              <li>
-                <img src="img/old/chad.png" alt="Avatar" class="avatar" />
-                <div class="tweet">
-                  <div class="info">
-                    <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
-                    <span>26 janv.</span>
-                  </div>
-                  <p>
-                    I just published “The Belgian Red Cross website : backstage of a revamp like no other”
-                  </p>
-                  <div class="stats">
-                    <a href=""><img src="img/images/comment.svg"> 1</a>
-                    <a href=""><img src="img/images/like.svg"> 3</a>
-                  </div>
-                </div>
-              </li>
-              </li>
-            </ul>
-
-            <ul class="tweets">
-              <li>
-                <img src="img/old/chad.png" alt="Avatar" class="avatar" />
-                <div class="tweet">
-                  <div class="info">
-                    <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
-                    <span>26 janv.</span>
-                  </div>
-                  <p>
-                    I just published “The Belgian Red Cross website : backstage of a revamp like no other”
-                  </p>
-                  <div class="stats">
-                    <a href=""><img src="img/images/comment.svg"> 1</a>
-                    <a href=""><img src="img/images/like.svg"> 3</a>
-                  </div>
-                </div>
-              </li>
-              </li>
-            </ul>
-
-            <ul class="tweets">
-              <li>
-                <img src="img/old/chad.png" alt="Avatar" class="avatar" />
-                <div class="tweet">
-                  <div class="info">
-                    <a href=""><strong>Benoît Vrins</strong> @Exibit</a>
-                    <span>26 janv.</span>
-                  </div>
-                  <p>
-                    I just published “The Belgian Red Cross website : backstage of a revamp like no other”
-                  </p>
-                  <div class="stats">
-                    <a href=""><img src="img/images/comment.svg"> 1</a>
-                    <a href=""><img src="img/images/like.svg"> 3</a>
-                  </div>
-                </div>
-              </li>
-              </li>
-            </ul>
-
-          </section>
-
-          <div class="widget media">
-              <strong class="media-title"><img src="img/images/media.svg" alt="Photos and videos" /> Your Photos and videos</strong>
-      
+        <div class="covering">
+          <div class="bar">
+            <div class="content">
               <ul>
-                <li></li> 
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li class="active">
+                  <span>Posts</span>
+                  <strong><?php echo $Countpost; ?></strong>
+                </li>
+                <!-- <li>
+                  <span>Followings</span>
+                  <strong><?php //echo $follower_array; ?></strong>
+                </li>
+                <li>
+                  <span>Followers</span>
+                  <strong><?php //echo $following_array; ?></strong>
+                </li> -->
+                <li>
+                  <span>Favorites</span>
+                  <strong>0</strong>
+                </li>
+                <!-- <li>
+                  <span>Lists</span>
+                  <strong>8</strong>
+                </li>
+                <li>
+                  <span>Moments</span>
+                  <strong>0</strong>
+                </li> -->
               </ul>
+        
             </div>
           </div>
+        
+          <div class="wrapper-content content">
+            <aside class="profile">
+              <img src="<?php echo $prof_pic; ?>" alt="João Paulo" class="avatar bg-light" />
+              <h1><div class="jttcote"><?php echo $username; ?></div></h1>
+              <!-- <span class="username">@<?php echo $username; ?></span> -->
+              <p><?php echo $bio; ?></p>
+        
+              <ul class="data">
+                <li><img src="img/images/place.svg" alt="Place" /><?php if (!empty($loc)){echo $loc;} else{ echo 'Not specified';} ?></li>
+                <li><img src="img/images/child.svg" alt="Born" /><?php if (!empty($$dob)){echo $dob;} else{ echo 'Not specified';}  ?></li>
+                <li><img src="img/images/link.svg" alt="Link" /><?php if (!empty($website_link)){echo $website_link;} else{ echo 'Not specified';}  ?></li>
+                <li><img src="img/images/clock.svg" alt="Joined" /><?php echo $signup_date; ?></li>
+              </ul>
+              <div class="edit-prof">
+                <button><a href="edit-profile.php" class="text-decoration-none text-dark">Edit Profile</a></button>
+              </div>
+            </aside>
+            <div style="width: 100%">
+              <!-- Gallery -->
+              <div class="widget media">
+                <div class="headher">
+                  <div class="borderline">
+                    <div class="inplace">
+                      <strong class="media-title"><img src="img/images/media.svg" alt="Gallery" /> Gallery</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid">
+                  <div id="mygallery" class="justified-gallery">
+                    <?php 
+                        $i=0;
+                        while($row = mysqli_fetch_array($user_data_post)) {
+                    ?>
+                    <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
+                          echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'; ?>
+                    </a>
+                    <?php
+                        $i++;
+                        }
+                    ?>
+                  </div>
+                </div>
+                <script>
+                  $(document).ready(function () {
+                      $("#mygallery").justifiedGallery({
+                          rowHeight : 250,
+                          maxrowHeight : 250,
+                          lastRow : 'center',
+                          margins : 15
+                          // sizeRangeSuffixes: {
+                          //     100: '_t',
+                          //     240: '_m',
+                          //     320: '_n',
+                          //     500: '',
+                          //     640: '_z',
+                          //     1024: '_b'
+                          // }
+                      });
+                  });
+                </script>
+              </div>
+              <!-- Commissions -->
+              <div class="widget media">
+                <div class="headher">
+                  <div class="borderline">
+                    <div class="inplace">
+                      <strong class="media-title"><img src="img/images/media.svg" alt="Commissions" /> Commissions</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid">
+                  <div id="mygallery" class="justified-gallery">
+                    <?php 
+                        $i=0;
+                        while($row = mysqli_fetch_array($user_data_post)) {
+                    ?>
+                    <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
+                          echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'; ?>
+                    </a>
+                    <?php
+                        $i++;
+                        }
+                    ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            $(document).ready(function () {
+                $("#mygallery").justifiedGallery({
+                    rowHeight : 250,
+                    maxrowHeight : 250,
+                    lastRow : 'center',
+                    margins : 15
+                    // sizeRangeSuffixes: {
+                    //     100: '_t',
+                    //     240: '_m',
+                    //     320: '_n',
+                    //     500: '',
+                    //     640: '_z',
+                    //     1024: '_b'
+                    // }
+                });
+            });
+          </script>
+        </div>
       </div>
     <?php include("bts/footer.php") ?>
     </body>

@@ -16,6 +16,10 @@ div.containing{
   padding: 275px 35px 35px 35px;
 }
   
+div.covering{
+  background-color: #292929;
+}
+
   div.bar {
     height: 60px;
     background: #F4E4C0;
@@ -91,9 +95,9 @@ div.containing{
       background-color: whitesmoke;
       color: black;
     width: 300px;
+    height: 100%;
     margin:15px;
-    padding-right: 25px;
-    padding-left: 10px;
+    padding: 25px;
     flex-shrink: 0;
     border-radius: 10px;
   }
@@ -181,15 +185,38 @@ div.containing{
     margin-bottom: 5px;
   }
   
- /* div.wrapper-content aside.profile .widget.media ul {
-      float: right;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 10px;
+.jttcote{
+  text-align: center;
+}
+
+.headher{
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  text-align: center;
+}
+
+.borderline{
+  width: 100%;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.192);
+}
+
+.inplace{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+  div.wrapper-content .widget {
+    margin-top: 15px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.192);
+    border-radius: 2px;
   }
-  
+  /*
   div.wrapper-content aside.profile .widget.media ul li {
     width: 82px;
     height: 82px;
@@ -368,10 +395,6 @@ div.wrapper-content  .widget.media ul li {
   margin-bottom: 6px;
 }
 
-div.wrapper-content  .widget.media .media-title {
-    margin-left:25px;
-    margin-top: 10px;
-  }
 .edit-prof button{
     width: 100px;
     height: 35px;

@@ -1,32 +1,37 @@
 <?php 
-    // ini_set("display_errors", "off");
+    ini_set("display_errors", "off");
     include_once ('bts/connect_db.php');
-
-    $url = basename($_SERVER['PHP_SELF']);
-    $query = $_SERVER['QUERY_STRING'];
-    if($query){
-    $url .= "?".$query;
-    }
-    $_SESSION['current_page'] = $url;
 
     $id = mysqli_real_escape_string($con, $_GET['id']);
     $sql = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$id'");
     $row = mysqli_fetch_assoc($sql);
     $cid = $row["pid"];
 
+    $uid = mysqli_query($con, "SELECT * FROM users WHERE id = '$cid'");
+    $roww = mysqli_fetch_assoc($uid);
+
     // This is where pfp gets itself
     $getpost = mysqli_query($con, "SELECT * FROM comments WHERE pid = '$id'");
     $rowcomms = mysqli_fetch_assoc($getpost);
     $user = $rowcomms["username"];
+    // Default pfp
+    $def = 'https://i.imgur.com/qiwcrKS.png';
 
     $getpfp = mysqli_query($con, "SELECT * FROM users WHERE username = '$user'");
     $rowuser = mysqli_fetch_assoc($getpfp);
+    $postuserid = $rowuser["id"];
     $pfp = $rowuser["prof_pic"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php echo $row['title']; ?> | Lucat</title>
+    <title><?php
+        if(!empty($row['title'])){
+            echo $row['title'];
+        }else{
+            echo 'Untitled';
+        } 
+    ?> | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/global.css" rel="stylesheet">
     <link href="Styles/commissions.css" rel="stylesheet">
@@ -50,7 +55,14 @@
             <div>
                 <div class="view_title"><b>
                 <?php echo '<div style="font-size:25px">'.$row['title'].'</div>';?></b>
-                <span class=""><?php echo '<div> by '.$row['username'].'</div>';?></span>
+                <span class="">
+                    <?php echo '<div> by ';
+                        if($roww['prof_pic'] == $def){
+                            echo '<img id="hatdog" src="'.$roww['prof_pic'].'" width="25px" height="25px"/>';
+                        }else{
+                            echo '<img src="data:image/jpeg;base64,'.base64_encode($roww['prof_pic']).'" />';
+                        } 
+                        echo ' <a href="profile.php?id='.$row['id'].'">'.$row['username'].'</a></div>';?></span>
                 <span class="view_date"><u><?php echo '<div>'.$row['username'].'</div>';?></u></span>
             </div>
                 <div class="view_txt">
@@ -66,6 +78,7 @@
                 
                 $checkComms = mysqli_query($con, "SELECT * FROM comments WHERE pid = $cid");
                 $resultt = mysqli_query($con, "SELECT * FROM comments WHERE pid = $cid");
+                $def = 'https://i.imgur.com/qiwcrKS.png';
                 
             ?>
             <?php
@@ -75,7 +88,13 @@
             <div class="commend" id="below">
                 <div class="CUser">
                     <div class="sep">
-                        <b><u><?php echo $roww['username']?></u></b>
+                        <?php if($pfp == $def){
+                            echo '<img id="hatdog" src="'.$pfp.'" width="25px" height="25px"/>';
+                            }else{
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($pfp).'" />';
+                            } 
+                        ?>
+                        <b><u><a href="profile.php?id=<?php echo $postuserid ?>"><?php echo $roww['username']?></a></u></b>
                         <?php
                             $checkDelP = $roww["username"];
                             if($checkDelP == $checkDel2){
@@ -89,7 +108,6 @@
                         } ?>
                     </div>
                     <div class="Ccom">
-                    <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($pfp).'" />';?>
                         <?php echo $roww['cmt'];?>
                         <!-- <div>_______________________</div> -->
                     </div>
@@ -122,6 +140,7 @@
           </div>
         </div>
     </div>
+    <script src="Javascript/ads-normal.js"></script>
     <?php include("bts/footer.php") ?>
 </body>
 </html>

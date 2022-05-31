@@ -2,13 +2,6 @@
     include_once 'bts/connect_db.php';
     ini_set("display_errors", "off");
 
-    $url = basename($_SERVER['PHP_SELF']);
-    $query = $_SERVER['QUERY_STRING'];
-    if($query){
-    $url .= "?".$query;
-    }
-    $_SESSION['current_page'] = $url;
-
     $result = mysqli_query($con,"SELECT * FROM posts");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
 ?>
@@ -59,34 +52,6 @@
                     $i++;
                     }
                 ?>
-                <!-- <a href="#" class="cover"> 
-                    
-                    <img src="img/Vanellope.png"/>
-                </a>
-                    <a href="#" class="cover">
-                    <img src="img/cypher.png" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="img/Black Mage FF Final.png" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="img/cover.jpg" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="img/Jail.png" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="http://unsplash.it/560/500?image=677" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="http://unsplash.it/670/410?image=401" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="http://unsplash.it/620/340?image=623" />
-                </a>
-                    <a href="#" class="cover">
-                    <img src="http://unsplash.it/790/390?image=339" />
-                </a> -->
             </div>
         </div>
         <script>
@@ -105,27 +70,6 @@
                     //     1024: '_b'
                     // }
                 });
-            });
-        </script>
-        <!-- <span><div class="pagination page">
-            <a class="active" href="#">&laquo;</a>
-            <a class="pageNo" href="#">1</a>
-            <a class="pageNo" href="#">2</a>
-            <a class="pageNo" href="#">3</a>
-            <a class="pageNo" href="#">4</a>
-            <a class="pageNo" href="#">5</a>
-            <a class="pageNo" href="#">6</a>
-            <a class="pageNo" href="#">7</a>
-            <a class="pageNo" href="#">8</a>
-            <a class="pageNo" href="#">9</a>
-            <a class="active" href="#">&raquo;</a>
-        </div></span> -->
-        <script>
-            var colors = ['#8cd6ab', '#F6A42E', '#BBEECC', '#FCB293', '#FCB293', '#FCB293'];
-            $(".pageNo").hover(function () {
-                $(this).css("background-color", colors[(Math.random() * colors.length) | 0]);
-            }, function () {
-                $(this).css("background-color", "");
             });
         </script>
     </div>
