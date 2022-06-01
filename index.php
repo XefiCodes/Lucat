@@ -11,7 +11,7 @@
     $_SESSION['current_page'] = $url;
 
     $result = mysqli_query($con,"SELECT * FROM posts LIMIT 8");
-    $resultt = mysqli_query($con,"SELECT * FROM posts LIMIT 8");
+    $resultt = mysqli_query($con,"SELECT * FROM posts ORDER BY dateCreated DESC LIMIT 8");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
 
     $carosel = mysqli_query($con,"SELECT * FROM posts LIMIT 4");
@@ -287,36 +287,32 @@
         ?>
       <!-- More Ads -->
       <div class="flex-box">
-          <div  class="ad-normal" data-component="slideshow">
+          <div  class="space ad-normal" data-component="slideshow">
             <div id="advert" class="advert w3-content w3-display-container">
-              <img class="mySlides" src="img/old/chad.png" style="width:100%">
-              <img class="mySlides" src="img/old/dale.png" style="width:100%">
-              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
-              <img class="mySlides" src="img/old/black.png" style="width:100%">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
             </div>
           </div>
-          <div class="ad-normal" data-component="slideshow">
+          <div class="space ad-normal" data-component="slideshow">
             <div id="advert" class="advert w3-content w3-display-container">
-              <img class="mySlides" src="img/old/chad.png" style="width:100%">
-              <img class="mySlides" src="img/old/dale.png" style="width:100%">
-              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
-              <img class="mySlides" src="img/old/black.png" style="width:100%">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
             </div>
           </div>
-          <div class="ad-normal" data-component="slideshow">
+          <div class="space ad-normal" data-component="slideshow">
             <div class="advert w3-content w3-display-container">
-              <img class="mySlides" src="img/old/chad.png" style="width:100%">
-              <img class="mySlides" src="img/old/dale.png" style="width:100%">
-              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
-              <img class="mySlides" src="img/old/black.png" style="width:100%">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
             </div>
           </div>
-          <div class="ad-normal" data-component="slideshow">
+          <div class="space ad-normal" data-component="slideshow">
             <div class="advert w3-content w3-display-container">
-              <img class="mySlides" src="img/old/chad.png" style="width:100%">
-              <img class="mySlides" src="img/old/dale.png" style="width:100%">
-              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
-              <img class="mySlides" src="img/old/black.png" style="width:100%">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
             </div>
           </div>
     <script src="Javascript/ads-normal.js"></script>

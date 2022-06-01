@@ -98,9 +98,11 @@
                 <li><img src="img/images/link.svg" alt="Link" /><?php if (!empty($website_link)){echo $website_link;} else{ echo 'Not specified';}  ?></li>
                 <li><img src="img/images/clock.svg" alt="Joined" /><?php echo $signup_date; ?></li>
               </ul>
+              <?php if(isset($_SESSION['id'])){ if ($_SESSION['id'] == $uid){ ?>
               <div class="edit-prof">
                 <button><a href="edit-profile.php" class="text-decoration-none text-dark">Edit Profile</a></button>
               </div>
+              <?php }} ?>
             </aside>
             <div style="width: 100%">
               <!-- Gallery -->

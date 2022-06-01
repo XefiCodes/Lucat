@@ -249,7 +249,6 @@ nav ul li a.com{
     margin: 0;
   }
   .ad-long{
-    /* position: ; */
     background-color: #A5A4FF;
     border: solid black 1px;
     overflow: hidden;
@@ -266,7 +265,6 @@ nav ul li a.com{
   [data-component="slideshow"] .slide.active {
     display: block;
   }
-
 
   .flex-box{
     margin-top: 100px;
