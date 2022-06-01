@@ -11,6 +11,7 @@
     <title>Commissions | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/commissions.css" rel="stylesheet">
+    <link href="Styles/gallery.css" rel="stylesheet">
     <link href="Styles/global.css" rel="stylesheet">
 </head>
 <body>
@@ -38,7 +39,7 @@
                 });
             </script>
             </div></span>
-            <div class="container-fluid">
+            <div class="">
                 <div class="row gap">
                 <div class="card-container">
                     <?php
