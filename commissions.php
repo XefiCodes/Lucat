@@ -6,8 +6,8 @@
 
     $result = mysqli_query($con,"SELECT * FROM commissions LIMIT 4");
     $resultt = mysqli_query($con,"SELECT * FROM commissions LIMIT 4");
-    $resultArt = mysqli_query($con,"SELECT * FROM commissions WHERE status = '$art' LIMIT 4");
-    $resultCli = mysqli_query($con,"SELECT * FROM commissions WHERE status = '$cli' LIMIT 4");
+    $resultArt = mysqli_query($con,"SELECT * FROM commissions WHERE status = '$art' ORDER BY dateCreated DESC LIMIT 4");
+    $resultCli = mysqli_query($con,"SELECT * FROM commissions WHERE status = '$cli' ORDER BY dateCreated DESC LIMIT 4");
     
     $checkPosts = mysqli_query($con, "SELECT * FROM commissions");
     $checkArt = mysqli_query($con, "SELECT * FROM commissions WHERE status = '$art'");

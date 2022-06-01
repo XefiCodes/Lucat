@@ -11,7 +11,7 @@
     <title>Commissions | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/commissions.css" rel="stylesheet">
-    <link href="Styles/gallery.css" rel="stylesheet">
+    <!-- <link href="Styles/gallery.css" rel="stylesheet"> -->
     <link href="Styles/global.css" rel="stylesheet">
 </head>
 <body>
@@ -41,7 +41,7 @@
             </div></span>
             <div class="">
                 <div class="row gap">
-                <div class="card-container">
+                <div class="card-container" style="margin-top: 20px;">
                     <?php
                     $i=0;
                     if (mysqli_num_rows($checkPosts) > 0){

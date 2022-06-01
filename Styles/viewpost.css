@@ -21,7 +21,7 @@
 .view_img{
     text-align: center;
     position: relative;
-    height: fit-content;
+    height: 80vh;
     border: solid rgba(255, 255, 255, 0.158) 1px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.24);
@@ -31,6 +31,7 @@
     vertical-align: middle;
     object-fit: contain;
     width: 100%;
+    height: 100%;
     position: relative;
 }
 
