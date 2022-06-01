@@ -37,6 +37,13 @@ input[type=submit]{
 
 }
 
+textarea{
+}
+
+.tag{
+  text-align: center;
+}
+
 .query{
   width: 50vw;  
   margin-top:15vw; 

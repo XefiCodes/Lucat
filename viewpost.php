@@ -1,6 +1,13 @@
 <?php 
     ini_set("display_errors", "off");
     include_once ('bts/connect_db.php');
+    
+    $url = basename($_SERVER['PHP_SELF']);
+    $query = $_SERVER['QUERY_STRING'];
+    if($query){
+    $url .= "?".$query;
+    }
+    $_SESSION['current_page'] = $url;
 
     $id = mysqli_real_escape_string($con, $_GET['id']);
     $sql = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$id'");
@@ -63,7 +70,7 @@
                             echo '<img src="data:image/jpeg;base64,'.base64_encode($roww['prof_pic']).'" />';
                         } 
                         echo ' <a href="profile.php?id='.$row['id'].'">'.$row['username'].'</a></div>';?></span>
-                <span class="view_date"><u><?php echo '<div>'.$row['username'].'</div>';?></u></span>
+                <span class="view_date"><u><?php echo '<div>'.$row['dateCreated'].'</div>';?></u></span>
             </div>
                 <div class="view_txt">
                 <?php echo '<div>'.$row['txt'].'</div>';?>

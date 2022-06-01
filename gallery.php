@@ -3,7 +3,12 @@
     ini_set("display_errors", "off");
 
     $result = mysqli_query($con,"SELECT * FROM posts");
+    $resultt = mysqli_query($con,"SELECT * FROM posts");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
+
+    // $resultag = mysqli_query($con,"SELECT * FROM tags");
+    // $checkTags = mysqli_query($con, "SELECT * FROM tags");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +25,15 @@
         <h2 class="featureHeader"><b>Browse</b></h2>
             <span><div class="pagination">
             <a class="active" href="#">&laquo;</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a> 
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
+            <?php $x=0; 
+                if(mysqli_num_rows($checkPosts) > 0){ 
+                    while($row = mysqli_fetch_array($result)){ 
+                        if (!empty($row['tag'])){
+            ?>
+                <a class="tags" href="gallery.php?tag=<?php echo $row['tag'] ?>"><?php echo $row['tag'] ?></a>
+            <?php       }
+                    }$x++;
+                } ?>
             <a class="active" href="#">&raquo;</a>
             </div></span>
             <script>
@@ -43,11 +48,10 @@
             <div id="mygallery" class="justified-gallery">
                 <?php 
                     $i=0;
-                    while($row = mysqli_fetch_array($result)) {
+                    while($row = mysqli_fetch_array($resultt)) {
                 ?>
                 <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
-                      echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'; ?>
-                </a>
+                      echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" /></a>'; ?>
                 <?php
                     $i++;
                     }

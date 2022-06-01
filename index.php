@@ -13,6 +13,8 @@
     $result = mysqli_query($con,"SELECT * FROM posts LIMIT 8");
     $resultt = mysqli_query($con,"SELECT * FROM posts LIMIT 8");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
+
+    $carosel = mysqli_query($con,"SELECT * FROM posts LIMIT 4");
 ?>
 <!DOCTYPE html>
 <html lang="en">
