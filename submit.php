@@ -35,7 +35,7 @@
             <input type="file" name="image" onchange="view()" style=" margin-top: auto;" />
             <input type="text" name="title" placeholder="Title" style=" margin-left : 12vw; " required/>
             <input type="text" name="caption" placeholder="Description" style=" margin-left : 12vw; "/>
-            <textarea class="it" name="tag" rows="4" style=" margin-left : 12vw; width: 50%; " placeholder="Insert tags here... Divide it with a comma (,)"></textarea>
+            <textarea class="it" name="tag" rows="4" style=" margin-left : 12vw; width: 50%; " placeholder="Insert tags here... Divide it with a comma (,) With no space please."></textarea>
             <div class="divider">
                 <div class="warning">Images should not be more than 1 MB. PNG only.</div>
                 <input type="submit" value="" name="illu">
