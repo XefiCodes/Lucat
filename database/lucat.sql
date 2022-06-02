@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `commissions` (
   `username` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
   `txt` varchar(255) DEFAULT NULL,
-  `dateCreated` date NOT NULL,
+  `dateCreated` datetime NOT NULL,
   `priceMin` int(11) DEFAULT NULL,
   `priceMax` int(255) DEFAULT NULL,
   `status` varchar(50) NOT NULL,

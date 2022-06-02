@@ -106,7 +106,132 @@
                 }
                 else{
             ?>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Vanellope.png" />
+              </div>
+            </a>
+            <div class="insides"></div>
           </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/cypher.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/whos mario.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Jail.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/nightmarefule.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Jail.png" />
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 first">
+            <a href="#" class="cover">
+              <div class="coll">
+                <img class="jezuki" src="img/Black Mage FF Final.png" />
+              </div>
+            </a>
+          </div>
+        <?php
+            }
+        ?>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <section id="Tag" class="margin">
+        <div class="header-fluid headering">
+          <h2 class="featureHeader">Tags</h2>
+          <a class="featureHeader footer-right link-col" href="gallery.php"><b>Go to Gallery</b></a>
+        </div>
+        <div class="tag-fluidity" style="width: 80%;">
+            <div class="tag-fluid">
+              <div class="btn"> 
+                <a class="imag" href="gallery.php">
+                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                  <div class="hoverTagline">Tags</div>
+                </a>
+              </div>
+              <div class="btn">
+                <a class="imag">
+                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                  <div class="hoverTagline">Tags</div>
+                </a>
+              </div>
+              <div class="btn"> 
+                <a class="imag"> 
+                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                  <div class="hoverTagline">Tags</div>
+                </a>
+              </div>
+              <div class="btn"> 
+                <a class="imag"> 
+                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
+                  <div class="hoverTagline">Tags</div>
+                </a>
+              </div>
+              <div class="btn"> 
+                <a class="imag"> 
+                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width:125%;">
+                  <div class="hoverTagline">Tags</div>
+                </a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Submissions -->
+      <div class="discover margin">
+        <div class="header-fluid headering">
+          <h2 class="featureHeader">Discover</h2>
+          <a class="featureHeader footer-right link-col" href="gallery.php"><b>See all</b></a>
+        </div>
+        <div class="container-fluid" style="width:80%">
+          <div class="row gap">
+            <?php
+              $i=0;
+              if (mysqli_num_rows($checkPosts) > 0){
+                  while($row = mysqli_fetch_array($resultt)) {
+            ?>
+            <div class="col-md-4 first">
+              <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">'?>
+                <div class="coll">
+                  <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
+                </div>
+              </a>
+            </div>
+            
+            <?php
+                $i++;
+                    }
+                }
+                else{
+            ?>
           <div class="col-md-4 first">
             <a href="#" class="cover">
               <div class="coll">
@@ -161,130 +286,6 @@
         ?>
         </div>
       </div>
-
-      <!-- Tags -->
-      <section id="Tag" class="margin">
-        <div class="header-fluid headering">
-          <h2 class="featureHeader">Tags</h2>
-          <a class="featureHeader footer-right link-col" href="gallery.php"><b>Go to Gallery</b></a>
-        </div>
-        <div class="tag-fluidity" style="width: 80%;">
-            <div class="tag-fluid">
-              <button class="btn"> 
-                <a class="imag" href="gallery.php">
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </button>
-              <button class="btn">
-                <a class="imag">
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </button>
-              <button class="btn"> 
-                <a class="imag"> 
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </button>
-              <button class="btn"> 
-                <a class="imag"> 
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </button>
-              <button class="btn"> 
-                <a class="imag"> 
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width:125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Recent Submissions -->
-      <div class="discover margin">
-        <div class="header-fluid headering">
-          <h2 class="featureHeader">Discover</h2>
-          <a class="featureHeader footer-right link-col" href="gallery.php"><b>See all</b></a>
-        </div>
-        <div class="container-fluid" style="width:80%">
-          <div class="row gap">
-            <?php
-              $i=0;
-              if (mysqli_num_rows($checkPosts) > 0){
-                  while($row = mysqli_fetch_array($resultt)) {
-            ?>
-            <div class="col-md-4 first">
-              <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">'?>
-                <div class="coll">
-                  <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
-                </div>
-              </a>
-            </div>
-            
-            <?php
-                $i++;
-                    }
-                }
-                else{
-            ?>
-          </div>
-        </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/Vanellope.png" />
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/cypher.png" />
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/whos mario.png" />
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/Jail.png" />
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/nightmarefule.png" />
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/Jail.png" />
-              </div>
-            </a>
-          </div>
-          <div class="col-md-4 first">
-            <a href="#" class="cover">
-              <div class="coll">
-                <img class="jezuki" src="img/Black Mage FF Final.png" />
-              </div>
-            </a>
-          </div>
-        <?php
-            }
-        ?>
       <!-- More Ads -->
       <div class="flex-box">
           <div  class="space ad-normal" data-component="slideshow">

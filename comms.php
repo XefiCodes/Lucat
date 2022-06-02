@@ -9,15 +9,19 @@
             $user = $_SESSION['username'];
             $title = $_POST['title'];
             $desc = $_POST['caption'];
-            $date = date("Y-m-d");
+            $time = strtotime(date('Y-m-d H:i:s'));
+            $date = date('Y-m-d H:i:s', $time);
             $min = $_POST['min'];
             $max = $_POST['max'];
             $status = $_POST['status'];
             if($status != 1){
-                $status = 'Client';
+                $realstat = 'Client';
+            }
+            else{
+                $realstat = 'Artist';
             }
 
-            $sql = "insert into commissions (image, id, username, title, txt, dateCreated, priceMin, priceMax, status, close) values(?,'$id','$user','$title','$desc', '$date', '$min', '$max', '$status', 'no')";
+            $sql = "insert into commissions (image, id, username, title, txt, dateCreated, priceMin, priceMax, status, close) values(?,'$id','$user','$title','$desc', '$date', '$min', '$max', '$realstat', 'no')";
             $getimg = mysqli_prepare($con, $sql);
             mysqli_stmt_bind_param($getimg, "s" ,$fimg);
             mysqli_stmt_execute($getimg);
