@@ -23,9 +23,8 @@
     position: relative;
     height: 80vh;
     border: solid rgba(255, 255, 255, 0.158) 1px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     background-color: rgba(0, 0, 0, 0.24);
-    margin-bottom: 10px;
 }
 .view_img img{
     vertical-align: middle;
@@ -34,38 +33,45 @@
     height: 100%;
     position: relative;
 }
-
 .view_title{
-    text-align: center;
-    background-color:#F4E4C0;
-    padding:10px;
-    border: solid rgba(255, 255, 255, 0.034) 1px;
-    border-radius: 10px;
-    font-size: 20px ;
+    background-color: #F5F5F5;
+    border-radius: 0 0 10px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1px;
     color: black;
-    margin-bottom: 5px;
 }
-/* .view_username{
-    text-align: center;
+.view_info {
+    border-radius: 0 0 0 10px;
+}
+.view_tag {
+    background: #ECECEC;
+    border-radius: 50px;
+    width: fit-content;
+    padding: .5rem 1rem;
+}
+.commentt {
+    display: flex;
+    flex-direction: row;
+}
+.com_size {
+    background: white;
+    border-radius: 50px 0 0 50px;
+    width: fit-content;
+    padding: .5rem 1rem;
+    border: 0;
     color: black;
-    border-radius: 10px;
-    background-color:#F4E4C0;
-    padding: 5px;
-    border: solid white 1px;
-    font-size: 16px;
-    margin-bottom: 5px;
-    
-} */
-.view_txt{
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.24) ;
-    padding:20px;
-    /* margin-top: 50px; */
-    border: solid white 1px;
-    font-size: 17px;
-    margin-bottom: 5px;
-    color: white;
-    
+}
+.com_sub {
+    border: 0;
+    border-radius: 0 50px 50px 0;
+    background-color: #F9E3B3;
+}
+.com_sub:hover {
+    filter: brightness(105%);
+}
+.view_comments {
+    border-radius: 0 0 10px 0;
 }
 .coom_section{
     padding:10px;
@@ -73,15 +79,6 @@
     border-radius: 10px;
     margin-left: 25px;
     margin-top: 10px;
-}
-.com_size{
-    display: flex;
-    width:100%;
-}
-.commentt{
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
 }
 .Ccom{
     margin-left: 10px;
@@ -94,5 +91,4 @@
     float: right;
     padding: 10px;
     font-size: 14px;
-    
 }
