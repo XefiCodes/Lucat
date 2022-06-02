@@ -72,9 +72,21 @@
                         echo ' <a href="profile.php?id='.$row['id'].'">'.$row['username'].'</a></div>';?></span>
                 <span class="view_date"><u><?php echo '<div>'.$row['dateCreated'].'</div>';?></u></span>
             </div>
-                <div class="view_txt">
-                <?php echo '<div>'.$row['txt'].'</div>';?>
-                </div>
+            
+            <div class="view_tags">
+                <?php 
+                    $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE pid = '$cid'"); 
+                    while($rowws = mysqli_fetch_array($getpostid)){
+                ?>
+                    <div ><?php echo $rowws['tag']; ?> </div>        
+                <?php 
+
+                    }
+                ?>
+            </div>
+            <div class="view_txt">
+            <?php echo '<div>'.$row['txt'].'</div>';?>
+            </div>
         </div>
         <!-- Comments -->
         <div class="coom_section">

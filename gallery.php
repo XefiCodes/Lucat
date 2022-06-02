@@ -108,6 +108,38 @@
             });
         </script>
     </div>
+      <!-- More Ads -->
+      <div class="flex-box">
+          <div  class="space ad-normal" data-component="slideshow">
+            <div id="advert" class="advert w3-content w3-display-container">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
+            </div>
+          </div>
+          <div class="space ad-normal" data-component="slideshow">
+            <div id="advert" class="advert w3-content w3-display-container">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
+            </div>
+          </div>
+          <div class="space ad-normal" data-component="slideshow">
+            <div class="advert w3-content w3-display-container">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
+            </div>
+          </div>
+          <div class="space ad-normal" data-component="slideshow">
+            <div class="advert w3-content w3-display-container">
+              <img class="mySlides" src="img/promologo.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo3.jpg" style="width:100%">
+              <img class="mySlides" src="img/promo2.jpg" style="width:100%">
+            </div>
+          </div>
+        <script src="Javascript/ads-normal.js"></script>
+        </div>
     <?php include("bts/footer.php") ?>
 </body>  
 </html>

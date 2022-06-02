@@ -268,6 +268,12 @@ nav ul li a.com{
 
   .flex-box{
     margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    margin: 30px;
   }
 /* Footer */
 

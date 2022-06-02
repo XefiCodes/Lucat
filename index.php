@@ -15,7 +15,8 @@
     $resulttag = mysqli_query($con,"SELECT * FROM tags LIMIT 4");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
 
-    $carosel = mysqli_query($con,"SELECT * FROM posts LIMIT 4");
+    $carosel = mysqli_query($con,"SELECT * FROM posts LIMIT 5");
+    $Countcarosel = mysqli_query($con,"SELECT * FROM posts LIMIT 5");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,17 +45,19 @@
                 <div class="carousel-inner">
                   <?php 
                         $n = 0;
-                        while($row = mysqli_fetch_array($result)) {
-                          if ($n = 1){
+                        while($row = mysqli_fetch_array($carosel)) {
+                          if ($n == 1){
                   ?>
                   <div class="carousel-item active">
+                    <a href="viewpost.php?id=<?php echo $row['pid']; ?>">
                     <?php echo '<img class="d-block banner" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
+                    </a>
                   </div>
-                  <?php
-                          } else {
-                  ?>
+                  <?php } else { ?>
                   <div class="carousel-item">
+                    <a href="viewpost.php?id=<?php echo $row['pid']; ?>">
                     <?php echo '<img class="d-block banner" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
+                    </a>
                   </div>
                   <?php }$n++;} ?>
                 </div>
@@ -89,7 +92,7 @@
         <div class="container-fluid" style="width:80%">
           <div class="row gap">
             <?php
-              $i=0;
+              $a=0;
               if (mysqli_num_rows($checkPosts) > 0){
                   while($row = mysqli_fetch_array($result)) {
             ?>
@@ -99,10 +102,13 @@
                   <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                 </div>
               </a>
+              <div class="inner">
+                <input class="">
+              </div>
             </div>
             
             <?php
-                $i++;
+                $a++;
                     }
                 }
                 else{
@@ -307,7 +313,6 @@
           </div>
     <script src="Javascript/ads-normal.js"></script>
     </div>
-    
     <!-- Cat -->
     <div class="catmover">
       <div class="cat">

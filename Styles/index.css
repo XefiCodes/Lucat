@@ -207,16 +207,6 @@
           transform: scale(120%);
 }
 
-.flex-box{
-
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items:center;
-  align-content: center;
-  margin: 30px;
-}
-
 .flex-box-ad-1{
   width:300px;
   border: 1px solid black;
