@@ -37,6 +37,10 @@ input[type=submit]{
 
 }
 
+#togol{
+  width: 100%;
+}
+
 .query{
   width: 50vw;  
   margin-top:15vw; 

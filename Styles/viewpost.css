@@ -21,9 +21,8 @@
 .view_img{
     text-align: center;
     position: relative;
-    height: 80vh;
+    height: 90vh;
     border: solid rgba(255, 255, 255, 0.158) 1px;
-    border-radius: 10px 10px 0 0;
     background-color: rgba(0, 0, 0, 0.24);
 }
 .view_img img{
@@ -34,21 +33,28 @@
     position: relative;
 }
 .view_title{
-    background-color: #F5F5F5;
-    border-radius: 0 0 10px 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1px;
     color: black;
+    border-top: 1px solid rgba(255, 255, 255, 0.192);;
 }
 .view_info {
     border-radius: 0 0 0 10px;
+}
+.view_tags{
+    display: flex;
+    column-gap: 5px;
+    row-gap: 5px;
 }
 .view_tag {
     background: #ECECEC;
     border-radius: 50px;
     width: fit-content;
     padding: .5rem 1rem;
+}
+.view_tag a{
+    text-decoration: none;
 }
 .commentt {
     display: flex;

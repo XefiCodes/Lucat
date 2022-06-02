@@ -10,13 +10,6 @@ body{
     color:white;
   
   }
-  
-/* Margin */
-
-.margin{
-  margin-top: 25px;
-  margin-bottom: 75px;
-}
 
 /* Header */
 
@@ -273,7 +266,7 @@ nav ul li a.com{
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    margin: 30px;
+    margin: 50px 150px 30px 150px;
   }
 /* Footer */
 

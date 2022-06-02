@@ -3,7 +3,7 @@
 .dividerTop{
   display: flex;
   justify-content: space-around;
-  margin: 0 30px 0 30px;
+  margin: 30px 30px 0 30px;
 }
 
 .epal{
@@ -51,6 +51,7 @@
 .container-fluid{
   display: flex; 
   flex-direction: column;
+  margin-bottom: 25px;
  } 
 
  .headering {
@@ -58,14 +59,18 @@
   box-sizing: border-box;
   width: 100%;
   text-align: left;
-  padding: 0px 150px;
-  margin-top:20px;
+  padding: 0px;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.192);
 }
  .disc-right{
    text-decoration: none;
 
+ }
+
+ .featureHeader{
+   margin-bottom: 15px;
  }
  
 /* Discover */
@@ -74,6 +79,29 @@
   margin: 25px;
   display: contents;
 }
+
+.chingtag{
+  margin: 75px 90px 0 90px;
+  padding: 50px;
+  position: relative;
+}
+
+.ching{
+  margin: 75px 90px 0 90px;
+  padding: 50px;
+  position: relative;
+}
+.ching:before, .ching:after {
+  position:absolute;
+  width:120px; height: 120px;
+  border-color:rgba(255, 255, 255, 0.705); /* or whatever colour */
+  border-style:solid; /* or whatever style */
+  content: ' ';
+}
+.ching:before {top:0;left:0;border-width: 2px 0 0 2px}
+.ching:after {bottom:0;right:0;border-width: 2px 2px 0 0; transform: rotate(90deg);}
+.ching>:first-child:before {bottom:0;right:0;border-width: 0 2px 2px 0}
+.ching>:first-child:after {bottom:0;left:0;border-width: 0 0 2px 2px}
 
  .row{
   --bs-gutter-x: 0;
@@ -133,8 +161,10 @@
 
 /* Tags*/
 
-#Tag{
+#Tag{    
   margin-top: 100px;
+  margin-bottom: 50px;
+  background-color: #454545;
 }
 
 .tag-fluid{

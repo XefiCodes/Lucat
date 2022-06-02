@@ -41,7 +41,7 @@
     ?> | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/global.css" rel="stylesheet">
-    <link href="Styles/commissions.css" rel="stylesheet">
+    <!-- <link href="Styles/commissions.css" rel="stylesheet">  -->
     <link href="Styles/viewpost.css" rel="stylesheet">
 </head>
 <body>
@@ -75,23 +75,23 @@
                             </span>
                             <span class="view_date"><u><?php echo '<div>'.$row['dateCreated'].'</div>';?></u></span>
                         </div>
-
-                        <!-- Space for tags - Sample tag styling -->
-                        <div class="view_tag"><?php echo $row['tag'];?></div>
-
-                        <!-- Actual Code -->
+                        <!-- Tags -->
                         <div class="view_tags">
                             <?php 
                                 $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE pid = '$cid'"); 
                                 while($rowws = mysqli_fetch_array($getpostid)){
                             ?>
-                                <div ><?php echo $rowws['tag']; ?> </div>        
+                                <div class="view_tag"><a href="?tag=<?php echo $rowws['tag']; ?>"><div class="scp"><?php echo $rowws['tag'];?></div></a></div>
                             <?php 
-
                                 }
                             ?>
                         </div>
-
+                        <script>
+                            var colors = ['#8cd6ab', '#F6A42E', '#BBEECC', '#FCB293', '#FCB293', '#FCB293'];
+                            $(".view_tag").ready(function () {
+                                $(this).css("background", colors[(Math.random() * colors.length) | 0]);
+                            });
+                        </script>
                         <p class="mt-3 fs-5">"<?php echo $row['txt'];?>"</p>
                     </div>
 

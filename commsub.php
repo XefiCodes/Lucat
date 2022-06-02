@@ -25,7 +25,7 @@
                 });
             });
         </script>
-        <!-- <button id="togol"></button> -->
+        <button id="togol"><a href="submit.php">Submission Form here</a></button>
         <!-- Commissions Form -->
         <form id="com" class="query" action="comms.php" method="POST" enctype="multipart/form-data" style="border-radius:10px">
             <img id="pic" src="img/upload.png" width="50vw" height="50px" style=" margin-left : 23vw; border-style:none; " />

@@ -31,19 +31,15 @@
             
                 if(mysqli_num_rows($checkTags) > 0){ 
                     while($rowt = mysqli_fetch_array($resultag)) {
-                        if(isset($curTag)){
-                            if($rowt['tag'] == $curTag){
+                        if($rowt['tag'] == $curTag){
             ?>
                 <a class="tags active" href="gallery.php"><?php echo $rowt['tag'] ?></a>
             <?php
-                        }
-            ?>
-            <?php
-                    }
+                        } else{
             ?>
                 <a class="tags" href="?tag=<?php echo $rowt['tag'] ?>"><?php echo $rowt['tag'] ?></a>
             <?php
-                    }$x++;
+                    }}$x++;
                 } ?>
             <a class="active" href="#">&raquo;</a>
             </div></span>
