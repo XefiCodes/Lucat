@@ -7,30 +7,41 @@
             $fimg = file_get_contents($img);
             $name = $_SESSION["username"];
             $id = $_SESSION["id"];
-            $tit = $_POST['title'];
-            $cap = $_POST['caption'];
-            $date = date("Y-m-d");
-            $tag = $_POST['tag'];
-            // $sep = ' ';
-            // $array = explode(" ", $tag);
+            $tit = mysqli_real_escape_string($con, $_POST['title']);
+            $cap = mysqli_real_escape_string($con, $_POST['caption']);
+            $time = strtotime(date('Y-m-d H:i:s'));
+            $date = date('Y-m-d H:i:s', $time);
+            $tag = mysqli_real_escape_string($con, $_POST['tag']);
 
-            $resultag = mysqli_query($con,"SELECT * FROM tags");
 
-            $sql = "insert into posts (image, id, username, title, txt, dateCreated, tag) values(?,'$id','$name','$tit','$cap', '$date', '$tag')";
+            $sql = "insert into posts (image, id, username, title, txt, dateCreated, tag) values(?,'$id','$name','$tit','$cap', NOW(), '$tag')";
             $getimg = mysqli_prepare($con, $sql);
             mysqli_stmt_bind_param($getimg, "s" ,$fimg);
             mysqli_stmt_execute($getimg);
             $check = mysqli_stmt_affected_rows($getimg);
 
-            // foreach ($array as $input){
-            $tag = "INSERT INTO tags (tag) value '$input'";
-            // }
+            $getRecent = mysqli_query($con, "SELECT * FROM posts ORDER BY dateCreated DESC LIMIT 1");
+            $getPID = mysqli_fetch_array($getRecent);
+            $getcha = $getPID["pid"];
+            $getTag = $getPID["tag"];
+
+            $array = explode(",", $getTag);
+            foreach ($array as $input){
+                $resultag = mysqli_query($con,"SELECT * FROM tags WHERE tag = '$input'");
+                if (!empty($resultag)){
+                    mysqli_query($con, "INSERT INTO tags (tag) value ('$input')");
+                }
+            }
+            foreach($array as $input){
+                $resultag = mysqli_query($con, "SELECT * FROM tagged WHERE pid = '$getcha' AND tag = '$input'");
+                if (mysqli_num_rows($resultag) > 0){
+                }
+                else{
+                    mysqli_query($con, "INSERT INTO tagged (pid, tag) values ('$getcha', '$input')");
+                }
+            }
 
             if ($check == 1) {
-                $select =  mysqli_insert_id($con);
-                // foreach($array as $input){
-                $tagged = "insert into tagged (pid, tag) values ($select, $input)";
-                // }
                 header('location:index.php');
             }
             else {

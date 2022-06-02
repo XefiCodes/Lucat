@@ -6,9 +6,11 @@
     $resultt = mysqli_query($con,"SELECT * FROM posts");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
 
-    // $resultag = mysqli_query($con,"SELECT * FROM tags");
-    // $checkTags = mysqli_query($con, "SELECT * FROM tags");
+    $resultag = mysqli_query($con,"SELECT * FROM tags");
+    $checkTags = mysqli_query($con, "SELECT * FROM tags");
 
+    $curTag = mysqli_real_escape_string($con, $_GET['tag']);
+    $checkcurTag = mysqli_query($con, "SELECT * FROM tagged where tag = '$curTag'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,12 +28,21 @@
             <span><div class="pagination">
             <a class="active" href="#">&laquo;</a>
             <?php $x=0; 
-                if(mysqli_num_rows($checkPosts) > 0){ 
-                    while($row = mysqli_fetch_array($result)){ 
-                        if (!empty($row['tag'])){
+            
+                if(mysqli_num_rows($checkTags) > 0){ 
+                    while($rowt = mysqli_fetch_array($resultag)) {
+                        if(isset($curTag)){
+                            if($rowt['tag'] == $curTag){
             ?>
-                <a class="tags" href="gallery.php?tag=<?php echo $row['tag'] ?>"><?php echo $row['tag'] ?></a>
-            <?php       }
+                <a class="tags active" href="gallery.php"><?php echo $rowt['tag'] ?></a>
+            <?php
+                        }
+            ?>
+            <?php
+                    }
+            ?>
+                <a class="tags" href="?tag=<?php echo $rowt['tag'] ?>"><?php echo $rowt['tag'] ?></a>
+            <?php
                     }$x++;
                 } ?>
             <a class="active" href="#">&raquo;</a>
@@ -48,13 +59,33 @@
             <div id="mygallery" class="justified-gallery">
                 <?php 
                     $i=0;
-                    while($row = mysqli_fetch_array($resultt)) {
-                ?>
-                <?php echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
-                      echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" /></a>'; ?>
-                <?php
-                    $i++;
-                    }
+                    $j=0;
+                    $k = 0;
+                    if(!empty($curTag)){
+                        if (mysqli_num_rows($checkcurTag) > 0){
+                            $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE tag = '$curTag'");
+                            while($getTags = mysqli_fetch_array($getpostid)){
+                                $getdapid = $getTags['pid'];
+                                $getpid = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$getdapid'");
+                                while($rows = mysqli_fetch_array($getpid)) {
+                                        echo '<a href="viewpost.php?id='.$rows['pid'].'" class="cover">';
+                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($rows['Image']).'" /></a>';
+                                }$j++;
+                            }$k++;
+                        }
+                        else{
+                        ?><div>There's nothing here...</div>
+                        <?php
+                            }
+                        }
+                        else{
+                            if (mysqli_num_rows($checkPosts) > 0){
+                                while($row = mysqli_fetch_array($result)) {
+                                    echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
+                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" /></a>';
+                                }$i++;
+                            }
+                        }
                 ?>
             </div>
         </div>
