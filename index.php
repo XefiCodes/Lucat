@@ -12,6 +12,7 @@
 
     $result = mysqli_query($con,"SELECT * FROM posts LIMIT 8");
     $resultt = mysqli_query($con,"SELECT * FROM posts ORDER BY dateCreated DESC LIMIT 8");
+    $resulttag = mysqli_query($con,"SELECT * FROM tags LIMIT 4");
     $checkPosts = mysqli_query($con, "SELECT * FROM posts");
 
     $carosel = mysqli_query($con,"SELECT * FROM posts LIMIT 4");
@@ -41,21 +42,21 @@
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
+                  <?php 
+                        $n = 0;
+                        while($row = mysqli_fetch_array($result)) {
+                          if ($n = 1){
+                  ?>
                   <div class="carousel-item active">
-                    <img src="img/whos mario.png" class="d-block banner" alt="IM1">
+                    <?php echo '<img class="d-block banner" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                   </div>
+                  <?php
+                          } else {
+                  ?>
                   <div class="carousel-item">
-                    <img src="img/Jail.png" class="d-block banner" alt="IM2">
+                    <?php echo '<img class="d-block banner" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                   </div>
-                  <div class="carousel-item">
-                    <img src="img/cypher.png" class="d-block banner" alt="IM3">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/Black Mage FF Final.png" class="d-block banner" alt="IM4">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/Vanellope.png" class="d-block banner" alt="IM5">
-                  </div>
+                  <?php }$n++;} ?>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -162,7 +163,6 @@
           </div>
         </div>
       </div>
-
       <!-- Tags -->
       <section id="Tag" class="margin">
         <div class="header-fluid headering">
@@ -170,37 +170,26 @@
           <a class="featureHeader footer-right link-col" href="gallery.php"><b>Go to Gallery</b></a>
         </div>
         <div class="tag-fluidity" style="width: 80%;">
-            <div class="tag-fluid">
-              <div class="btn"> 
-                <a class="imag" href="gallery.php">
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </div>
-              <div class="btn">
-                <a class="imag">
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </div>
-              <div class="btn"> 
-                <a class="imag"> 
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </div>
-              <div class="btn"> 
-                <a class="imag"> 
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width: 125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </div>
-              <div class="btn"> 
-                <a class="imag"> 
-                  <img class="tag-img" src="img/topPlaces3.jpg" alt="Snow" style="width:125%;">
-                  <div class="hoverTagline">Tags</div>
-                </a>
-              </div>
+          <div class="tag-fluid">
+            <?php 
+                $i=0;
+                $j=0;
+                $k=0;
+                while($row = mysqli_fetch_array($resulttag)) { 
+                  $tagger = $row['tag'];
+                  $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE tag = '$tagger'");
+                  while($getTags = mysqli_fetch_array($getpostid)){
+                    $getdapid = $getTags['pid'];
+                    $getpid = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$getdapid'");
+                    while($rows = mysqli_fetch_array($getpid)) {
+            ?>
+            <div class="btn">
+              <a class="imag" href="gallery.php?tag=<?php echo $row['tag']; ?>">
+                <?php echo '<img class="tag-img" alt="'.$rows['title'].'" src="data:image/jpeg;base64,'.base64_encode($rows['Image']).'" />';?>
+                <div class="hoverTagline"><?php echo $row['tag']; ?></div>
+              </a>
+            </div>
+            <?php }$i++;}$j++;}$k++; ?>
           </div>
         </div>
       </section>
