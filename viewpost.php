@@ -41,7 +41,6 @@
     ?> | Lucat</title>
     <?php include("bts/links.php") ?>
     <link href="Styles/global.css" rel="stylesheet">
-    <!-- <link href="Styles/commissions.css" rel="stylesheet">  -->
     <link href="Styles/viewpost.css" rel="stylesheet">
 </head>
 <body>
@@ -49,128 +48,125 @@
     <?php 
         if(mysqli_num_rows($sql) > 0){
     ?>
-    <!-- ad -->
     <!-- Display Image and Info -->
     <div class="beeg_content">
         <div class="view">
-        <div class="daborder">
-        <div class="content">
-            <div class="view_img">
-            <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
-            </div>
-        </div>
-            <div>
-                <div class="view_title">
-                    <div class="view_info py-4 px-5 bg-light">
-                        <b><?php echo '<div style="font-size:25px">'.$row['title'].'</div>';?></b>
-                        <div class="d-flex justify-content-between mt-1 mb-2">
-                            <span class="date-time">
-                                <?php echo '<div> by ';
-                                    if($roww['prof_pic'] == $def){
-                                        echo '<img id="hatdog" src="'.$roww['prof_pic'].'" width="25px" height="25px"/>';
-                                    } else{
-                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($roww['prof_pic']).'" />';
-                                    } 
-                                echo ' <a href="profile.php?id='.$row['id'].'">'.$row['username'].'</a></div>';?>
-                            </span>
-                            <span class="view_date"><u><?php echo '<div>'.$row['dateCreated'].'</div>';?></u></span>
-                        </div>
-                        <!-- Tags -->
-                        <div class="view_tags">
-                            <?php 
-                                $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE pid = '$cid'"); 
-                                while($rowws = mysqli_fetch_array($getpostid)){
-                            ?>
-                                <div class="view_tag"><a href="?tag=<?php echo $rowws['tag']; ?>"><div class="scp"><?php echo $rowws['tag'];?></div></a></div>
-                            <?php 
-                                }
-                            ?>
-                        </div>
-                        <script>
-                            var colors = ['#8cd6ab', '#F6A42E', '#BBEECC', '#FCB293', '#FCB293', '#FCB293'];
-                            $(".view_tag").ready(function () {
-                                $(this).css("background", colors[(Math.random() * colors.length) | 0]);
-                            });
-                        </script>
-                        <p class="mt-3 fs-5">"<?php echo $row['txt'];?>"</p>
+            <div class="daborder">
+                <!-- Image -->
+                <div class="content">
+                    <div class="view_img">
+                    <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                     </div>
-
-                    <div class="view_comments py-4 px-5 bg-light">
-                        <h3 class="fs-5 fw-normal">Comments</h3>
-                        
+                </div>
+                <!-- Information -->
+                <div>
+                    <div class="view_title">
+                        <div class="view_info py-4 px-5 bg-light">
+                            <b><?php echo '<div style="font-size:25px">'.$row['title'].'</div>';?></b>
+                            <div class="d-flex justify-content-between mt-1 mb-2">
+                                <span class="date-time">
+                                    <?php echo '<div> by ';
+                                        if($roww['prof_pic'] == $def){
+                                            echo '<img id="hatdog" src="'.$roww['prof_pic'].'" width="25px" height="25px"/>';
+                                        } else{
+                                            echo '<img src="data:image/jpeg;base64,'.base64_encode($roww['prof_pic']).'" />';
+                                        } 
+                                    echo ' <a href="profile.php?id='.$row['id'].'">'.$row['username'].'</a></div>';?>
+                                </span>
+                                <span class="view_date"><u><?php echo '<div>'.$row['dateCreated'].'</div>';?></u></span>
+                            </div>
+                            <!-- Tags -->
+                            <div class="view_tags">
+                                <?php 
+                                    $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE pid = '$cid'"); 
+                                    while($rowws = mysqli_fetch_array($getpostid)){
+                                ?>
+                                    <div class="view_tag"><a href="?tag=<?php echo $rowws['tag']; ?>"><div class="scp"><?php echo $rowws['tag'];?></div></a></div>
+                                <?php 
+                                    }
+                                ?>
+                            </div>
+                            <script>
+                                var colors = ['#8cd6ab', '#F6A42E', '#BBEECC', '#FCB293', '#FCB293', '#FCB293'];
+                                $(".view_tag").hover(function () {
+                                    $(this).css("background-color", colors[(Math.random() * colors.length) | 0]);
+                                }, function () {
+                                    $(this).css("background-color", "");
+                                });
+                            </script>
+                            <p class="mt-3 fs-5">"<?php echo $row['txt'];?>"</p>
+                        </div>
                         <!-- Comments -->
-                        <form class="commentt" action="comment.php" method="POST">
-                            <input text="text" name="pid" value="<?php echo $cid ?>" hidden>
-                            <input type="text" name="ct" class="com_size px-4 py-3" placeholder="Write a comment..."  autocomplete="off"/>
-                            <input type="submit" name="com" class="com_sub px-4 py-3" value="COMMENT">
-                        </form>
-
-                        <div class="coom_section">
-                            <?php
-                                $checkDel = $row["username"];
-                                $checkDel2 = $_SESSION["username"];
-                                $j = 0;
-                                
-                                $checkComms = mysqli_query($con, "SELECT * FROM comments WHERE pid = $cid");
-                                $resultt = mysqli_query($con, "SELECT * FROM comments WHERE pid = $cid");
-                                $def = 'https://i.imgur.com/qiwcrKS.png';
-                                
-                            ?>
-                            <?php
-                                if (mysqli_num_rows($checkComms) > 0){
-                                    while($roww = mysqli_fetch_array($resultt)){
-                            ?>
-                            
-                            <div class="commend" id="below">
-                                <div class="CUser">
-                                    <div class="sep">
-                                        <?php if($pfp == $def){
-                                            echo '<img id="hatdog" src="'.$pfp.'" width="25px" height="25px"/>';
-                                            }else{
-                                                echo '<img src="data:image/jpeg;base64,'.base64_encode($pfp).'" />';
-                                            } 
-                                        ?>
-                                        <b><u><a href="profile.php?id=<?php echo $postuserid ?>"><?php echo $roww['username']?></a></u></b>
-                                        <?php
-                                            $checkDelP = $roww["username"];
-                                            if($checkDelP == $checkDel2){
-                                        ?>
-                                        <!-- This is trash function, if thy want it -->
-                                        <!-- <form style="width: 25px" action="del.php" method="POST">
-                                            <input hidden text="text" name="pidd" value="<?php //echo $row["pid"] ?>">
-                                            <button type="submit" name="delP" value=""><i class="fa fa-trash-o"></i></button>
-                                        </form> -->
-                                        <?php
-                                        } ?>
-                                    </div>
-                                    <div class="Ccom">
-                                        <?php echo $roww['cmt'];?>
-                                        <!-- <div>_______________________</div> -->
+                        <div class="view_comments py-4 px-5 bg-light">
+                            <h3 class="fs-5 fw-normal">Comments</h3>
+                            <!-- Comments Form -->
+                            <form class="commentt" action="comment.php" method="POST">
+                                <input text="text" name="pid" value="<?php echo $cid ?>" hidden>
+                                <input type="text" name="ct" class="com_size px-4 py-3" placeholder="Write a comment..."  autocomplete="off"/>
+                                <input type="submit" name="com" class="com_sub px-4 py-3" value="COMMENT">
+                            </form>
+                            <div class="coom_section">
+                                <?php
+                                    $checkDel = $row["username"];
+                                    $checkDel2 = $_SESSION["username"];
+                                    $j = 0;
+                                    
+                                    $checkComms = mysqli_query($con, "SELECT * FROM comments WHERE pid = $cid");
+                                    $resultt = mysqli_query($con, "SELECT * FROM comments WHERE pid = $cid");
+                                    $def = 'https://i.imgur.com/qiwcrKS.png';
+                                    
+                                ?>
+                                <?php
+                                    if (mysqli_num_rows($checkComms) > 0){
+                                        while($roww = mysqli_fetch_array($resultt)){
+                                ?>
+                                <!-- Actual Comments -->
+                                <div class="commend" id="below">
+                                    <div class="CUser">
+                                        <div class="sep">
+                                            <?php if($pfp == $def){
+                                                echo '<img id="hatdog" src="'.$pfp.'" width="25px" height="25px"/>';
+                                                }else{
+                                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($pfp).'" />';
+                                                } 
+                                            ?>
+                                            <b><u><a href="profile.php?id=<?php echo $postuserid ?>"><?php echo $roww['username']?></a></u></b>
+                                            <?php
+                                                $checkDelP = $roww["username"];
+                                                if($checkDelP == $checkDel2){
+                                            ?>
+                                            <!-- This is trash function, if thy want it -->
+                                            <!-- <form style="width: 25px" action="del.php" method="POST">
+                                                <input hidden text="text" name="pidd" value="<?php //echo $row["pid"] ?>">
+                                                <button type="submit" name="delP" value=""><i class="fa fa-trash-o"></i></button>
+                                            </form> -->
+                                            <?php
+                                            } ?>
+                                        </div>
+                                        <div class="Ccom">
+                                            <?php echo $roww['cmt'];?>
+                                        </div>
                                     </div>
                                 </div>
+                                <?php  }  $j++;  } ?>
                             </div>
-                            <?php  }  $j++;  } ?>
-                            
                         </div>
                     </div>
                 </div>
+            </div>
+            <?php
+                } if(mysqli_num_rows($sql) == 0){
+            ?>
+                <div class="content"><div class="view_img">Item does not exist.</div></div>
+            <?php
+                }
+            ?>
         </div>
-    </div>
-        <?php
-            } if(mysqli_num_rows($sql) == 0){
-        ?>
-            <div class="">Item does not exist.</div>
-        <?php
-            }
-        ?>
-    </div>
-    <div class="epal">
+        <div class="epal">
           <div class="ad-long">
             <div id="advert" class="advert w3-content w3-display-container">
-              <img class="mySlides" src="img/old/chad.png" style="width:100%">
-              <img class="mySlides" src="img/old/dale.png" style="width:100%">
-              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
-              <img class="mySlides" src="img/old/black.png" style="width:100%">
+              <img class="mySlides" src="img/poster-long-1.png" style="width:100%">
+              <img class="mySlides" src="img/poster-long-2.png" style="width:100%">
             </div>
           </div>
         </div>

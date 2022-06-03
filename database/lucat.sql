@@ -69,8 +69,9 @@ CREATE TABLE IF NOT EXISTS `commissions` (
 DROP TABLE IF EXISTS `heart`;
 CREATE TABLE IF NOT EXISTS `heart` (
   `hid` int(255) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
+  `id` int(255) NOT NULL,
   `pid` int(255) NOT NULL,
+  `liked` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`hid`),
   KEY `fkheart` (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -171,13 +172,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `prof_pic`, `cover_pic`, `signup_date`, `user_closed`, `tweets`, `follower_array`, `following_array`, `comment_stat`, `bio`, `loc`, `website_link`, `dob`, `status`) VALUES
 (1, 'Dragmanouts', 'Dragmaba@yahoo.com', '8ce87b8ec346ff4c80635f667d1592ae', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-19', 'no', 0, ',', ',', '', 'Web, Design & Hip-Hop\r\nPartner/UI Designer @spade_be\r\nMusician in @dashboxmusic\r\n', 'Namur, Belgium', 'exibit.be', '1978-06-20', 'Offline now'),
-(2, 'Xenonph', 'Nashinsorio@gmail.com', '6a204bd89f3c8348afd5c77c717a097a', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-29', 'no', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active now'),
-(6, 'Test', 'Nash.insorio19@bathspa.ac.uk', '6a204bd89f3c8348afd5c77c717a097a', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-31', 'no', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active now'),
-(7, 'Test2', 'Nash_insorio@yahoo.com', '6a204bd89f3c8348afd5c77c717a097a', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-31', 'no', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active now'),
-(8, 'Test3', 'Test@gmail.com', '7c96053e681f16e90aaefd33566ed1fc', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-31', 'yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Offline now'),
-(9, 'Testname', 'Trashcan@mail.com', 'c69874b898abb180ac71bd99bc16f8fb', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-31', 'yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Offline now'),
-(10, 'Testtest', 'A@mail.com', '4349bd323c9393d141694b73ad17c5b5', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-06-01', 'yes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Offline now'),
-(11, 'Testyeah', 'As@gmail.com', 'c69874b898abb180ac71bd99bc16f8fb', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-06-01', 'no', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active now');
+(2, 'Xenonph', 'Nashinsorio@gmail.com', '6a204bd89f3c8348afd5c77c717a097a', 'https://i.imgur.com/qiwcrKS.png', 'https://i.imgur.com/qiwcrKS.png', '2022-05-29', 'no', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active now');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

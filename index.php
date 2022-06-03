@@ -46,7 +46,7 @@
                   <?php 
                         $n = 0;
                         while($row = mysqli_fetch_array($carosel)) {
-                          if ($n == 1){
+                          if ($n == 0){
                   ?>
                   <div class="carousel-item active">
                     <a href="viewpost.php?id=<?php echo $row['pid']; ?>">
@@ -75,10 +75,8 @@
         <div class="epal">
           <div class="ad-long">
             <div id="advert" class="advert w3-content w3-display-container">
-              <img class="mySlides" src="img/old/chad.png" style="width:100%">
-              <img class="mySlides" src="img/old/dale.png" style="width:100%">
-              <img class="mySlides" src="img/old/Chung.png" style="width:100%">
-              <img class="mySlides" src="img/old/black.png" style="width:100%">
+              <img class="mySlides" src="img/poster-long-1.png" style="width:100%">
+              <img class="mySlides" src="img/poster-long-2.png" style="width:100%">
             </div>
           </div>
         </div>

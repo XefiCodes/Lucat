@@ -25,8 +25,7 @@
             $getcha = $getPID["pid"];
             $getTag = $getPID["tag"];
 
-            $arr = implode("", $getTag);
-            $array = explode(",", $arr);
+            $array = explode(",", $getTag);
             foreach ($array as $input){
                 $resultag = mysqli_query($con,"SELECT * FROM tags WHERE tag = '$input'");
                 if (!empty($resultag)){
