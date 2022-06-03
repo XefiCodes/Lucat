@@ -20,7 +20,7 @@
 		height: inherit;
 		position: absolute;
 		opacity: 0;
-		animation: cycleImg 31s infinite;
+		animation: cycleImg 80s infinite;
 
 	}
 	
@@ -39,13 +39,25 @@
 	
 	.col-sm-6:nth-child(2),
 	.col-sm-6:nth-child(2) img{
-		animation-delay:10s;
+		animation-delay: 10s;
 		
 	}
 	
 	.col-sm-6:nth-child(3),
 	.col-sm-6:nth-child(3) img{
-		animation-delay: 20s;
+		animation-delay: 25s;
+		
+	}
+
+	.col-sm-6:nth-child(4),
+	.col-sm-6:nth-child(4) img{
+		animation-delay: 35s;
+		
+	}
+
+	.col-sm-6:nth-child(5),
+	.col-sm-6:nth-child(5) img{
+		animation-delay: 45s;
 		
 	}
 	
@@ -85,14 +97,14 @@
 	@keyframes cycleImg{
 		
 		25%{
-			opacity: 2;
-		}
-		40%{
 			opacity: 1;
 		}
-        60%{
+		40%{
 			opacity: 0;
 		}
+		
+        
+		
 		
 	}
 	
