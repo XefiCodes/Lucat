@@ -7,12 +7,12 @@
             $fimg = file_get_contents($img);
             $id = $_SESSION['id'];
             $user = $_SESSION['username'];
-            $title = $_POST['title'];
-            $desc = $_POST['caption'];
+            $title = mysqli_real_escape_string($con, $_POST['title']);
+            $desc = mysqli_real_escape_string($con, $_POST['caption']);
             $time = strtotime(date('Y-m-d H:i:s'));
             $date = date('Y-m-d H:i:s', $time);
-            $min = $_POST['min'];
-            $max = $_POST['max'];
+            $min = mysqli_real_escape_string($con, $_POST['min']);
+            $max = mysqli_real_escape_string($con, $_POST['max']);
             $status = $_POST['status'];
             if($status != 1){
                 $realstat = 'Client';

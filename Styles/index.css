@@ -17,6 +17,10 @@
 
  /* Carousel */
 
+#topIndex{
+  width: 100%;
+}
+
  .carousel-inner{
   width: 100%;
   height: 100%;
@@ -98,8 +102,8 @@
   border-style:solid; /* or whatever style */
   content: ' ';
 }
-.ching:before {top:0;left:0;border-width: 2px 0 0 2px}
-.ching:after {bottom:0;right:0;border-width: 2px 2px 0 0; transform: rotate(90deg);}
+.ching:before {z-index: -5;top:0;left:0;border-width: 2px 0 0 2px}
+.ching:after {z-index: -5;bottom:0;right:0;border-width: 2px 2px 0 0; transform: rotate(90deg);}
 .ching>:first-child:before {bottom:0;right:0;border-width: 0 2px 2px 0}
 .ching>:first-child:after {bottom:0;left:0;border-width: 0 0 2px 2px}
 
@@ -120,6 +124,7 @@
  .first{
   z-index: 0;
   overflow: hidden;
+  position: relative;
   flex-grow: 2;
   height: 250px;
   width: 250px;
@@ -147,17 +152,17 @@
     transition: 0.2s;
 }
  
- .cover:hover{
-     width:100%;
-     height:100%;
-     z-index: 1;
-     overflow: hidden;
-     background: #74747469;
-     opacity: 50%;
-     transition: 0.2s;
-     cursor: pointer;
-     border-radius:10px;
-  }
+.cover:hover{
+    width:100%;
+    height:100%;
+    z-index: 1;
+    overflow: hidden;
+    background: #74747469;
+    opacity: 50%;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius:10px;
+}
 
 /* Tags*/
 

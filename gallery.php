@@ -1,6 +1,13 @@
 <?php
     include_once 'bts/connect_db.php';
     ini_set("display_errors", "off");
+    
+    $url = basename($_SERVER['PHP_SELF']);
+    $query = $_SERVER['QUERY_STRING'];
+    if($query){
+    $url .= "?".$query;
+    }
+    $_SESSION['current_page'] = $url;
 
     $result = mysqli_query($con,"SELECT * FROM posts");
     $resultt = mysqli_query($con,"SELECT * FROM posts");
@@ -53,35 +60,85 @@
             </script>
         <div class="container-fluid">
             <div id="mygallery" class="justified-gallery">
-                <?php 
-                    $i=0;
-                    $j=0;
-                    $k = 0;
-                    if(!empty($curTag)){
-                        if (mysqli_num_rows($checkcurTag) > 0){
-                            $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE tag = '$curTag'");
-                            while($getTags = mysqli_fetch_array($getpostid)){
-                                $getdapid = $getTags['pid'];
-                                $getpid = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$getdapid'");
-                                while($rows = mysqli_fetch_array($getpid)) {
-                                        echo '<a href="viewpost.php?id='.$rows['pid'].'" class="cover">';
-                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($rows['Image']).'" /></a>';
-                                }$j++;
-                            }$k++;
+            <?php 
+                $i=0;
+                $j=0;
+                $k = 0;
+                if(!empty($curTag)){
+                    if (mysqli_num_rows($checkcurTag) > 0){
+                        $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE tag = '$curTag'");
+                        while($getTags = mysqli_fetch_array($getpostid)){
+                            $getdapid = $getTags['pid'];
+                            $getpid = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$getdapid'"); ?>
+                            
+                            <?php 
+                            while($rows = mysqli_fetch_array($getpid)) { ?><div>
+                                <a href="viewpost.php?id=<?php echo $row['pid']?>" class="cover">
+                                    <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($rows['Image']).'" />' ?>
+                                </a>
+                                <?php if (isset($_SESSION['id'])){ 
+                                    $pid = $row['pid']; $uid = $_SESSION['id'];
+                                    $checkuser = mysqli_query($con,"SELECT * FROM heart WHERE pid = '$pid' AND id = '$uid'");
+                                    $lied = mysqli_fetch_array($checkuser);
+                                    $liked = $lied['liked'];
+                                    ?>
+                                    <div id="inner">
+                                    <form action="heart.php" class="peace" method="POST">
+                                        <input hidden class="ping" type="text" name="Love" value="<?php echo $row["pid"] ?>">
+                                        <input hidden class="ing" type="text" name="You" value="<?php echo $_SESSION["id"] ?>">
+                                        <button type="submit" id="hat" class="hato">
+                                        <?php if ($liked == NULL){ ?>
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                        <?php } else{ ?>
+                                            <i class="fa fa-heart activate" aria-hidden="true"></i>
+                                        <?php 
+                                        } ?>
+                                        </button>
+                                    </form>
+                                    </div>
+                                <?php } ?></div>
+                                <?php
+                            }$j++;
+                        }$k++;?>
+                            
+                    <?php } else {
+                    ?><div>There's nothing here...</div>
+                    <?php
                         }
-                        else{
-                        ?><div>There's nothing here...</div>
-                        <?php
-                            }
+                    }
+                    else{
+                        if (mysqli_num_rows($checkPosts) > 0){
+                            while($row = mysqli_fetch_array($result)) { ?>
+                                <div>
+                                <a href="viewpost.php?id=<?php echo $row['pid']?>" class="cover">
+                                <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />'
+                                ?>
+                                </a>
+                                <?php if (isset($_SESSION['id'])){ 
+                                    $pid = $row['pid']; $uid = $_SESSION['id'];
+                                    $checkuser = mysqli_query($con,"SELECT * FROM heart WHERE pid = '$pid' AND id = '$uid'");
+                                    $lied = mysqli_fetch_array($checkuser);
+                                    $liked = $lied['liked'];
+                                    ?>
+                                    <div id="inner">
+                                    <form action="heart.php" class="peace" method="POST">
+                                        <input hidden class="ping" type="text" name="Love" value="<?php echo $row["pid"] ?>">
+                                        <input hidden class="ing" type="text" name="You" value="<?php echo $_SESSION["id"] ?>">
+                                        <button type="submit" id="hat" class="hato">
+                                        <?php if ($liked == NULL){ ?>
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                        <?php } else{ ?>
+                                            <i class="fa fa-heart activate" aria-hidden="true"></i>
+                                        <?php 
+                                        } ?>
+                                        </button>
+                                    </form>
+                                    </div>
+                                </div><?php
+                                } 
+                            }$i++;
                         }
-                        else{
-                            if (mysqli_num_rows($checkPosts) > 0){
-                                while($row = mysqli_fetch_array($result)) {
-                                    echo '<a href="viewpost.php?id='.$row['pid'].'" class="cover">';
-                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" /></a>';
-                                }$i++;
-                            }
-                        }
+                    }
                 ?>
             </div>
         </div>

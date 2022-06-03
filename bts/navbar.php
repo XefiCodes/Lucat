@@ -12,7 +12,7 @@
             <ul><input type="text" placeholder=""><i class="fa fa-search" aria-hidden="true"></i></ul>
             <ul class="right">
                 <?php if (isset($_SESSION['id'])){ ?>
-                    <li><a href="submit.php" class="sub item">Submit</a></li>
+                    <li><a href="submit.php" class="sub item">Post</a></li>
                     <li><a href="commissions.php" class="com item">Commissions</a></li>
                 <?php } else { ?>
                     <li><a href="signin.php" class="sub item">Login</a></li>

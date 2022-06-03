@@ -84,8 +84,6 @@
       <!-- Discover -->
       <div class="discover margin">
         <div class="ching">
-          <div class="top"><div class="leftt"></div></div>
-          <div class="bot"><div class="right"></div></div>
           <div class="header-fluid headering">
             <h2 class="featureHeader">Discover</h2>
             <a class="featureHeader footer-right link-col" href="gallery.php"><b>See all</b></a>
@@ -103,11 +101,28 @@
                     <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                   </div>
                 </a>
-                <div class="inner">
-                  <input class="">
+                <?php if (isset($_SESSION['id'])){ 
+                  $pid = $row['pid']; $uid = $_SESSION['id'];
+                  $checkuser = mysqli_query($con,"SELECT * FROM heart WHERE pid = '$pid' AND id = '$uid'");
+                  $lied = mysqli_fetch_array($checkuser);
+                  $liked = $lied['liked'];
+                ?>
+                <div id="inner">
+                  <form action="heart.php" class="peace" method="POST">
+                    <input hidden class="ping" type="text" name="Love" value="<?php echo $row["pid"] ?>">
+                    <input hidden class="ing" type="text" name="You" value="<?php echo $_SESSION["id"] ?>">
+                    <button type="submit" id="hat" class="hato">
+                      <?php if ($liked == NULL){ ?>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <?php } else{ ?>
+                        <i class="fa fa-heart activate" aria-hidden="true"></i>
+                      <?php 
+                      } ?>
+                    </button>
+                  </form>
                 </div>
+                <?php } ?>
               </div>
-              
               <?php
                   $a++;
                       }
@@ -224,6 +239,27 @@
                     <?php echo '<img class="jezuki" src="data:image/jpeg;base64,'.base64_encode($row['Image']).'" />';?>
                   </div>
                 </a>
+                <?php if (isset($_SESSION['id'])){ 
+                  $pid = $row['pid']; $uid = $_SESSION['id'];
+                  $checkuser = mysqli_query($con,"SELECT * FROM heart WHERE pid = '$pid' AND id = '$uid'");
+                  $lied = mysqli_fetch_array($checkuser);
+                  $liked = $lied['liked'];
+                ?>
+                <div id="inner">
+                  <form action="heart.php" class="peace" method="POST">
+                    <input hidden class="ping" type="text" name="Love" value="<?php echo $row["pid"] ?>">
+                    <input hidden class="ing" type="text" name="You" value="<?php echo $_SESSION["id"] ?>">
+                    <button type="submit" id="hat" class="hato">
+                      <?php if ($liked == NULL){ ?>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <?php } else{ ?>
+                        <i class="fa fa-heart activate" aria-hidden="true"></i>
+                      <?php 
+                      } ?>
+                    </button>
+                  </form>
+                </div>
+                <?php } ?>
               </div>
               
               <?php
@@ -335,7 +371,6 @@
         </div>
       </div>
     </div>
-    
     <!-- Footer -->
     <?php include("bts/footer.php") ?>
 </body>

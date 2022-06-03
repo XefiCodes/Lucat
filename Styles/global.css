@@ -216,6 +216,34 @@ nav ul li a.com{
      color:#c1dfc557;
    }
 
+/* Heart */
+
+
+/* Hearts */
+#inner{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.hato{
+  box-sizing: content-box;
+  padding: 0px;
+  color: inherit;
+  background: none;
+  border: none;
+  line-height: 1;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.activate{
+  color: rgb(255, 64, 96);
+}
+
   /* Ads */
 
 #advert > img{
