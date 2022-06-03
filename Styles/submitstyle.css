@@ -19,7 +19,7 @@ body{
   align-content: center;
 }
 
-input[type=text], select{
+.in{
   width:50%;
   height: 50%;
   padding:12px 20px;

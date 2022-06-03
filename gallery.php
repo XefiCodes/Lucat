@@ -69,9 +69,7 @@
                         $getpostid = mysqli_query($con, "SELECT * FROM tagged WHERE tag = '$curTag'");
                         while($getTags = mysqli_fetch_array($getpostid)){
                             $getdapid = $getTags['pid'];
-                            $getpid = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$getdapid'"); ?>
-                            
-                            <?php 
+                            $getpid = mysqli_query($con, "SELECT * FROM posts WHERE pid = '$getdapid'");
                             while($rows = mysqli_fetch_array($getpid)) { ?><div>
                                 <a href="viewpost.php?id=<?php echo $row['pid']?>" class="cover">
                                     <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($rows['Image']).'" />' ?>

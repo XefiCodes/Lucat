@@ -62,7 +62,29 @@
                 <div>
                     <div class="view_title">
                         <div class="view_info py-4 px-5 bg-light">
-                            <b><?php echo '<div style="font-size:25px">'.$row['title'].'</div>';?></b>
+                            <b style="position: relative;"><?php echo '<div style="font-size:25px">'.$row['title'].'</div>';?>
+                            <?php if (isset($_SESSION['id'])){ 
+                                    $pid = $row['pid']; $uid = $_SESSION['id'];
+                                    $checkuser = mysqli_query($con,"SELECT * FROM heart WHERE pid = '$pid' AND id = '$uid'");
+                                    $lied = mysqli_fetch_array($checkuser);
+                                    $liked = $lied['liked'];
+                                    ?>
+                                    <div id="inner">
+                                    <form action="heart.php" class="peace" method="POST">
+                                        <input hidden class="ping" type="text" name="Love" value="<?php echo $row["pid"] ?>">
+                                        <input hidden class="ing" type="text" name="You" value="<?php echo $_SESSION["id"] ?>">
+                                        <button type="submit" id="hat" class="hato">
+                                        <?php if ($liked == NULL){ ?>
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                        <?php } else{ ?>
+                                            <i class="fa fa-heart activate" aria-hidden="true"></i>
+                                        <?php 
+                                        } ?>
+                                        </button>
+                                    </form>
+                                    </div>
+                                <?php } ?>
+                            </b>
                             <div class="d-flex justify-content-between mt-1 mb-2">
                                 <span class="date-time">
                                     <?php echo '<div> by ';

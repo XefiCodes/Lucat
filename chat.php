@@ -10,12 +10,11 @@
         <title>Chat</title>
         <?php include("bts/links.php") ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-        <link href="Styles/global.css" rel="stylesheet">
         <link href="Styles/chat.css" rel="stylesheet">
-        
+        <link href="Styles/global.css" rel="stylesheet">
     </head>
 <body>
-  <?php //include("bts/navbar.php") ?>
+    <?php include("bts/navbar.php") ?>
   <div class="wrapper">
     <section class="chat-area">
       <header>

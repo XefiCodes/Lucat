@@ -1,3 +1,6 @@
+<?php 
+    $search = "SELECT * FROM users "
+?>
 <header>
     <nav>
         <ul>
@@ -9,7 +12,18 @@
             <?php } ?>
             <li><a href="gallery.php" class="left item">Gallery</a></li>
             </ul>
-            <ul><input type="text" placeholder=""><i class="fa fa-search" aria-hidden="true"></i></ul>
+            <ul class="mid">
+                <li>
+                    <span class="middle">
+                        <form action="searchuser.php" class="theone" method="POST">
+                            <input class="edge" type="text" name="searching" placeholder="Want to find someone?">
+                            <button type="submit" id="search">
+                                <i id="secon" class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </span>
+                </li>
+            </ul>
             <ul class="right">
                 <?php if (isset($_SESSION['id'])){ ?>
                     <li><a href="submit.php" class="sub item">Post</a></li>

@@ -25,27 +25,6 @@
       <?php include("bts/navbar.php") ?>
     <div class="daborder">
         <h2 class="featureHeader"><b>Browse Commissions</b></h2>
-            <span><div class="pagination">
-            <a class="active" href="#">&laquo;</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a> 
-            <a class="tags" href="#">Tags</a>
-            <a class="tags" href="#">Tags</a>
-            <a class="active" href="#">&raquo;</a>
-            <script>
-                var colors = ['#8cd6ab', '#F6A42E', '#BBEECC', '#FCB293', '#FCB293', '#FCB293'];
-                $(".tags").hover(function() {
-                    $(this).css("background-color", colors[(Math.random() * colors.length) | 0])
-                }, function() {
-                    $(this).css("background-color", "")
-                });
-            </script>
-          </div></span>
         <div class="header-fluid headering">
             <h2 class="featureHeader">Featured</h2>
             <a class="featureHeader footer-right link-col" href="commissionB.php"><b>See all</b></a>

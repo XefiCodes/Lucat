@@ -216,17 +216,19 @@ div.covering{
     border: 1px solid rgba(255, 255, 255, 0.192);
     border-radius: 2px;
   }
-  /*
-  div.wrapper-content aside.profile .widget.media ul li {
-    width: 82px;
-    height: 82px;
-    background-color: #D0D5D9;
-    border-radius: 4px;
-    flex-shrink: 0;
-    margin-bottom: 6px;
-  } */
+
+  .woso{
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+  }
+
+  .containerd{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   
-    .timeline {
+  .timeline {
     margin-left: 40px;
     margin-top: 15px;
     margin-bottom: 15px;
